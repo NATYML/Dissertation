@@ -1,0 +1,28 @@
+\select@language {spanish}
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1} Baryonic acoustic oscillations }{3}{section.1.1}
+\contentsline {chapter}{\numberline {2}Fundamentos en Cosmolog\IeC {\'\i }a }{5}{chapter.2}
+\contentsline {section}{\numberline {2.1}M\'etrica Robertson Walker}{6}{section.2.1}
+\contentsline {section}{\numberline {2.2}Ecuaci\'on de Campo de Hilbert-Einstein}{8}{section.2.2}
+\contentsline {section}{\numberline {2.3}Ecuaciones de Friedmann}{10}{section.2.3}
+\contentsline {section}{\numberline {2.4}Ecuaciones de Estado}{13}{section.2.4}
+\contentsline {section}{\numberline {2.5}Evoluci\IeC {\'o}n de las Perturbaciones de Densidad en R\IeC {\'e}gimen Newtoniano}{14}{section.2.5}
+\contentsline {subsection}{\numberline {2.5.1}Descripci\IeC {\'o}n Newtoniana}{14}{subsection.2.5.1}
+\contentsline {subsection}{\numberline {2.5.2}Inestabilidad de Jeans}{16}{subsection.2.5.2}
+\contentsline {subsection}{\numberline {2.5.3}Espectro de Potencias}{18}{subsection.2.5.3}
+\contentsline {section}{\numberline {2.6}Colapso No-lineal de las Perturbaciones de Densidad }{20}{section.2.6}
+\contentsline {subsection}{\numberline {2.6.1}Aproximaci\IeC {\'o}n de Zeldovich}{21}{subsection.2.6.1}
+\contentsline {section}{\numberline {2.7} Cosmic density field }{22}{section.2.7}
+\contentsline {subsection}{\numberline {2.7.1} Correlation functions }{22}{subsection.2.7.1}
+\contentsline {subsection}{\numberline {2.7.2} Mass moments }{22}{subsection.2.7.2}
+\contentsline {subsection}{\numberline {2.7.3} Clustering in the real and redshift space }{22}{subsection.2.7.3}
+\contentsline {subsubsection}{ Redshift distortions }{22}{section*.2}
+\contentsline {subsubsection}{ Real space correlation functions }{22}{section*.3}
+\contentsline {section}{\numberline {2.8} Baryonic acoustic oscillations }{22}{section.2.8}
+\contentsline {chapter}{\numberline {3} Cosmological simulations }{23}{chapter.3}
+\contentsline {section}{\numberline {3.1} Numerical methods }{23}{section.3.1}
+\contentsline {section}{\numberline {3.2} Halo selection }{23}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1} Friends of friends }{23}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2} Bound density maximum }{23}{subsection.3.2.2}
+\contentsline {section}{\numberline {3.3} Correlation functions in cosmological simulations }{23}{section.3.3}
+\contentsline {section}{\numberline {3.4} Power spectrum in cosmological simulations }{23}{section.3.4}

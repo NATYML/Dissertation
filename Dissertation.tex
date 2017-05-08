@@ -1,0 +1,82 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% HEADER
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%\documentclass[english,a4paper,11pt,twoside]{book}
+\documentclass[spanish,a4paper,11pt,twoside]{book}
+
+\include{Macros/Macro}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% DOCUMENT
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+%\pagestyle{empty} %No headings for the first pages.
+\pagenumbering{alph}
+
+\frontmatter
+
+\input{Cover}
+
+\cleardoublepage
+\newpage
+\pagenumbering{roman}
+
+%\input{Abstract}
+
+% \input{Acknowledgements}
+\markboth{Contents}{}
+\tableofcontents
+%\listoffigures
+%\listoftables
+
+\cleardoublepage %The first chapter should start on an odd page.
+
+%% Chapters %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\mainmatter
+\pagenumbering{arabic}
+
+\input{Chapters/Chap1}
+\input{Chapters/Chap2}
+\input{Chapters/Chap3}
+%\input{Chapters/Chap4}
+%\input{Chapters/Chap5}
+
+\newpage
+\cleardoublepage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% BIBLIOGRAPHY AND OTHER LISTS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% A small distance to the other stuff in the table of contents (toc)
+\addtocontents{toc}{\protect\vspace*{\baselineskip}}
+
+\addcontentsline{toc}{chapter}{References} %'Bibliography' into toc
+%\nocite{*} %Even non-cited BibTeX-Entries will be shown.
+\bibliographystyle{ieeetr} %Style of Bibliography: plain / apalike / amsalpha / ...
+\renewcommand{\bibname}{References}
+%\bibliography{References}
+
+
+%% The List of Figures
+%\clearpage
+%\addcontentsline{toc}{chapter}{List of Figures}
+%\listoffigures
+
+%% The List of Listings
+%\clearpage
+%\addcontentsline{toc}{chapter}{List of Listings}
+%\lstlistoflistings
+
+%% The List of Tables
+%\clearpage
+%\addcontentsline{toc}{chapter}{List of Tables}
+%\listoftables
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% APPENDICES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\appendix
+%\input{AppendixA}
+
+\end{document}
