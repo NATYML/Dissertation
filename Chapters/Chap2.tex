@@ -1,37 +1,41 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter{ Cosmological Background }\label{chap:marco}
+	\chapter{ Cosmological Background }\label{chap:marco}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Cosmology is the branch of physics that studies the Universe as a whole, 
-therefore, it attempts to explain its origin, evolution and the observed structure 
-of the Universe,at least, at big scales. Hence, a coarse grained approximation is mandatory, 
+therefore, it attempts to explain its origin, evolution and structure 
+at big scales. Hence, a coarse grained approximation is mandatory due
+to the scales considered, 
 this is, several approximations are necessary in the endeavour of such a task.
 
 In this search, two major points are considered. The first one is the 
-cosmological principle, it assumes that on sufficiently large scales the Universe can 
-be considered homogeneous and isotropic. It can be understood homogeneity like invariance 
-under traslation and isotropy like invariance under rotation. This principe stablishes that
-the universe should appear the same for certain observers which are called fundamental observers,
+cosmological principle, it assumes that on sufficiently large scales the Universe 
+is homogeneous and isotropic. In this context, homogeneity can be understood like invariance 
+under traslation and isotropy like invariance under rotation. Then, this principe establishes that
+the universe should appear the same for certain observers named fundamental observers,
 i.e., observers located at each point for which the universe appears isotropic and
-homogeneous. Then, there is no relative motion among them due to they are observing
-the same structures. This finally allows to synchronize clocks defining an cosmic time. 
+homogeneous. Since the Universe is expanding, the distance among cosmological observers
+changes with time but in an uniform way. Using these observers is possible to synchronize 
+clocks using a light pulse. The time measured is named cosmic time. 
 
-The overall isotropy and homogeneity have been observed, for example in the isotropy 
-measured in the cosmic microwave background (CMB) radiation and the sponge like structure
-of the distribution of galaxies. Until now, all observations have agreed with this asseveration.
+
+The overall isotropy and homogeneity have been observed, for example in observations of 
+cosmic microwave background (CMB) radiation and the sponge like structure
+of the distribution of galaxies. Until now, observations have agreed with this asseveration.
 
 \
 
-The second point is that modern cosmology is based on general relativity, 
-where Einstein field equations serve as a set of fundamental equations to
-study the Universe at big scales, fortunately isotropy and homogeneity 
-leds to a simple form of these.
-From them, Friedmman equations provide a theoretical 
-framework for the universe expansion, i.e., how the universe 
-scale factor changes with
-cosmic time.  Other important aspect is the global curvature that
-depends on the universe total content of energy and matter and can only
-take three possible values because of the cosmological principle. 
+The second important point is that modern cosmology is fundamented on general relativity.
+Here, Einstein field equations (EFE) serve as a set of fundamental equations to study the 
+Universe at big scales. Fortunately, isotropy and homogeneity leds to a simple form of 
+these and hence a relative simple mathematical treatment in cosmology.
+From EFE, Friedmman equations are obtained, they provide a theoretical 
+framework to study universe expansion. This is measured with the 
+scale factor, i.e., describes how the relative distances between any two observers
+change with cosmic time.
+Other important issue is global curvature that
+depends on the universe total content of energy and matter and can
+take only three possible values, due to cosmological principle. 
 
 A standard model in cosmology is $\lambda$CDM, where additionally to an 
 expanding universe, there is a dark energy component that accelerates 
@@ -40,8 +44,8 @@ be used in this work.
 
 \
 
-In this chapter, several basic concepts are going to be introduce to finally lead to 
-bayronic acoustic oscillations (BAO). 
+In this chapter, several basic concepts in $\lambda$CDM standard model are going to 
+be introduce to finally lead to bayronic acoustic oscillations (BAO). 
 
 %&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 \section{ Robertson Walker Metric}
@@ -60,7 +64,7 @@ at big scales.}
 In this context, homogeneous is understood as the independence of the place 
 where a reference system is defined, i.e., the structure of the Universe observed 
 is the same no matter the reference system used. 
-On the other hand, isotropy stablishes that regardless of the direction chosen, 
+On the other hand, isotropy establishes that regardless of the direction chosen, 
 the same structure is going to be observed. Then, we are dealing with traslational
 and rotational symmetry. 
 
@@ -178,7 +182,6 @@ This shows that not only density causes curvature of space-time
 but also pressure. The Universe can be modelled with this particular
 shape of the energy-momentum tensor. 
 
-
 There are several solutions to the Einstein field equation but not
 many in an analytical form, for example, Schwarzchild found the metric
 of an estatic spherical mass. Other possible solution is the Kerr 
@@ -216,8 +219,8 @@ $a(t_o)=1$, also $\rho$ is the radiation and matter density, $P$ is
 the total pressure.  
 
 The equation \ref{fried1} has the form of force equation and it can
-be parcially deduced from newtonian mechanic without the presion
-and cosmological constant terms. A most convenient and used form
+be parcially deduced from newtonian mechanic (without the presion
+and cosmological constant terms). A most convenient and used form
 is obtained after algebraically manipulating them 
 
 
@@ -345,41 +348,371 @@ total density paremeter.
 \section{ State equation }
 %&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 
+As mentioned before, scale factor determines the Universe expansion, 
+hence it is mandatory to find relations that relates the different universe 
+density components with it. 
 
+Assuming matter is an isolated system, the first law of thermodynamics is
+expressed as $dU = -pdV$, where relativistic terms are included in the 
+internal energy term. Using the equipartition theorem and derivativing 
+internal energy with respect to scale factor is obtained 
 
+\[ T \propto a^{-2} \]
+
+but from the equation state $P = NkT$ and taking into account that $N = N_oa^{-3}$  
+it is known that  $P \propto a^{-5}$. Pressure due to matter diminishes 
+strongly with universe expansion, while density and temperature change smoother. 
+The latter is another cause for vacuum to dominate universe expansion. 
+
+\
+
+Radiation energy density is
+
+\[\xi=\sum_{\nu}N(\nu)h\nu\]
+
+where $N(\nu)$ is photon density and satifies the relation $N \propto (1+z)^3$,
+so that $\xi \propto  \sum_\nu C_\nu a^{-4} $. Comparing with Stefan Boltzmann
+law is concluded that $T\propto a^{-1}$. Radiation pressure dependence on scale
+factor is found using $ P=\frac{1}{3}\epsilon_{total}$ with which is obtanied
+$P \propto a^{-4}$. 
+
+Otherwise, vacuum satisfies $\epsilon_{total}=\rho c^2$ where $\rho$
+is an effective density. Replacing this result in first law of thermodynamics
+and derivativing with respect to scale factor  
+
+\[ P=-\rho c^2 = -\f{ \Lambda c^4}{8\pi G}\]
+
+the vacuum density constancy has to be used in its deduction.
 
 %&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 \section{ Perturbation evolution in the newtonian regimen }
 %&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 
+As already stated, there is no radiation comming toward us from a epoch 
+previous to decoupling. Although, due to last scattering between radiation
+and matter, highly homogeneous and isotropic distribution of matter is
+observed, i.e., patterns obtained from background cosmic radiation\footnote{
+Image WMAP taken from \url{http://lambda.gsfc.nasa.gov/product/map/current/m_images.cfm}} (Figure \ref{CMB}).  
+The wavelength associated to this cosmic radiation is in the microwave range.
+In CMB radiation, small temperature perturbations are observed, hence, small matter
+perturbations were present at this epoch. These are the initial seeds from where 
+structures observed nowadays formed. 
+
+In this structure growth, density fluctuations are increasing but it is not
+until they got a size of $\delta\sim 1$ that their movement was not exclusive
+due to cosmic expansion. The fluctuations have grown enough to start talking 
+about galaxy formation when their density gets around $1\times 10^6$ compared with
+the background density, this happens for a epoch around $z\sim 100$.
+
+But, it is still important to study the initial stages of the fluctuations.
+Because of this, a linear regime treatment for fluctuations when $\delta\ll 1$
+are key in such a study. 
+
+%**********************************************************************************************************************
+\begin{figure}[htbp]
+       \centering
+               \includegraphics[width=0.6\textwidth]{Images/chapter2/CMB.png}
+       \caption{\small Cosmic background radiation image obtained by WMAP 
+       using 5 different maps.}
+       \label{CMB}
+ \end{figure}
+%**********************************************************************************************************************
+
+
 %######################################################################################################################
 \subsection{ Newtonian description  }
 %######################################################################################################################
+
+
+Inhomogeneities have to be formed at initial stages, these initial density fluctuations 
+have a characteristic length much smaller than the hubble radious. This implies that the
+size of the fluctuations is very small compared with scales where the universe curvature 
+is significant, making this newtonian approximation be valid. But because of this, casualty 
+is taken as instantaneous. 
+
+Taking into account the last shown, a fluid in motion of density $\rho$ subjected to 
+a gravitational field that suffers changes in pressure satifies 
+
+\begin{eqnarray}
+\der{\rho}{t}&=& -\rho \nabla_r\cdot \textbf{u} \nonumber\\
+\der{\textbf{u}}{t} &=& -\f{\nabla_r P}{\rho}-\nabla_r\phi \nonumber\\
+\nabla^2_r \phi & =& 4\pi G\rho 
+\label{euler}
+\end{eqnarray}
+
+As density fluctuations are more of our interest, since inhomogeneties 
+respect to background are the ones that trigger potential wells, it is
+useful to expresss density as $\rho = \overline{\rho}+\delta\rho$, where
+$\overline{\rho}$ is the background density. 
+Here, it is necessary to clear another point. Particle velocities have 
+two different contributions, the first one is caused because of the Universe
+expansion and the other one is the proper velocity of the particle,recessional 
+and peculiar velocities respectively. 
+From the latter mentioned, the coordinate system can be changed from \ref{euler}
+an euler description to a lagrangian one, i.e., moving with the Universe expansion.
+Let's see this in more detail, velocity in a eulearian description is 
+$\textbf{u}= a\dot{\textbf{x}}+ \textbf{x}\dot{a} = \textbf{v}+\textbf{x}\dot{a}$, 
+where $\textbf{v}$ is the peculiar velocity and $\textbf{x}\dot{a}$ is the universe 
+expansion velocity. 
+Then, making a change to comovil coordinates, coordinates that move with the universe
+expansion and changing density to density contrast, the next equations are found
+
+\begin{eqnarray}
+\pder{\delta}{t} &=& -\f{1}{a}\nabla\cdot[(1+\delta)\textbf{v}]\nonumber\\
+\pder{\textbf{v}}{t}+\f{\dot{a}}{a}\textbf{v}+\frac{1}{a}(\textbf{v}\cdot\nabla)\textbf{v}& = &
+-\f{\nabla \Phi}{a}-\f{\nabla P}{a\overline{\rho}(1+\delta)}\nonumber\\
+\nabla^2 \Phi &=& 4\pi G\overline{\rho}a^2\delta
+\label{ec.movimiento}
+\end{eqnarray}
+
+the first one corresponds to the continuity equation, the second one is Euler's 
+equation and the last one is poissonian gravitational field equation. Velocity 
+components appear due to gravitational interactions and changes in pressuare,
+here $\Phi$ is an effective potential. 
+
+\
+
+Aditionally, equation of state relating the thermodynamic quantities P, 
+$\rho$ and s( entropy ) for this cosmological fluid is 
+
+\begin{equation}
+P(\rho,s)= \left[\f{h^2}{2\pi(\mu m_p)^{5/3}}e^{-5/3}\right]\rho^{5/3}\exp \left(\frac{2}{3}\f{\mu m_ps}{k_B}\right)
+\label{ec.estado}
+\end{equation}
+
+Manipulating algebraically the continuity equation, Poisson equation and state equation,
+a wave equation for density fluctuations can be obtanied
+
+\begin{equation}
+\f{\partial^2\delta}{\partial t^2}+2\f{\dot{a}}{a}\pder{\delta}{t} =
+4\pi G \overline{\rho}\delta + \f{C_s^2}{a^2}\nabla^2\delta+\f{2}{3}\f{\overline{T}}{a^2}\nabla^2s
+\label{onda}
+\end{equation}
+
+where $\overline{T}$ is the background temperature and $C_s$ is sound speed.
+The Universe expansion is seen in the second term in the left side. Since for an expanding
+universe the term $\dot{a}{a}$ is positive, Hubble param, its effect is opposed to the perturbation 
+growth. This result was expected due to expansion is against collapse leaving to
+a decrease in growth. 	
+
+In the right side causes for perturbation evolution are shown, these can make them grow 
+or disipate. Entropy can be considered as heat interchange between perturbation and 
+surroundings, causing the expansion or growth of the perturbation. Gravitational field
+is a source for perturbation growth. 
+
+A solution to the perturbation equation in terms of Fourier series is proposed
+
+\begin{eqnarray}
+\delta(x,t) &=& \sum_k \delta_k(t)e^{ik\cdot x} \nonumber\\
+s(x,t) &=& \sum_k s(t)e^{ik\cdot x} \nonumber
+\end{eqnarray}
+
+an important aspect is the indepencency of the functions $e^{ik\cdot x}$ allowing 
+equation \ref{onda} be expressed as 
+
+\begin{equation}
+\f{d^2\delta_k(t)}{dt^2}+2\f{\dot{a}}{a}\der{\delta_k(t)}{t} = 
+\left[4\pi G\overline{\rho}-\f{C_s^2 k^2}{a^2}\right]\delta_k(t)
+-\f{2}{3}\f{\overline{T}}{a^2}k^2s_k(t)
+\label{ec.modos}
+\end{equation}
+
+the equation solution provides expansion coefficients for Fourier series,
+from where, the behaviour to density fluctuations, their growth or 
+disipation, is obtained. 
+
 %######################################################################################################################
 \subsection{ Jeans Inestability}
 %######################################################################################################################
 
+Before solving the mode equation \ref{ec.modos}, it is important to develop
+some intuition about physical phenomena. This can be achived making some 
+simplifications. For example, taking an isentropic static universe ($\dot{a}=0$)
+the expression becomes
 
+\[
+\f{d^2\delta_k(t)}{dt^2} +
+\omega^2\delta_k(t) = 0
+\]
+
+with $\omega^2 = C_s^2k^2/a^2-4\pi G\overline{\rho}$. Clearly the solution of mode 
+equation depends on $\omega$'s sign, if $C_s^2k^2/a^2>4\pi G\overline{\rho}$,  
+$\omega$ is positive and the solution obtained is oscillatory. In other words, 
+this solution is a sound wave not gravitationally inestable, therefore, it is
+not of our interest. 
+By the other side, if $4\pi G\overline{\rho}>C_s^2k^2/a^2$ the solution takes
+the form $\delta_k(t)\propto e^{\Gamma_k t}$, with $\Gamma_k=i\omega_k$ named
+growth rate. In this case, the perturbation disipates or collapses depending
+on the square frequency sign chose. 
+
+Physically, it is expected fluctuations tend to collapse 
+because of gravity though preassure gradient caused by atomic
+interactions goes against it. The ones of interest are those
+ones that collapse. For this, a minimum length that a perturbation
+must have to obtain an inestable flutuaction, i.e., a collapsing
+perturbation, is defined. Hence, from the frequency Jeans' length
+is obtained $\lambda_J = 2\pi a/k_j$ and satisfies 
+$\lambda_J = 2\pi/k_j = C_s(\pi/G\rho)^{1/2}$.
+The growth rate can be rewritten in terms of $\lambda_J$, 
+allowing to make the next comparison, if $\lambda_{pert}>>\lambda_J$
+is satisfied the perturbation collapses where $\lambda_{pert}$
+is the length of the perturbation.
+
+
+As was shown previously, Jeans' length depends on sound speed 
+that is define as 
+
+\[
+C_s^2 = \left( \pder{P}{\rho} \right)_s
+\]
+
+and using also the state equation \ref{ec.estado} a relation 
+is found. It was also used the fact that radiation and matter 
+temperature are equal for $z \leq z_{eqv}$ due to coupling. 
+But after decoupling every component evolves independently. 
+Jean's and mass length, the last one defined as $M_J =  \pi\overline{\rho}_{m,o}\lambda_J^3 $,
+are given by
+
+\begin{eqnarray}
+\lambda_J \approx 0.01(\Omega_{b,o}h^2)^{-1/2}Mpc\\
+M_J \approx 1.5\times 10^5 (\Omega_{b,o}h^2)^{-1/2}M_{\odot}
+\end{eqnarray}
+
+Before decoupling, speed of sound was affected not only 
+by matter but for radiation, even the latter one was more
+important since radiation density dominates in this epoch
+(figure \ref{densidad}). 
+The valid state equation for radiation in this epoch is
+$P = c^2\rho_r/3$ and it can be shown that the change 
+in magnitude order evaluated before and after decoupling
+of Jean's length and mass is $2.6\times 10^{-5}$ and $1.8\times 10^{-14}$
+respectively. From previous asseveration a possible conclusion is
+decoupling increases gravitational collapse since  minimum characteristic length
+required for collapsing becomes smaller. 
+
+\
+
+Until now dark matter has not been mentioned, a component that contrary
+to baryonic matter does not interact with radiation. But it is around
+$23\%$ of the overall Universe content, making it responsible for the 
+large scale mass distribution observed. Dark matter particles interact
+among them and with baryonic matter through gravitational interaction.
+This leads to dark matter potential wells where baryonic matter can also fall.  
+It occurs around $z \sim 3500$. But, dark matter initial seeds for potential 
+wells are formed before decoupling, since they do not interact with radiation,
+they can gather forming them. While this happens, baryonic matter and radiation 
+interacts gravitationally with dark matter, leading to no formation of 
+baryonic seeds precisely because of the mentioned coupling. Later a more detailed 
+explanation will be provided. 
+
+The last arguments exposed allow to express perturbations as $\delta = \delta_oD(z)$,
+where $\delta_o$ is a initial seed from where a dark matter potential well formed
+and $D(z)$ is a growing function of a initial seed.
+Then, rewritting equation \ref{ec.modos}  
+
+\[
+\f{d^2D(z)}{dz^2}+\left[ \f{H'(z)}{H(z)} -\f{1}{1+z}\right]\der{D}{z}
+= \f{1}{H^2(z)}\left[ \f{4\pi G\overline{\rho}(z)}{(1+z)^2} \right]D(z)
+\]
+
+%**********************************************************************************************************************
+\begin{figure}[htbp]
+       \centering
+               \includegraphics[width=0.8\textwidth]{Images/chapter2/masavacio.pdf}
+       \caption{\small Perturbation evolution for a model Mass-vacuum, the behaviour
+       for different contributions of each component. }
+       \label{masavacio}
+ \end{figure}
+%**********************************************************************************************************************
+
+in the expresion isotropy was assumed and the velocity term was neglected
+since the perturbations of our interest satify $\lambda_J \ll \lambda$.
+Using the last equation, different solutions changing density parameters
+are obtained. For example, an Einstein de Sitter Universe  $\delta_k(z)=\delta_o(1+z)^{-1}$,  
+an Universe dominated by radiation $\delta_k(z)=\delta_o(1+z)^{-1.22}$ and
+an Universe dominated by vacuum $\delta_k(z)=\delta_o(1+z)^{-0.58}$. 
+Obviously, for different contributions to every component of density can be found,
+in figure \ref{masavacio} is shown perturbations evolution for a model with
+matter and vacuum contributions. As expected, for bigger matter density
+perturbations grow faster while for universes with bigger vacuum contribution, 
+perturbations grow slower cause accelerated expansion. In the latter, a bigger
+initial mass is required to start collapsing. In the figure, largest redshift
+is $z=0$ but solution is only valid while $\delta\ll 1$. 
 
 %&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 \section{ Statistical properties of cosmological perturbations }
 %&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
-%######################################################################################################################
-\subsection{ Gaussian Random fields }
-%######################################################################################################################
-%######################################################################################################################
-\subsection{ Linear perturbation spectrum }
-%######################################################################################################################
-%-----------------------------------------------------------------------------------------------------------
-\subsubsection{ Initial power spectrum }
-%-----------------------------------------------------------------------------------------------------------
-%-----------------------------------------------------------------------------------------------------------
-\subsubsection{ Amplitude of the linear power spectrum }
-%-----------------------------------------------------------------------------------------------------------
-%-----------------------------------------------------------------------------------------------------------
-\subsubsection{ Standard deviation }
-%-----------------------------------------------------------------------------------------------------------
 
+Nevertheless, to study the evolution of the universe since decoupling requiere to know 
+or assume a density field, to know density in every point and its evolution with time.  
+
+In order to study the density field it is necessary to make an statistical treatment that allow us
+to know its properties. It is usually considered for the initial density field, that density contrasts 
+follow a normal distribution centered in $\langle \delta \rangle = 0$. This idea is supported by
+inflationary scenarios that predict the contrast density field as a gaussian random field. 
+In this approach the probability of having a mode between $\delta_k$ and $\delta_{k}+d\delta_k$ is, 
+
+\begin{equation}
+\mathcal{P}(\delta_{\mbox{\boldmath$\kappa$}})r_{\mbox{\boldmath$\kappa$}}dr_{\mbox{\boldmath$\kappa$}}d\phi_{\mbox{\boldmath$\kappa$}}
+=
+\exp\left[-\f{r_{\mbox{\boldmath$\kappa$}}^2}{2V_u^{-1}P(\kappa)}\right]	\f{r_{\mbox{\boldmath$\kappa$}}}{V_u^{-1}}
+\f{dr_{\mbox{\boldmath$\kappa$}}}{P(\kappa)}\f{d\phi_{\mbox{\boldmath$\kappa$}}}{2\pi}
+\label{probabilidad}
+\end{equation}
+
+
+where $r_{\mbox{\boldmath$\kappa$}}$ corresponds to perturbations amplitude,  $\phi_{\mbox{\boldmath$\kappa$}}$ 
+is the phase and varies between $[0,2\pi)$.  The joint probability distribution function is useful because it allows the independence of the terms $\delta_{\mbox{\boldmath$\kappa$}}$, or in other words it is the product of every mode
+
+\[
+\mathcal{P}_{\mbox{\boldmath$\kappa$}}(\delta_{\mbox{\boldmath$\kappa$}1},...,\delta_{\mbox{\boldmath$\kappa$}N})=
+\prod_{\mbox{\boldmath$\kappa$}}\mathcal{P}_{\mbox{\boldmath$\kappa$}}(\delta_{\mbox{\boldmath$\kappa$}})
+\]
+
+
+This expression is not satisfied when the inverse fourier transform is done, since the probability density is 
+not separable in the initial coordinate space. The term $P(\kappa)$ (assuming isotropy in \mbox{\boldmath$\kappa$}) is the power spectrum 
+defined in the fourier space and it is related to the 2 point correlation function in the real space
+
+\begin{equation}
+P(k) = \f{4\pi}{V_u}\int_0^\infty \xi (r)\f{sin(kr)}{kr}r^2dr =  \langle|\delta(\mbox{\boldmath$\kappa$})|^2\rangle
+\label{pk}
+\end{equation}
+
+$\xi (r)$  describes the distribution of points, telling for example, how clumpy certain region is and in general the clustering 
+properties of the system. Being more specific, this function describes the excess probability of finding a particle 
+at a distance $r$ from a particle selected at random over the expected in an uniform, random distribution. 
+The two point correlation is related to the density contrast as
+
+\[\xi (r) =  \langle  \delta(\textbf{x})\delta(\textbf{x}+\textbf{r}) \rangle\]
+
+therefore, the density field leads to a direct way to find the power spectrum through a fourier transform. 
+
+%**********************************************************************************************************************
+\begin{figure}[htbp]
+       \centering
+               \includegraphics[width=0.95\textwidth]{./Images/chapter2/PS_CF.png}
+       \caption{\small BAO peak in the correlation function in the left and the oscillations of BAO in the power spectrum in the right,
+       (\cite{PLOT}).  
+       The lower curve is the main SDSS sample and the upper one is the LGR sample. }
+       \label{ps_cf}
+ \end{figure}
+%**********************************************************************************************************************
+
+The isotropy of the universe is taken into account during the power spectrum calculation because an average is done over
+all  possible orientations of the vector ${\mbox{\boldmath$\kappa$}}$, as it can be seen in the expression. 
+
+ Additionally it has been found that the initial power spectrum 
+expected from inflation theories has the form $P(\kappa)= k^n$. If $n=1$ the power spectrum is called 
+Harrison-Zeldovich which is commonly used. 
+
+With the initial power spectrum it can be done an inverse fourier transform and this way creating the initial 
+density field. 
+
+\
+
+It is necessary to consider that after recombination epoch, density contrasts started growing in size 
+causing a non linear growth to appear. This implies a change in the density field and likewise the power spectrum. 
 
 
 %&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
@@ -412,3 +745,75 @@ total density paremeter.
 %&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 \section{ Baryonic acoustic oscillations }
 %&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+Let us consider the epoch before recombination. The baryonic plasma (ionized protons and electrons) was coupled with radiation via 
+Thomson scattering,  i.e., the electric field of photons accelerate charged particles making small density contrast to disperse. Nevertheless,
+considering that dark matter do not interact with radiation, small dark matter density contrasts can form. Hence, the baryons are 
+subject to two competing forces, radiation pressure and gravitation. Consider a particular dark matter density contrast that attract
+nearby baryons, they start clustering around the dark matter forming a bigger density contrast. But, due to the pressure caused
+by coupling, the outward force becomes bigger than gravity, making baryons to move outward as a sound wave. This oscillation 
+of the baryonic plasma is known as baryonic acoustic oscillation. 
+
+\
+
+When decoupling occurs and temperature drops, the force responsible for the expansion of the shell disappear, this is, 
+the pressure caused by the coupling between baryons and radiation, leading baryons in the last position they were located. 
+The scale of the baryonic acoustic oscillation is 
+usually called the sound horizon and it can be computed as
+
+\[  
+s = \int_{z_{rec}}^{\infty} \f{c_s dz}{H(z)}
+\]
+
+
+where $c_s$ is the velocity of the propagation and $H(z)$ is the hubble param, (\cite{pilar}). 
+
+Therefore, there is a spherical shell formed 
+around the dark matter density contrast. Now, not only dark matter density contrast seed gravitational instability but 
+the baryons on the shell. 
+
+The structures continue to grow reaching non linear growth and wipe out the imprint lead by the baryonic acoustic
+oscillations except for the bigger ones. The estimated size of the remaining BAO is $105$Mpc, causing that scale to 
+be more likely to have galaxy formation activity. The reason this distribution is not observed at cosmological scales is because
+of the amount of imprints, they smear out the preferred scale. Though, it is expected an enhancement in the two point
+correlation at scales of the baryonic oscillations. As was seen before, there is a direct correspondence between the 
+two point correlation and the power spectrum. Hence, a characteristic oscillation in the power spectrum caused by the imprint of BAO is naturally found. 	
+
+ 
+%**********************************************************************************************************************
+\begin{figure}[htbp]
+       \centering
+               \includegraphics[width=1.0\textwidth]{Images/chapter2/BAOS2.png}
+       \caption{\small All the figures show the evolution of the radial mass profile of dark matter,  baryons, photons
+       and neutrinos. First one: Initial perturbations of the four species. 
+       Second one: the neutrinos do not interact and move away, 
+       the plasma of baryons and radiation overdensity expands because of radiation pressure, the dark matter
+       continues to fall in the perturbation. Third one: The temperature drops enought to lead to decoupling, 
+      the baryons slows down until stopped, the radiation and neutrinos continue moving away. Fourth one:  
+      The dark matter and baryons eventually get the same distribution because of the gravitational interaction.}
+       \label{DBM}
+ \end{figure}
+%**********************************************************************************************************************
+
+Since baryonic acoustic oscillations are primarily a linear phenomenon, they are preserved in the power spectrum despite of 
+the temporal evolution. Then,  BAO are used as an standard ruler, specifically for high redshift where other rulers tend to fail. 
+This is commonly used for constraining dark matter models. 
+
+\
+
+Although, the nonlinear collapse change the shape and position of baryonic acoustic oscillations, broaden and shift the 
+peak. This is clearly seen in the figure (\ref{peak}), the broadening of the peak initially shown as a very sharp causes 
+a damping in the frequency in the power spectrum. It is expected that this effect that is going to be studied in this work, affects baryonic 
+acoustic oscillations on scales around $\sim 10$Mpc.
+
+The diffusion damping (silk damping)  also causes a reduction in size of density inequalities by the diffusion of photons from 
+hot regions to colder ones during the epoch of recombination. 
+
+%**********************************************************************************************************************
+\begin{figure}[htbp]
+       \centering
+               \includegraphics[width=0.9\textwidth]{Images/chapter2/width.png}
+       \caption{\small In the left the correlation function and the right the power spectrum. When the width of the peak is increased
+       the acoustic oscillation obtained in the power spectrum is damped.    }
+       \label{peak}
+ \end{figure}
+%**********************************************************************************************************************
