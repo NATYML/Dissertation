@@ -729,7 +729,7 @@ where a statistical treatment results as a natural way to study it.
 This statistical characterizations leads to the study of a joint probability 
 distribution where the moments, in principle infinite, would describe the 
 cosmic density field. 
-In this approach, the probability of having a mode between $\delta_k$ and 
+Following this approach, the probability of having a mode between $\delta_k$ and 
 $\delta_{k}+d\delta_k$ is, 
 
 \begin{equation}
@@ -762,14 +762,29 @@ P(k) = \f{4\pi}{V_u}\int_0^\infty \xi (r)\f{sin(kr)}{kr}r^2dr =  \langle|\delta(
 \label{pk}
 \end{equation}
 
-$\xi (r)$  describes the distribution of points, telling for example, how clumpy certain region is and in general the clustering 
-properties of the system. Being more specific, this function describes the excess probability of finding a particle 
-at a distance $r$ from a particle selected at random over the expected in an uniform, random distribution. 
+as it can be seen in the expression, the isotropy of the universe is taken into account since during the power spectrum calculation, an average is done over all  possible orientations of the vector ${\mbox{\boldmath$\kappa$}}$
+
+Here, $\xi (r)$  describes the distribution of points, telling for example, how clumpy certain region is or in general the clustering properties of the system. Being more specific, this function describes the excess probability of finding a particle at a distance $r$ from a particle selected at random over the expected in an uniform, random distribution. 
 The two point correlation is related to the density contrast as
 
 \[\xi (r) =  \langle  \delta(\textbf{x})\delta(\textbf{x}+\textbf{r}) \rangle\]
 
-therefore, the density field leads to a direct way to find the power spectrum through a fourier transform. 
+therefore, the density field leads to a direct way to find the power spectrum through a fourier 
+transform. $\xi$ only depends on the amplitude of r because of the assumption of homogeneity
+and isotropy. 
+
+So far, it has been shown two statistical measures, a fourier pair, in real space the 
+correlation function and in fourier space the power spectrum. 
+But other moments can be specified as previously mentioned, in general an l point 
+correlation function can be defined through the next expression 
+$\xi^l(\vec{x}_1,\vec{x}_2,\ldots \vec{x}_l) \equiv  \langle  \delta_1\delta_2 \ldots\delta_l)\rangle $ where the connected terms are the ones that contributed to the calculation.
+
+An important remark is that if initial density pertubations follow a gaussian distribution 
+all moments higher than two (2 point correlation function) are zero, i.e., the density
+perturbation field is completely described by the two first moments of the distribution. 
+
+\
+
 
 %**********************************************************************************************************************
 \begin{figure}[htbp]
@@ -781,8 +796,6 @@ therefore, the density field leads to a direct way to find the power spectrum th
        \label{ps_cf}
  \end{figure}
 %**********************************************************************************************************************
-
-The isotropy of the universe is taken into account during the power spectrum calculation because an average is done over all  possible orientations of the vector ${\mbox{\boldmath$\kappa$}}$, as it can be seen in the expression. 
 
 It is usually considered for the initial density field, that density contrasts 
 follow a normal distribution centered in $\langle \delta \rangle = 0$. This idea is supported by
@@ -824,9 +837,9 @@ baryonic matter is probably a bias tracer of the mass distribution.
 
 \
 
-It is necessary to consider that after recombination epoch, density contrasts started growing 
-in size causing a non linear growth to appear. This implies a change in the density field and 
-likewise the power spectrum. 
+It is necessary to consider that after recombination epoch, density contrasts started
+growing in size causing a non linear growth to appear. This implies a change in the 
+density field and likewise the power spectrum. 
 
 
 
