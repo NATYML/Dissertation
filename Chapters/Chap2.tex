@@ -773,6 +773,20 @@ therefore, the density field leads to a direct way to find the power spectrum th
 transform. $\xi$ only depends on the amplitude of r because of the assumption of homogeneity
 and isotropy. 
 
+No clustering would imply that $\xi(r)$ is zero. A natural way to see this is through
+the conditional probability that a particle in a volume element $dV_2$ given that there 
+is other one in a volume $dV_1$ at a distance $r$ 
+
+\[dP(2|1) = n[1+\xi(x_{12})]dV_2\]
+
+if $\xi(x_{12})>0$ the probability of finding such pair of particles increases,
+i.e., there is clustering of structures. But if $\xi(x_{12})<0$ such probability 
+diminishes leading to an anticorrelation.  In the case where $\xi(x_{12})=0$ 
+there would be no clustering, the distribution of particles would be the one of 
+a random catalogue. 
+
+\
+ 
 So far, it has been shown two statistical measures, a fourier pair, in real space the 
 correlation function and in fourier space the power spectrum. 
 But other moments can be specified as previously mentioned, in general an l point 
@@ -800,9 +814,10 @@ perturbation field is completely described by the two first moments of the distr
 It is usually considered for the initial density field, that density contrasts 
 follow a normal distribution centered in $\langle \delta \rangle = 0$. This idea is supported by
 inflationary scenarios where a random gaussian perturbation field arises naturally from quantum 
-fluctuations during inflation. Since there are a large number of modes, the central limit theory 
-would support this idea if the mode phases are independent. One of the advantages of this model 
-is that the perturbation field remains gaussian during linear evolution. 
+fluctuations during inflation, i.e., statistical behaviour lies on quantum fluctuations. 
+Since there are a large number of modes, the central limit theory 
+would support this idea if the mode phases are independent. 
+One of the advantages of this model is that the perturbation field remains gaussian during linear evolution. 
 
 Additionally it has been found that the initial power spectrum expected from inflation theories 
 has the form $P(\kappa)= k^n$. If $n=1$ the power spectrum is called Harrison-Zeldovich which is 
@@ -810,8 +825,11 @@ commonly used.
 
 With the initial power spectrum it can be done an inverse fourier transform and this way creating the initial density field. 
 
-Using inflationary models the shape of the power spectrum is well determined but there are not
-amplitude predictions, i.e., there is not a defined normalization of the power spectrum. 
+\
+
+Furthermore, using inflationary models the shape of the linear power spectrum is well 
+determined but there are not amplitude predictions, i.e., there is not a defined 
+normalization of the power spectrum. 
 One commonly way to do such thing is through the variance of the galaxy distribution when
 sampled with randomly placed spheres at radius R. The relation between the variance of the 
 density field and the power spectrum is
@@ -824,8 +842,8 @@ where $\hat{\omega}_R(k)$ is the Fourier transform of the spherical top hot mode
 
 \[\hat{\omega}_R(k) = \frac{3}{(k R)^2}[\sin(kR)-kR\cos(k R)]\]
  
-In this approach $\sigma(R)$ is taken as one when $R=8h^{-1}Mpc$ because of 
-the galaxy distribution. 
+In this approach $\sigma(R)$ is taken around one when $R=8h^{-1}Mpc$ because of 
+measures performed observationally. 
 Then, normalizing the power spectrum would imply to force $\sigma(R)$ to be one 
 for the mentioned distance.
 
