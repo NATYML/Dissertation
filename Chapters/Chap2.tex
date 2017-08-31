@@ -425,13 +425,13 @@ are key in such a study.
 
 
 Inhomogeneities have to be formed at initial stages, these initial density fluctuations 
-have a characteristic length much smaller than the hubble radious. This implies that the
+have a characteristic length much smaller than the hubble radius. This implies that the
 size of the fluctuations is very small compared with scales where the universe curvature 
-is significant, making this newtonian approximation be valid. But because of this, casualty 
-is taken as instantaneous. 
+is significant, making this newtonian approximation be valid. Because of this, casualty 
+is taken as granted.
 
-Taking into account the last shown, a fluid in motion of density $\rho$ subject to 
-a gravitational field that suffers changes in pressure satifies 
+Basic equations of gas dynamics for a fluid in motion of density $\rho$ 
+subject to a gravitational field that suffers changes in pressure satifies 
 
 \begin{eqnarray}
 \der{\rho}{t}&=& -\rho \nabla_r\cdot \textbf{u} \nonumber\\
@@ -442,7 +442,7 @@ a gravitational field that suffers changes in pressure satifies
 
 As density fluctuations are more of our interest, since inhomogeneties 
 respect to background are the ones that trigger potential wells, it is
-useful to expresss density as $\rho = \overline{\rho}+\delta\rho$, where
+useful to expresss density as $\rho = \overline{\rho}+\delta\overline{\rho}$, where
 $\overline{\rho}$ is the background density. 
 Here, it is necessary to clear another point. Particle velocities have 
 two different contributions, the first one is caused because of the Universe
@@ -473,7 +473,7 @@ here $\Phi$ is an effective potential.
 \
 
 Aditionally, equation of state relating the thermodynamic quantities P, 
-$\rho$ and s( entropy ) for this cosmological fluid is 
+$\rho$ and s (entropy) for this cosmological fluid is 
 
 \begin{equation}
 P(\rho,s)= \left[\f{h^2}{2\pi(\mu m_p)^{5/3}}e^{-5/3}\right]\rho^{5/3}\exp \left(\frac{2}{3}\f{\mu m_ps}{k_B}\right)
@@ -507,8 +507,13 @@ A solution to the perturbation equation in terms of Fourier series is proposed
 s(x,t) &=& \sum_k s(t)e^{ik\cdot x} \nonumber
 \end{eqnarray}
 
-an important aspect is the indepencency of the functions $e^{ik\cdot x}$ allowing 
-equation \ref{onda} be expressed as 
+in fourier space, $\textbf{k}$ is the wave number and $\delta_k$ is 
+a density mode that is calculated using the discrete fourier transform
+of the density field. Hence, every mode depends on all the known values
+of the density perturbations. 
+
+An important aspect in the last expression is the indepencency of the 
+functions $e^{ik\cdot x}$ allowing equation \ref{onda} be expressed as 
 
 \begin{equation}
 \f{d^2\delta_k(t)}{dt^2}+2\f{\dot{a}}{a}\der{\delta_k(t)}{t} = 
@@ -714,21 +719,26 @@ simulations.
 %&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 
 Nevertheless, to study the evolution of the universe since decoupling requiere to know 
-or assume a density field, to know density in every point and its evolution with time.  
+or assume a density field, to know density in every point and its evolution with time. 
+But using the concept of density contrast $\delta = (\rho - \overline{\rho})/\overline{\rho}$, 
+leads to a density perturbation field, which is a clearer way to analyse the evolution
+of the density field.
 
-While in linear regime, there are a huge amount of perturbations described by different 
-fourier modes. Since they evolve independently their amplitudes change with time, which 
-can be modelled using a transfer function and a linear growth rate. To characterize
-such amount of density field values, statistical properties could be defined. This is,
-not considering individual positions or properties but instead moments defined from
+In linear regime, there are a huge amount of perturbations described by different 
+fourier modes. Since they evolve independently their amplitudes change with time and 
+can be modelled using a transfer function $T(k)$ and a linear growth rate $D(t)$ as
+shown previously. To characterize such amount of density field values, statistical 
+properties could be defined. 
+This is, not considering individual positions or properties but instead moments defined from
 some distribution function. This idea is supported by the fact that there is no access 
 to the primordial perturbations that originated the large scale structure observed 
 nowadays. Hence, our Universe could be considered as a realization of a random process 
 where a statistical treatment results as a natural way to study it. 
 
-This statistical characterizations leads to the study of a joint probability 
-distribution where the moments, in principle infinite, would describe the 
-cosmic density field. 
+Consider that the Universe can be divided in small cells, each of them with position 
+$x_i$. These can be statistically characterized with a joint probability 
+distribution and its moments that, in principle infinite, would describe the 
+cosmic density perturbation field. 
 Following this approach, the probability of having a mode between $\delta_k$ and 
 $\delta_{k}+d\delta_k$ is, 
 
@@ -742,7 +752,7 @@ $\delta_{k}+d\delta_k$ is,
 
 
 where $r_{\mbox{\boldmath$\kappa$}}$ corresponds to perturbations amplitude,  $\phi_{\mbox{\boldmath$\kappa$}}$ 
-is the phase and varies between $[0,2\pi)$.  The joint probability distribution function 
+is the phase and varies between $[0,2\pi)$. The joint probability distribution function 
 is useful because it allows the independence of the terms $\delta_{\mbox{\boldmath$\kappa$}}$, 
 or in other words it is the product of every mode
 
@@ -771,7 +781,7 @@ The two point correlation is related to the density contrast as
 
 therefore, the density field leads to a direct way to find the power spectrum through a fourier 
 transform. $\xi$ only depends on the amplitude of r because of the assumption of homogeneity
-and isotropy. 
+and isotropy, i.e., depends on relative distances. 
 
 No clustering would imply that $\xi(r)$ is zero. A natural way to see this is through
 the conditional probability that a particle in a volume element $dV_2$ given that there 
@@ -792,13 +802,14 @@ correlation function and in fourier space the power spectrum.
 But other moments can be specified as previously mentioned, in general an l point 
 correlation function can be defined through the next expression 
 $\xi^l(\vec{x}_1,\vec{x}_2,\ldots \vec{x}_l) \equiv  \langle  \delta_1\delta_2 \ldots\delta_l)\rangle $ where the connected terms are the ones that contributed to the calculation.
+For example, the first moment of the distribution is $\langle \delta(x) \rangle = 0$ because 
+of the definition of density perturbation field. 
 
 An important remark is that if initial density pertubations follow a gaussian distribution 
 all moments higher than two (2 point correlation function) are zero, i.e., the density
 perturbation field is completely described by the two first moments of the distribution. 
 
 \
-
 
 %**********************************************************************************************************************
 \begin{figure}[htbp]
@@ -850,8 +861,6 @@ for the mentioned distance.
 But several problems arise, one is that this normalization is not precisely valid
 for linear regime since $\sigma(R)\approx 1$ when $\delta(R)\ll 1$. Other one is
 baryonic matter is probably a bias tracer of the mass distribution. 
-
-
 
 \
 
