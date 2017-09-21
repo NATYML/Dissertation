@@ -98,9 +98,102 @@ to appear as a possible solution that implies more reasonable computing times.
 
 A main objective in a simulation could be the study the formation process, fusion and
 further interactions that are produced among halos and vacuum regions that conform
-the filamentary structure of the Universe. 
+the filamentary structure of the Universe. Next, three of the most known numerical 
+methods for cosmological simulations are going to be briefly exposed.
+
+\begin{enumerate}
+\item \textbf{Particle Mesh (PM)}\cite{tree}
+
+In this method a grid is created over the particle array
+as shown in the figure \ref{PM}. The particles more closed
+to a vertice are assigned to this, to an specific cell, getting the density. 
+Other way to calculate the density is cloud in cell, later explained
+in more detail, where particles are considered constant density cubes causing
+that a single particle contributes to different cells.
+Using Poisson equation the potential in every grid vertice can be found
+thanks to the Fourier transform. The potential calculation or the force of 
+each particle can be interpolated among the points created by the 
+grid. 
+
+Although this method reduces considerably the computing time 
+since its of the order of O($N+M\log M$) with $N$ being the number of particles
+and $M$ the number of vertices. The lack of resolution in the regions that are
+more dense makes this method insufficient to respond for the physical situation.
+Furthermore, it does not give account for a complex geometry or systems
+higly correlated. A step forward in this direction is $P^3M$ that uses
+for smaller scales finer calculations making a particle particle calculation. 
+
+%**********************************************************************************************************************
+\begin{figure}[htbp]
+       \centering
+               \includegraphics[width=0.35\textwidth]{Images/chapter3/MG.png}
+       \caption{\small Particle mesh method. Every vertice of the grid gets 
+       properties calculated from the closer particles.}
+       \label{PM}
+ \end{figure}
+%**********************************************************************************************************************
 
 
+\item \textbf{Tree method}\cite{tree}
+
+
+To illustrate this method let's consider a 2D particle array. 
+This square is divided in small cells of the same area where
+each particle is assigned to a specific cell. 
+If this number is superior to one, subdivisions of the cell
+are performed and again if the number of particles per subcells 
+is superior to one, subdivisions are made once more. This
+process is repeated until for every cell there is at most
+one particle. 
+This subdivision is used to create a tree structure, this consists
+in a root, i.e., all the square area and the branches that are 
+created with each subdivision performed. This serves as a map
+of the disposition of the particles in the square array. 
+The particles are numerate from the upper left of the square 
+until all particles in the first cell are numerate following with
+the second cell until the lower left is reached. 
+
+When the gravitational calculation is performed, the contribution 
+to the force exerted over a particle due to the more distant ones
+is much lower than with the nearer. Hence, the far ones can be 
+approximated as a seudoparticle with mass $M$ and with a position
+$r_{CM}=\sum_im_ir_i/M$. As a selection criteria the next expression
+is taken
+
+\begin{equation}
+s/q\leq \theta
+\label{sq}
+\end{equation}
+
+where $s$ is the cell size with wich the particle of interest is interacting 
+with, $d$ the distance cell partilce and $\theta$ is a tolerance value to
+define. When the condition is satisfied the gravitational interaction 
+is calculated directly with the seudoparticle. In the opposite case the 
+relation \ref{sq} for the subcells that contain the studied cell and that way
+successively until the condition is satisfied or only one particle is 
+present per cell. In this way the direct calculation is avoided for far
+objects without avoiding the calculation for the nearer ones. 
+Therefore, the computing time is reduced from $O(N^2)$ to $O(N\log(N))$.
+
+%**********************************************************************************************************************
+\begin{figure}[htbp]
+       \centering
+               \includegraphics[width=1.0\textwidth]{Images/chapter3/treecode.png}
+       \caption{\small In the left panel is shown the array of the particles and the subdivisions performed until at most one particle is found per cell. In the right one, the tree found for such distribution is shown.}
+       \label{tree}
+ \end{figure}
+%**********************************************************************************************************************
+
+
+\item ART Code\cite{klypin}
+
+As its acronym indicates, Adaptive Refinement Tree Code consists in a multigrid
+code. An initial grid is created where the Poisson equation is solved afterwards
+followed by a refinement according to overdensities that are in certain regions.
+Even after performing the refinement over the grid, this calculation can be 
+continously being performed, in  
+
+\end{enumerate}
 %&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 \section{ Halo selection }
 %&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
