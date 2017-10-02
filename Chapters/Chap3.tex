@@ -191,28 +191,79 @@ As its acronym indicates, Adaptive Refinement Tree Code consists in a multigrid
 code. An initial grid is created where the Poisson equation is solved afterwards
 followed by a refinement according to overdensities that are in certain regions.
 Even after performing the refinement over the grid, this calculation can be 
-continously being performed, in  
+continously being performed. Here, calculations particle particle are not being
+performed. Something new compared to the methods previously exposed is that 
+the cell shape can take any form allowing to get an adaptive grid depending on
+the amount of particles in the region. 
 
 \end{enumerate}
+
+There are many methods that are hibrid among the 3 exposed, for example 
+the already mentioned $P^3M$. All of them have both advantages and disadvantages
+that need to be evaluated according to the needs of the simulation. 
+
+\
+
 %&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 \section{ Halo selection }
 %&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+As a result of the dark matter particle interactions, perturbations 
+grow enough to form ligated objects hence they are in virial equilibrium,
+these are known as dark matter halos and satisfy $E_k=-V/2$. 
+They are responsible for the potential wells that causes baryonic matter 
+to fall in, finally forming the galaxies we observe today, i.e., dark
+matter halos host galaxies. 
+
+A main result of a cosmological simulation are the dark matter halos 
+catalogue, which we are going to work with, that contains halo properties such
+as position, velocity, mass, radious and redshift. Thus, a key step is to identify 
+halos from a cosmological simulation, the methods generally use to acomplish such 
+task are FOF and BDM 
+
+\begin{enumerate}
+
 %######################################################################################################################
 \subsection{ Friends of friends }
 %######################################################################################################################
+
+\item Friend of Friends (FOF) 
+
+To identify if a particles group lies in a dark matter halo, i.e., particles 
+are linked, a length is defined such that all the particles that lie inside 
+are part of the same group. This distance is called linking length. A condition 
+is imposed, groups can not intersect among them, hence a particle can only belong 
+to a specific group. But there is a problem with this approach, even when there is 
+a little amount of particles in common between two groups, some sort of small 
+``bridge`` that unites both of them, they are selected as one group not two
+as would be expected. This method also allows to define substructures, therefore using
+different linking lengths groups inside groups would be obtained, the bigger ones
+would host the smaller ones. 
+
 %######################################################################################################################
 \subsection{ Bound density maximum }
 %######################################################################################################################
 
+\item Bound Density Maximun(BDM)
 
+For this method the local maximum densities in the particle array of the simulation
+are detected. From them a spherical cut is defined and the particles inside form 
+the dark matter halo. Particles with bigger or equal velocity than the scape one
+are not included in the halo. 
+Contrary to FOF method, halos can overlap while the center of mass of one halo 
+does not fall into the other one. Nevertheless, if the center of mass of one halo
+fall in the virial radious of other one, this is considered a subhalo of the last
+one. The standard overdensity limit of the halos is $360\rho_{back}$ where $\rho_{back}$
+is the background density. 
+
+\end{enumerate}
+
+%&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+\section{ Power spectrum in cosmological simulations }
+%&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 
 %&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 \section{ Correlation functions in cosmological simulations }
 %&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 
-
-
-%&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
-\section{ Power spectrum in cosmological simulations }
-%&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 
