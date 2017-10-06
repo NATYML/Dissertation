@@ -259,11 +259,42 @@ is the background density.
 \end{enumerate}
 
 %&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+\section{Density field in a cosmological simulation}
+%&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+To construct from a cosmological simulation a good approximation of the real density 
+field, a sampling of the continuous density field in a regular grid of size $N^3$ is 
+performed. Hence, an assignment of the particle charge, i.e. particle mas, to the grid
+must be done. To obtain a more realistic density field approximation the grid points 
+can be increased also disminishing problems due to numerical effects but it is more
+expensive computationally. Furthermore, the number of particles in a simulation is 
+a restriction to the maximum value $N$ can have, it can not exceed $\sqrt[3]{N_p}$, there
+would not be enough particles to map correctly the density field per cell. A size grid
+around $\sqrt[3]{N_p}$ would optimal in the sense that the particle mean per cell would
+be one, hence a Poisson distribution would be followed. But the sampling made from the 
+particle distribution is not a mere sampling but a sampling convolved with a window 
+function (the way a particle mass is distributed in the grid), i.e., the window function
+$W$ that is used affects the density field calculated. For example, the particle number
+assignment can expressed as
+
+\[n(x) = \int_V d^3 x' n_0(\textbf{x'}) W(\textbf{x}-\textbf{x'})\]
+
+where $n_0 = \sum \delta^D ( \textbf{x} - \textbf{x}_i )$ is the particle number density,
+$\textbf{x}_i$ the position of the $i$-th particle, $W(x)$ the window function. 
+Similarly the continuous number density n(x) 
+
+
+
+
+
+
+%&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 \section{ Power spectrum in cosmological simulations }
 %&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 
 %&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 \section{ Correlation functions in cosmological simulations }
 %&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
 
 
