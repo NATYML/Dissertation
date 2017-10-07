@@ -268,23 +268,58 @@ performed. Hence, an assignment of the particle charge, i.e. particle mas, to th
 must be done. To obtain a more realistic density field approximation the grid points 
 can be increased also disminishing problems due to numerical effects but it is more
 expensive computationally. Furthermore, the number of particles in a simulation is 
-a restriction to the maximum value $N$ can have, it can not exceed $\sqrt[3]{N_p}$, there
+a restriction to the maximum value that $N$ can have, it can not exceed $\sqrt[3]{N_p}$, there
 would not be enough particles to map correctly the density field per cell. A size grid
-around $\sqrt[3]{N_p}$ would optimal in the sense that the particle mean per cell would
+around the value mentioned would optimal in the sense that the particle mean per cell would
 be one, hence a Poisson distribution would be followed. But the sampling made from the 
 particle distribution is not a mere sampling but a sampling convolved with a window 
 function (the way a particle mass is distributed in the grid), i.e., the window function
-$W$ that is used affects the density field calculated. For example, the particle number
-assignment can expressed as
+$W$ that is used affects the density field calculated. 
 
-\[n(x) = \int_V d^3 x' n_0(\textbf{x'}) W(\textbf{x}-\textbf{x'})\]
+Since the particles are located in a specific position it can be assured that
+the particle number density is 
 
-where $n_0 = \sum \delta^D ( \textbf{x} - \textbf{x}_i )$ is the particle number density,
-$\textbf{x}_i$ the position of the $i$-th particle, $W(x)$ the window function. 
-Similarly the continuous number density n(x) 
+\[n_0(\textbf{x}) = \sum_{i=1}^{N_{p}} \delta^D ( \textbf{x} - \textbf{x}_i )\]
+
+where $\textbf{x}_i$ the position of the $i$-th particle. The window function 
+quantifies how much of the particle number density is distributed to a grid point 
+separated by $\textbf{x}$, hence the sample particle number density can expressed as 
+
+\[n(\textbf{x}_p) = \int_V d^3 x' n_0(\textbf{x'}) W(\textbf{x}_p-\textbf{x'})\]
+
+Similarly, the sampled density contrast defined as $\delta^s(\textbf{x})=n(\textbf{x}_p)/\bar{n}-1$ 
+can be found using the convolution of the real density contrast and the window function 
+
+\[\delta_m(\textbf{x}) = [\delta(\textbf{x})*W](\textbf{x})\]
+
+its fourier transformation is simply the product of the fourier transformation of the real 
+density contrast and the window function 
+
+\[\delta_m(\textbf{k}) = \delta(\textbf{k})W(\textbf{k})\]
+
+thus, the real density contrast can be obtained dividing the sampled density contrast with
+the window function used. 
+
+\
+
+The procedure of convolving with a window function can be seen in a different way, if a 
+point spreading or cloud shape function $S(x')$, being $x'$ the distance from the particle
+position $x_i$, is carried by each particle then the charge assigned to the grid point $x_p$ 
+is given by the overlap of the shape function within the cubic cell $p$
+
+\[W(x)=\int \Pi \left(\frac{x'}{H} \right) S(x'-x)dx' \]
+
+where $\Pi(x)$ is the top hot function and $H=L/N$ is the size of a cell. 
+
+There are 3 commonly used schemes for the mass assignment, nearest grid point, cloud
+in cell and triangular shaped cloud. For each case we are going to consider a one dimensional
+window function. 
+The first scheme considers that the particle charge is assigned to the cell where the particle
+falls in, the cloud shape would be a Dirac delta function centered in the particle position
+or equivalent the window function would be 
 
 
-
+\[ W(x) = \Pi \left( \frac{x}{H} \right) \equiv \frac{1}{H}\Pi\left(\frac{x}{H}\right)*\delt \left(\frac{x}{H}\right)  \]
 
 
 
