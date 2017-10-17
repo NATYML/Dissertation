@@ -497,7 +497,11 @@ because they are the ones of interest for our work
 
 where $H = L/N$ is the separation of the grid in the real space, 
 $\boldsymbol{\kappa}_p = k_F \textbf{n}_p$ and $ \boldsymbol{n}_p = (i,j,k)$ with each index
-varying from $-N/2 \leq i \leq N/2$ . The function $\delta(\boldsymbol{\kappa}_p)$ is sampled in the points $\boldsymbol{\kappa}_p$ and $\delta(\boldsymbol{r}_p)$ in the points $\boldsymbol{r}_p$.
+varying from $-N/2 \leq i,j,k \leq N/2$ . The function $\delta(\boldsymbol{r}_p)$  is sampled 
+in the points $\boldsymbol{r}_p$ and $\delta(\boldsymbol{\kappa}_p)$ in the points 
+$\boldsymbol{\kappa}_p$. Therefore, the Fourier space is divided into small cells, N cubes of size 
+$\kappa_g = 2\pi/H$ per dimension as it was done for the simulation. 
+
 Furthermore, the extreme values for $\boldsymbol{n}_p$ correspond to Nyquist critical 
 frequency 
 
@@ -514,14 +518,26 @@ as shown in figure \ref{alias}.
                \includegraphics[width=0.8\textwidth]{Images/chapter3/aliasing.png}
        \caption{\small Aliasing effect for $H(f)$ sampled with a space interval $\Delta$.
        Frequencies outside the frequency range are included into the range because
-       of the discrete sampling of the function. }
+       of the discrete sampling of the function. Figure taken from \cite{Press}.}
        \label{alias}
  \end{figure}
 %**********************************************************************************************************************
 
-To perform the discrete Fourier transform of the sampled density field the library 
-FFTW for C language was used, where a fast Fourier discrete transformation is implemented.
-It has different routines, one is a complex to complex function, this is, perfoms a 
+To perform the discrete Fourier transform of the sampled density field was used the free 
+library FFTW, where a fast Fourier discrete transformation (FFT) is implemented.
+Because of algorithmic details of the FFT the fourier coefficients are ordered in the
+following manner
+
+\begin{eqnarray*}
+\kappa_l(i) =\left\{ \begin{array}{cl}
+\frac{2\pi}{L}i \hspace{1em} & \mathrm{if} \hspace{1em} i = 0,\dots ,\frac{N}{2}\\
+\frac{2\pi}{L}(-N+i) \hspace{1em} & \mathrm{if} \hspace{1em} i = \frac{N}{2}+1,\dots ,N-1\\
+\end{array}\right.
+\end{eqnarray*} 
+
+
+where the subindex $l$ stands for $x,y$ or $z$ coordinate. 
+The library has different routines, one is a complex to complex function, this is, perfoms a 
 Fourier transformation of a sampled complex function. Other one, named real to complex routine, 
 takes the real samples of a function to find the Fourier transformation. The last one 
 uses the Hermitian condition that allows to improve the calculation in speed and memory 
@@ -529,23 +545,79 @@ usage
 
 \[\delta_\kappa(-\textbf{n}_\kappa) = \delta_\kappa^*(\textbf{n}_\kappa)\]
 
-where the superscript $*$ denotes complex conjugate. In both cases, a normalization 
-must be taken into consideration, hence a factor of $\sqrt{N}$ appears.
+where the superscript $*$ denotes complex conjugate. In both cases a normalization 
+must be taken into consideration, this can be noticed in the relation between the transformed 
+density field obtained with FFTW and the sampled space density field 
 
-\
+\[\delta^{FFTW}(\textbf{n}_k) = \sum_{r_p} \delta(\textbf{r}_p)e^{-i\boldsymbol{\kappa}_p\cdot \boldsymbol{r}_p} = \frac{\delta(\boldsymbol{\kappa}_p)}{H^3}\]
 
-Thanks to the FT of the sampled density field calculated using FFTW library, an 
-estimative of the power spectrum can be found but some aditional factors of normalization 
-have to be taken into account \cite{Djeong}
+with the last expression and the definition of PS given in equation \ref{pk}, the power
+spectrum from FFTW is given by \cite{Djeong}
 
 \begin{equation}
-P(\kappa_F n_1) = \frac{V}{N^6}\langle|\delta^{FFTW}(\mbox{\boldmath$n$}_1)|^2\rangle
+P(\kappa_F n_1) = \frac{H^6 k^3_F}{(2\pi)^3}\langle\delta^{FFTW}(\mbox{\boldmath$n$}_1\delta^{FFTW}(-\mbox{\boldmath$n$}_1)\rangle = \frac{V}{N^6}\langle|\delta^{FFTW}(\mbox{\boldmath$n$}_1)|^2\rangle
 \end{equation} 
 
+this is the power spectrum estimator that is used throughout this work. 
 
+\subsection{PS calculation}
+
+To calculate the power spectrum, the next steps are followed
+
+\begin{enumerate}
+
+\item[1)] From a cosmological box of size L, a grid with $N^3$ subdivisions is performed
+creating cells of volume $H^3$. 
+
+\item[2)] The sampled space density field is created using a specific window function,
+mass of particles are assigned to the grid. 
+
+\item[3)] With FFTW software, the FT of the sampled space density field is calculated.
+
+\item[4)] To deconvolve and eliminate the aliasing effect $P(\boldsymbol{\kappa})\equiv |\delta(\kappa)|^2$ is divided by the next window function, at each grid point or equivalently each cell
+
+\[ W(\boldsymbol{\kappa}) = \prod^{3}_{i=1}\left[ 1 - \frac{2}{3}\sin^2\left(\frac{\pi\kappa_i}{2\kappa_N}\right) \right] \]
+
+where $\boldsymbol{\kappa} = (\kappa_x,\kappa_y,\kappa_z)$ as proposed in \cite{Jeong}.  
+
+\item[5)] The amount $P(\kappa)$ is calculated taking the spherical average of 
+$P(\boldsymbol{\kappa})$ corrected inside the shell 
+$\kappa -\Delta\kappa/2	< |\boldsymbol{\kappa}|<\kappa +\Delta\kappa/2$.
+
+\end{enumerate}
 
 
 %&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 \section{ Correlation functions in cosmological simulations }
 %&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 
+
+In practice, to calculate in a cosmological simulation the correlation function 
+a at distance $r$, it has to be performed an average of the number of neighbours per 
+particle at a given scale or the binned comoving separation. In this direction 
+correlation function estimators can be used, one of the most basic ones is shown below. 
+Two catalogues are considered for this estimator, one is our particles box, 
+data-data catalogue (DD) and the second one is generated 
+randomly with at least the same number of particles and the same size of the box, 
+random-random catalogue (RR). The DD catalogue should have regions with more or
+less clustering than a homogeneous distribution, this is precisely the RR catalogue role, 
+a way to measure how much the DD catalogue deviates from the homogenous distribution. 
+
+From this estimator is easier to notice that $\xi(r)$ is a measure of 
+excess or deficiency of clustering at $r$ making it more intuitive 
+
+\[1+\xi(r)= \f{\eta_{DD}(r)}{\eta_{RR}(r)}\]
+
+here $\eta_{RR}(r)$ is the number of pairs of particles at a distance $r$ in the catalogue DD 
+and $\eta_{RR}(r)$ is the number of pairs of particles at a distance $r$ in the catalogue RR. 
+
+Other common estimators also need an additional catalogue, the data-random, where the
+pair of particles would not only include the DD or RR but a mixed catalogue containing 
+both arrays, making more robust the estimator proposed
+
+\begin{eqnarray}
+\mbox{Landy-Szalay Estimator}\hspace{0.5cm} \xi_{LS}(r)&=& 1+\frac{DD(r)}{RR(r)}\left(\frac{N_R}{N}\right)^2-2\f{DR(r)}{RR(r)}\left(\frac{N_R}{N}\right) \nonumber \\
+\mbox{Hamilton Estimator}  \hspace{0.5cm} \xi_{HAM}(r)&=&\frac{DD(r)RR(r)}{DR(r)^2}-1 \nonumber 
+\end{eqnarray}
+
+where $N_R$ is the number of points of the RR catalogue and $N$ of the DD catalogue.
