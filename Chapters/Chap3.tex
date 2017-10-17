@@ -262,19 +262,20 @@ is the background density.
 \section{Density field in a cosmological simulation}
 %&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 
-To construct from a cosmological simulation a good approximation of the real density 
-field, a sampling of the continuous density field in a regular grid of size $N^3$ is 
-performed. Hence, an assignment of the particle charge, i.e. particle mas, to the grid
-must be done. To obtain a more realistic density field approximation the grid points 
-can be increased also disminishing problems due to numerical effects but it is more
-expensive computationally. Furthermore, the number of particles in a simulation is 
-a restriction to the maximum value that $N$ can have, it can not exceed $\sqrt[3]{N_p}$, there
-would not be enough particles to map correctly the density field per cell. A size grid
-around the value mentioned would optimal in the sense that the particle mean per cell would
-be one, hence a Poisson distribution would be followed. But the sampling made from the 
-particle distribution is not a mere sampling but a sampling convolved with a window 
-function (the way a particle mass is distributed in the grid), i.e., the window function
-$W$ that is used affects the density field calculated. 
+To construct a good approximation of the real density field from a cosmological simulation, 
+a sampling of the continuous density field in a regular grid of size $N^3$ is 
+performed, the subdivisions created are called cells. Hence, an assignment of the 
+particle charge, i.e. particle mas, to the grid must be done. To obtain a more realistic 
+density field approximation the grid points can be increased also disminishing problems 
+due to numerical effects but it is more expensive computationally. Furthermore, the number 
+of particles in a simulation is a restriction to the maximum value that $N$ can have, 
+it can not exceed $\sqrt[3]{N_p}$, there would not be enough particles to map correctly 
+the density field per cell. A size grid around the value mentioned would optimal in 
+the sense that the particle mean per cell would be one, hence a Poisson distribution 
+would be followed. But the sampling made from the particle distribution is not a 
+mere sampling but a sampling convolved with a window function (the way a particle 
+mass is distributed in the grid), i.e., the window function $W$ that is used affects 
+the density field calculated. 
 
 Since the particles are located in a specific position it can be assured that
 the particle number density is 
@@ -290,12 +291,18 @@ separated by $\textbf{x}$, hence the sample particle number density can expresse
 Similarly, the sampled density contrast defined as $\delta^s(\textbf{x})=n(\textbf{x}_p)/\bar{n}-1$ 
 can be found using the convolution of the real density contrast and the window function 
 
-\[\delta_m(\textbf{x}) = [\delta(\textbf{x})*W](\textbf{x})\]
+\begin{equation}
+\delta^s(\textbf{x}) = [\delta*W](\textbf{x})
+\label{df_conv}
+\end{equation}
 
 its fourier transformation is simply the product of the fourier transformation of the real 
 density contrast and the window function 
 
-\[\delta_m(\textbf{k}) = \delta(\textbf{k})W(\textbf{k})\]
+\begin{equation}
+\delta^s(\textbf{k}) = \delta(\textbf{k})W(\textbf{k})
+\label{df_four}
+\end{equation}
 
 thus, the real density contrast can be obtained dividing the sampled density contrast with
 the window function used. 
@@ -313,23 +320,232 @@ where $\Pi(x)$ is the top hot function and $H=L/N$ is the size of a cell.
 
 There are 3 commonly used schemes for the mass assignment, nearest grid point, cloud
 in cell and triangular shaped cloud. For each case we are going to consider a one dimensional
-window function. 
-The first scheme considers that the particle charge is assigned to the cell where the particle
-falls in, the cloud shape would be a Dirac delta function centered in the particle position
-or equivalent the window function would be 
+window function. The sencond and third one are first and second order distribution schemes
+respectively, hence each of them is a better approximation than the previous one. 
 
+\
 
-\[ W(x) = \Pi \left( \frac{x}{H} \right) \equiv \frac{1}{H}\Pi\left(\frac{x}{H}\right)*\delt \left(\frac{x}{H}\right)  \]
+\textbf{Nearest grid point: } The first scheme considers that the particle charge is 
+assigned to the cell where the particle falls, each cell is centered 
+in a grid point, therefore the particle is assigned to the nearest grid point. 
+Let us see this in more detail. If the cloud shape interpretation is used, the particle 
+shape would be a Dirac delta function that would be assigned to the specific cell 
+where particle falls in as shown in the figure \ref{NGP} (a). If the other interpretation 
+is considered, the window function would be a top hat function centered in the particle, 
+the value assigned to grid point would the one that top hat function would get when is 
+evaluated in that grid point as shown in figure \ref{NGP} (b). 
 
+\begin{eqnarray*}
+ W_{NGP}(x)  =  \Pi \left( \frac{x}{H} \right) & \equiv & \frac{1}{H}\Pi\left(\frac{x}{H}\right) *\delta \left(\frac{x}{H}\right) \\ 
+&  = &\frac{1}{H}\Pi\left(\frac{x}{H}\right)*S\left(\frac{x}{H}\right)
+\end{eqnarray*}
 
+This window function in the fourier space is
+
+\[ W_{NGP}(k)= sinc\left(\frac{\pi k}{2k_N} \right)\]
+
+where $k_N$ is the Nyquist frequency that later will be defined. 
+
+%**********************************************************************************************************************
+\begin{figure}[htbp]
+       \centering
+               \includegraphics[width=0.8\textwidth]{Images/chapter3/NGP.png}
+       \caption{\small The left figure shows the cloud shape interpretation where the Dirac function
+       is assigned to the particle grid. The right one shows the window function interpretation
+       where the top hat function evaluated in the grid point would give the charge assigned to it. }
+       \label{NGP}
+ \end{figure}
+%**********************************************************************************************************************
+
+\textbf{Cloud in cell: } This scheme assumes that the charge of a specific particle 
+assigned to a grid point is given by the overlap of a cell with a size H centered in 
+the particle with the cell centered any the grid point. Then, the particle not only 
+contributes to the cell where it falls in but also to some of the 26 neighbour cells. 
+This explanation is shown in the left figure of \ref{CIC} but according to the window 
+function explanation, a ''triangle'' function $\Lambda(x)$ centered in the particle and length
+H is evaluated in the corresponding grid points of the cells, the one where particle falls 
+in and the neighbour ones, finding the contribution of the charge to every one of them
+as shown in figure  \ref{CIC} (b).  
+
+\begin{eqnarray*}
+ W_{CIC}(x)  =  \Lambda \left( \frac{x}{H} \right) & \equiv & \frac{1}{H}\Pi\left(\frac{x}{H}\right) *\Pi \left(\frac{x}{H}\right) \\ 
+&  = &\frac{1}{H}\Pi\left(\frac{x}{H}\right)*S\left(\frac{x}{H}\right)
+\end{eqnarray*}
+
+This window function in the Fourier space is
+
+\[ W_{CIC}(k)= sinc^2\left(\frac{\pi k}{2k_N} \right)\]
+
+hence, the Fourier transform of the CIC window function is the square of the Fourier 
+transform of the NGP window function. 
+
+%**********************************************************************************************************************
+\begin{figure}[htbp]
+       \centering
+               \includegraphics[width=0.8\textwidth]{Images/chapter3/CIC.png}
+       \caption{\small The left panel shows the CIC cloud shape function and the intersection
+       between the cell centered in the particle with the cells provides the contribution of
+       the charge to every cell. The right one shows a ''triangle''	 function that is evaluated
+       in every grid point to find the charge contribution to the cell. }
+       \label{CIC}
+ \end{figure}
+%**********************************************************************************************************************
+
+\textbf{Triangular shaped cloud: } This scheme is as the two previously presented but the cloud
+shape function and the window function changes. As it happens with CIC, TSC contributes to diffent
+cells, not only the one where it falls in. Both interpretations are shown in the figure \ref{TSC}.
+Next the expression to calculate the charge contribution to a specific cell is given by
+
+\begin{eqnarray*}
+ W_{TSC}(x)  &=& \frac{1}{H}\Lambda \left( \frac{x}{H} \right)*\Pi \left(\frac{x}{H}\right) \\ 
+&  = &\frac{1}{H}\Pi\left(\frac{x}{H}\right)*S\left(\frac{x}{H}\right)
+\end{eqnarray*}
+
+The Fourier transform of the window function is 
+
+\[ W_{TSC}(k)= sinc^3\left(\frac{\pi k}{2k_N} \right)\]
+
+hence, the Fourier transform of the TSC window function is the cubic of the Fourier 
+transform of the NGP window function. 
+
+%**********************************************************************************************************************
+\begin{figure}[htbp]
+       \centering
+               \includegraphics[width=0.8\textwidth]{Images/chapter3/TSC.png}
+       \caption{\small The left figure shows the cloud shape function, a ''triangle'' function
+       and the overlap with the cells provides the value of the charge assigned to every cell. But
+       using the window function interpretation the right figure is obtained, where the particle carries
+       with a function that evaluated in every grid point gives the contribution to the specific cell. }
+       \label{TSC}
+ \end{figure}
+%**********************************************************************************************************************
+
+\
+
+Hence, each successively higher order assignment function is obtained by convolving the previous
+assignment function with $\frac{1}{H}\Pi\left(\frac{x}{H}\right)$. 
+
+From a one dimensional window function can be obtained the three dimensional one, simply as
+the multiplication of the three one dimensional ones. This last asseveration is valid due to 
+the grid used is regular. 
+
+Thus, for every cell contained in the cosmological box a value of the convolved density 
+field is calculated using a specific mass assignment scheme. 
 
 %&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 \section{ Power spectrum in cosmological simulations }
 %&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 
+
+The density perturbations of the ensemble, convolved density field for every cell 
+of the box, allow to calculate the power spectrum as shown in equation \ref{pk},
+an esemble average for every mode $\kappa$. Since this a statistical measure in
+the Fourier space let us see the Fourier transform in more detail.
+
+\subsection{Fourier transform}
+
+The fourier transform is defined for this work with the next convention
+
+\begin{equation}
+F(\boldsymbol{\kappa}) = \int_{-\infty}^{\infty} d^3 x f(\textbf{x})e^{-i \boldsymbol{\kappa}\cdot\bf{x}	}
+\label{FT}
+\end{equation}
+
+with $\kappa$ being the wave number vector. The inverse fourier transform as
+
+\begin{equation}
+f( \boldsymbol{x}) = \int_{-\infty}^{\infty} \frac{d^3 \kappa}{(2\pi)^3}  F(\boldsymbol{\kappa})e^{i \boldsymbol{\kappa}\cdot\bf{x}	}
+\label{IFT}
+\end{equation}
+
+The convolution of the functions $g(\bf{x})$ and $f(\bf{x})$ is defined as follows
+
+\[h(\bf{x}) = |g*f|(\bf{x})\equiv \int_{-\infty}^{\infty} g(\bf{x}')f(\bf{x} - \bf{x}') d^3 x' \]
+
+but the Fourier transform of $h(\bf{x})$ is 
+
+\[H(\boldsymbol{\kappa}) = G(\boldsymbol{\kappa}) F(\boldsymbol{\kappa})  \]
+
+this is known as the convolution theorem. It is used in our work since the fourier 
+transform of the window function convolved with the density field (equation \ref{df_conv})
+allow us to obtain the real density field. From equation \ref{df_four} 
+
+\[\delta(\textbf{k}) = \delta^s(\textbf{k})/W(\textbf{k})\]
+
+In the situation we are dealing with, the function $F(\boldsymbol{\kappa})$ is only
+sampled at evenly spaced intervals ($N^3$ frequencies totally) since we only 
+know $f(\textbf{x})$ in $N^3$ points
+
+\begin{eqnarray*}
+F(\boldsymbol{\kappa}) =\left\{ \begin{array}{cl}
+F(\kappa_F\boldsymbol{n}_\kappa) \hspace{1em} & \boldsymbol{n}_\kappa = (i,j,k) \in Z^3\\
+0 \hspace{1em} & \mathrm{otherwise}\\
+\end{array}\right.
+\end{eqnarray*} 
+
+where $\kappa_F=2\pi/L$ is the fundamental frequency.
+
+Due to the functions are only sampled in specific points, the integrals defined in 
+equations \ref{FT} and \ref{IFT} can be approximated to the discrete Fourier transform. 
+Let us express them in terms of the density fluctuations in real and Fourier space 
+because they are the ones of interest for our work 
+
+\begin{eqnarray*}
+\delta(\boldsymbol{\kappa}_p) = H^3 \sum_{n_p} \delta(\boldsymbol{r}_p) e^{-i\boldsymbol{\kappa}_p\cdot \boldsymbol{x}_p} \\
+\delta(\boldsymbol{r}_p) = \frac{1}{L^3}\sum_{\boldsymbol{k}_p} \delta(\boldsymbol{\kappa}_p) e^{i\boldsymbol{\kappa}_p\cdot \boldsymbol{x_p}} 
+\end{eqnarray*} 
+
+where $H = L/N$ is the separation of the grid in the real space, 
+$\boldsymbol{\kappa}_p = k_F \textbf{n}_p$ and $ \boldsymbol{n}_p = (i,j,k)$ with each index
+varying from $-N/2 \leq i \leq N/2$ . The function $\delta(\boldsymbol{\kappa}_p)$ is sampled in the points $\boldsymbol{\kappa}_p$ and $\delta(\boldsymbol{r}_p)$ in the points $\boldsymbol{r}_p$.
+Furthermore, the extreme values for $\boldsymbol{n}_p$ correspond to Nyquist critical 
+frequency 
+
+\[\kappa_N = \pi\frac{N}{L} = \frac{\pi}{H} \]
+
+thus, $-\kappa_N < k < \kappa_N $. A phenomenon called aliasing appears when a continuous 
+function is sampled and is not bandwidth limited to a frequency smaller than $\kappa_N$. 
+It consists in a folding over or aliasing of the frequencies that fall outside the range
+as shown in figure \ref{alias}. 
+
+%**********************************************************************************************************************
+\begin{figure}[htbp]
+       \centering
+               \includegraphics[width=0.8\textwidth]{Images/chapter3/aliasing.png}
+       \caption{\small Aliasing effect for $H(f)$ sampled with a space interval $\Delta$.
+       Frequencies outside the frequency range are included into the range because
+       of the discrete sampling of the function. }
+       \label{alias}
+ \end{figure}
+%**********************************************************************************************************************
+
+To perform the discrete Fourier transform of the sampled density field the library 
+FFTW for C language was used, where a fast Fourier discrete transformation is implemented.
+It has different routines, one is a complex to complex function, this is, perfoms a 
+Fourier transformation of a sampled complex function. Other one, named real to complex routine, 
+takes the real samples of a function to find the Fourier transformation. The last one 
+uses the Hermitian condition that allows to improve the calculation in speed and memory 
+usage
+
+\[\delta_\kappa(-\textbf{n}_\kappa) = \delta_\kappa^*(\textbf{n}_\kappa)\]
+
+where the superscript $*$ denotes complex conjugate. In both cases, a normalization 
+must be taken into consideration, hence a factor of $\sqrt{N}$ appears.
+
+\
+
+Thanks to the FT of the sampled density field calculated using FFTW library, an 
+estimative of the power spectrum can be found but some aditional factors of normalization 
+have to be taken into account \cite{Djeong}
+
+\begin{equation}
+P(\kappa_F n_1) = \frac{V}{N^6}\langle|\delta^{FFTW}(\mbox{\boldmath$n$}_1)|^2\rangle
+\end{equation} 
+
+
+
+
 %&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 \section{ Correlation functions in cosmological simulations }
 %&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
-
-
 
