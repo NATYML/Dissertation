@@ -1,15 +1,18 @@
 \chapter{ Cosmological simulations }
 
 
-In cosmology one issue that currently exists is finding 
-the dynamical evolution of the Universe, from its first 
-stages to the actual epoch. This makes necessary tools to
-study a big amount of interacting particles. 
-Considering all possible components in the Universe evolution, 
-the particles required to simulate the interaction among them
-would be so huge that it would not be viable
-to predict the evolution of every single particle for every
-time step. 
+Currently in cosmology, one issue is to find the way
+the dynamics of the Universe evolves from its first 
+stages to the actual epoch. Computational resources 
+appear as a necessary tool to tackle such problems
+due to the big amount of interacting particles. 
+If all possible components of the Universe would be considered 
+in its evolution, the particles required to simulate 
+the interaction among them would be so huge that it would not be viable
+to predict the evolution of every single particle. Hence, numerical approximations 
+must be developed to find for every time step all the properties needed to describe 
+the system, even when particles studied have masses with magnitude order of several 
+stellar masses. 
 
 In cosmological simulations a key component to consider
 is dark matter, since it is mostly because of this one that 
@@ -21,13 +24,14 @@ baryonic matter but also because it only interacts in this way.
 This component cannot be observed directly cause it does not interact 
 with radiation. But, since its gravitational effects are strong, there are 
 observational evidence that accounts for its existence. For example, 
-observing in galaxy rotation curves, the velocity measured at the outskirts 
-was too fast to explain only with baryonic matter. 
+observing galaxy rotation curves, the velocity measured at the outskirts 
+of spiral galaxies was too fast to explain with only baryonic matter. 
 
-A key argument to ignore baryonic matter in simulations is that
-defining as total density the sum of baryonic and dark matter only, 
-dark matter would contribute with around $80\%$ of all the density
-content. 
+Defining as total density the sum of baryonic and dark matter,
+a key argument to ignore baryonic matter in simulations can be
+given, dark matter would contribute with around $80\%$ of all 
+this density content. Hence, the assumption that the Universe
+dynamics is determined by dark matter is plausible.
 
 The next chapter is divided in several sections, the first one
 corresponds to the methods used in cosmological simulations to
@@ -35,8 +39,10 @@ calculate the gravitational evolution of the system. The second
 one contains different criteria selection to detect a dark matter
 halo in simulations. The third and fourth sections are dedicated
 to explain how to build two different statistical measures of clustering
-in real and fourier space, the correlation function and power spectrum 
-respectively. 
+in real space, the correlation function and in fourier space, the power spectrum. 
+The text books and articles that are used as reference in the next chapter
+are \cite{Djeong}, \cite{Longair}, \cite{tree}, \cite{Klypin}, \cite{Klypin2},
+\cite{Klypin3}, \cite{Jing}, \cite{Mont}.
 
 
 %&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
@@ -44,54 +50,51 @@ respectively.
 %&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 
 
-In the last chapter the equations that describe the evolution of 
-the perturbations in linear regime were provided and the Zeldovich 
-approximation for non linear regime was also given. But in a cosmological
-simulation is necessary initial conditions for the density field
-or a initial shape of the power spectrum. In these cosmological simulations 
-dark matter is a key component, in many cases is the only particle considered,
-hence some observational evidences are going to be provided. As already stated
-dark matter does not interact with radiation, the reason to be proposed 
-is the gravitational effects found in different systems studied. It is 
-about the  $\sim 24\%$ content of the Universe therefore it is important 
-to study its evolution. 
+To study the Universe evolution at big scales, simulations of dark matter
+interacting particles inside a cosmological boxe are performed. 
+In such cases is necessary to suppose initial conditions,
+an initial configuration of the Universe, i.e., an initial density field
+or an initial shape for the power spectrum. As mentioned, in these cosmological 
+simulations dark matter is a key component, in many cases is the only particle considered.
+Hence, it is important to provide some observational evidences encountered. 
+As already stated dark matter does not interact with radiation, nevertheless it turns
+out that the gravitational effects that causes are esential for the dynamical evolution
+of the Universe. It is around the  $\sim 24\%$ content of the Universe.
 
 One of the first observational evidence was found in the Coma cluster due to
-a mass estimation from the virial theorem, let's see this in more detail  
-
+a mass estimation from the virial theorem, let us see this in more detail: 
 the specific kinetic energy of the system is $T = v^2/2 \sim 3\sigma^2/2 $ 
 where $\sigma$ is the galaxy velocity dispertion and the potential energy
 is $U = 3GM_{vir}/(5R_{vir})$. From the mass-luminosity ratio and the 
 mean luminosity of the cluster, a second estimative of the mass is found. There is
-a discrepancy between the two values so big to assert that $\sim 90\%$ of the 
+such a big discrepancy between the two values that is reasonable to affirm that $\sim 90\%$ of the 
 cluster's mass is not visible. 
 
 The rotation curve of the galaxies can be other prove for dark matter existence,
 for example, the velocity measures performed with respect to the radious of Andromeda 
 galaxy (or another spiral galaxies) is approximately the same independent of the radial
-distance of the stars to the center of the galaxy. From this it could be affirmed that
+distance of the stars to the center of the galaxy. From this, it could be affirmed that
 density is uniform along the galaxy contrary to expected for the observed 
-number of star in function of the radious. 
+number of star in function of the radius. 
 
 
-The Bullet cluster is composed by two two clusters that are colliding, an event 
-not commonly observed. The gas of them reaches velocities around $\sim 10$ $millions$ $of$ $miles/h$
-during the violent collition while they interact among them because of their charge. 
+Another example is the Bullet cluster, composed by two two clusters that are colliding, 
+an event not commonly observed. The gas of them reaches velocities around $\sim 10$ $millions$ $of$ $miles/h$ during the violent collision while they interact among them because of their charge. 
 This interaction disminishes the gas velocity but this does not happen with dark
 matter cause it does not interact electrically. 
 Using gravitational lensing a distortion map is obtained. Using the X rays detected
-and the distortion map four different groups of matter are found, 2 bigger ones
+and the distortion map, four different groups of matter are found, 2 bigger ones
 that correspond to the dark matter component and two smaller ones that correspond
 to luminous matter formed from the intercluster gas. These presents a strong
 evidence of dark matter existence. 
 
 \
 
-Additionally to the initial conditions, the box size $L$ and the number of 
+So, additional to the initial conditions, the box size $L$ and the number of 
 dark matter particles $N^3$ that would be used should be fixed. 
 The gravitational interaction calculation of such a big number of particles
-could in principle be calculated through direct calculation. This first
-attempt is not very efficient or even it is not possible to perform it
+could in principle be calculated through direct sum of forces. This first
+attempt is not very efficient or even it is not possible to perform
 since the computing time or the computational resources would be very 
 big to be viable. The latter is the reason for approximate methods 
 to appear as a possible solution that implies more reasonable computing times.
@@ -137,7 +140,7 @@ for smaller scales finer calculations making a particle particle calculation.
 \item \textbf{Tree method}\cite{tree}
 
 
-To illustrate this method let's consider a 2D particle array. 
+To illustrate this method let us consider a 2D particle array. 
 This square is divided in small cells of the same area where
 each particle is assigned to a specific cell. 
 If this number is superior to one, subdivisions of the cell
@@ -613,7 +616,7 @@ and $\eta_{RR}(r)$ is the number of pairs of particles at a distance $r$ in the 
 
 Other common estimators also need an additional catalogue, the data-random, where the
 pair of particles would not only include the DD or RR but a mixed catalogue containing 
-both arrays, making more robust the estimator proposed
+both arrays, making more robust the estimator proposed \cite{Est_CF}
 
 \begin{eqnarray}
 \mbox{Landy-Szalay Estimator}\hspace{0.5cm} \xi_{LS}(r)&=& 1+\frac{DD(r)}{RR(r)}\left(\frac{N_R}{N}\right)^2-2\f{DR(r)}{RR(r)}\left(\frac{N_R}{N}\right) \nonumber \\
@@ -621,3 +624,17 @@ both arrays, making more robust the estimator proposed
 \end{eqnarray}
 
 where $N_R$ is the number of points of the RR catalogue and $N$ of the DD catalogue.
+
+\subsection{Correlation function calculation}
+
+To calculate the correlation function the Landy-Szalay estimator is used, the next
+rough steps are followed to calculate it
+
+\begin{enumerate}
+
+\item[1)] A catalogue of $N_R$ particles is generated randomly in a cubic box of size L.
+
+\item[2)] For a bin around $r$ the pair of galaxies in the DD, RR and DR catalogues are found
+and using Landy-Szalay estimator the correlation function is found for that scale. 
+
+\end{enumerate}
