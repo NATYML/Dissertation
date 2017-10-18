@@ -144,8 +144,8 @@ To illustrate this method let us consider a 2D particle array.
 This square is divided in small cells of the same area where
 each particle is assigned to a specific cell. 
 If this number is superior to one, subdivisions of the cell
-are performed and again if the number of particles per subcells 
-is superior to one, subdivisions are made once more. This
+are performed and if the number of particles per subcells 
+is superior to one, again subdivisions are made. This
 process is repeated until for every cell there is at most
 one particle. 
 This subdivision is used to create a tree structure, this consists
@@ -158,7 +158,7 @@ the second cell until the lower left is reached.
 
 When the gravitational calculation is performed, the contribution 
 to the force exerted over a particle due to the more distant ones
-is much lower than with the nearer. Hence, the far ones can be 
+is much lower than with the nearer ones. Thus, the far ones can be 
 approximated as a seudoparticle with mass $M$ and with a position
 $r_{CM}=\sum_im_ir_i/M$. As a selection criteria the next expression
 is taken
@@ -169,7 +169,7 @@ s/q\leq \theta
 \end{equation}
 
 where $s$ is the cell size with wich the particle of interest is interacting 
-with, $d$ the distance cell partilce and $\theta$ is a tolerance value to
+with, $d$ the distance cell particle and $\theta$ is a tolerance value to
 define. When the condition is satisfied the gravitational interaction 
 is calculated directly with the seudoparticle. In the opposite case the 
 relation \ref{sq} for the subcells that contain the studied cell and that way
@@ -188,13 +188,13 @@ Therefore, the computing time is reduced from $O(N^2)$ to $O(N\log(N))$.
 %**********************************************************************************************************************
 
 
-\item ART Code\cite{klypin}
+\item \textbf{ART Code\cite{Klypin}}
 
 As its acronym indicates, Adaptive Refinement Tree Code consists in a multigrid
-code. An initial grid is created where the Poisson equation is solved afterwards
+code. An initial grid is created where the Poisson equation is solved 
 followed by a refinement according to overdensities that are in certain regions.
 Even after performing the refinement over the grid, this calculation can be 
-continously being performed. Here, calculations particle particle are not being
+done continously. Here, calculations particle particle are not being
 performed. Something new compared to the methods previously exposed is that 
 the cell shape can take any form allowing to get an adaptive grid depending on
 the amount of particles in the region. 
@@ -212,25 +212,25 @@ that need to be evaluated according to the needs of the simulation.
 %&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 
 As a result of the dark matter particle interactions, perturbations 
-grow enough to form ligated objects hence they are in virial equilibrium,
-these are known as dark matter halos and satisfy $E_k=-V/2$. 
+grow enough to form ligated objects thus they are in virial equilibrium,
+these are known as dark matter halos and satisfy the relation $E_k=-V/2$. 
 They are responsible for the potential wells that causes baryonic matter 
-to fall in, finally forming the galaxies we observe today, i.e., dark
+to fall in, forming finally the galaxies we observe today, i.e., dark
 matter halos host galaxies. 
 
 A main result of a cosmological simulation are the dark matter halos 
 catalogue, which we are going to work with, that contains halo properties such
-as position, velocity, mass, radious and redshift. Thus, a key step is to identify 
+position, velocity, mass, radius and redshift. Therefore, a key step is to identify 
 halos from a cosmological simulation, the methods generally use to acomplish such 
-task are FOF and BDM 
+task are FOF and BDM\footnote{\url{https://www.cosmosim.org/cms/simulations/halo-finders/}}
 
 \begin{enumerate}
 
 %######################################################################################################################
-\subsection{ Friends of friends }
+%\subsection{ Friends of friends }
 %######################################################################################################################
 
-\item Friend of Friends (FOF) 
+\item \textbf{Friend of Friends (FOF)} 
 
 To identify if a particles group lies in a dark matter halo, i.e., particles 
 are linked, a length is defined such that all the particles that lie inside 
@@ -240,22 +240,22 @@ to a specific group. But there is a problem with this approach, even when there 
 a little amount of particles in common between two groups, some sort of small 
 ``bridge`` that unites both of them, they are selected as one group not two
 as would be expected. This method also allows to define substructures, therefore using
-different linking lengths groups inside groups would be obtained, the bigger ones
+different linking lengths, groups inside groups would be obtained, the bigger ones
 would host the smaller ones. 
 
 %######################################################################################################################
-\subsection{ Bound density maximum }
+%\subsection{ Bound density maximum }
 %######################################################################################################################
 
-\item Bound Density Maximun(BDM)
+\item \textbf{Bound Density Maximun(BDM)}
 
 For this method the local maximum densities in the particle array of the simulation
-are detected. From them a spherical cut is defined and the particles inside form 
+are detected. From them, a spherical cut is defined and the particles inside form 
 the dark matter halo. Particles with bigger or equal velocity than the scape one
 are not included in the halo. 
 Contrary to FOF method, halos can overlap while the center of mass of one halo 
 does not fall into the other one. Nevertheless, if the center of mass of one halo
-fall in the virial radious of other one, this is considered a subhalo of the last
+falls in the virial radius of other one, the first one is considered a subhalo of the last
 one. The standard overdensity limit of the halos is $360\rho_{back}$ where $\rho_{back}$
 is the background density. 
 
@@ -326,9 +326,9 @@ in cell and triangular shaped cloud. For each case we are going to consider a on
 window function. The sencond and third one are first and second order distribution schemes
 respectively, hence each of them is a better approximation than the previous one. 
 
-\
+\begin{enumerate}
 
-\textbf{Nearest grid point: } The first scheme considers that the particle charge is 
+\item \textbf{ Nearest grid point:} The first scheme considers that the particle charge is 
 assigned to the cell where the particle falls, each cell is centered 
 in a grid point, therefore the particle is assigned to the nearest grid point. 
 Let us see this in more detail. If the cloud shape interpretation is used, the particle 
@@ -360,7 +360,7 @@ where $k_N$ is the Nyquist frequency that later will be defined.
  \end{figure}
 %**********************************************************************************************************************
 
-\textbf{Cloud in cell: } This scheme assumes that the charge of a specific particle 
+\item \textbf{ Cloud in cell: } This scheme assumes that the charge of a specific particle 
 assigned to a grid point is given by the overlap of a cell with a size H centered in 
 the particle with the cell centered any the grid point. Then, the particle not only 
 contributes to the cell where it falls in but also to some of the 26 neighbour cells. 
@@ -394,7 +394,7 @@ transform of the NGP window function.
  \end{figure}
 %**********************************************************************************************************************
 
-\textbf{Triangular shaped cloud: } This scheme is as the two previously presented but the cloud
+\item \textbf{ Triangular shaped cloud: } This scheme is as the two previously presented but the cloud
 shape function and the window function changes. As it happens with CIC, TSC contributes to diffent
 cells, not only the one where it falls in. Both interpretations are shown in the figure \ref{TSC}.
 Next the expression to calculate the charge contribution to a specific cell is given by
@@ -410,6 +410,8 @@ The Fourier transform of the window function is
 
 hence, the Fourier transform of the TSC window function is the cubic of the Fourier 
 transform of the NGP window function. 
+
+\end{enumerate}
 
 %**********************************************************************************************************************
 \begin{figure}[htbp]
