@@ -268,7 +268,7 @@ is the background density.
 To construct a good approximation of the real density field from a cosmological simulation, 
 a sampling of the continuous density field in a regular grid of size $N^3$ is 
 performed, the subdivisions created are called cells. Hence, an assignment of the 
-particle charge, i.e. particle mas, to the grid must be done. To obtain a more realistic 
+particle charge, i.e. particle mass, to the grid must be done. To obtain a more realistic 
 density field approximation the grid points can be increased also disminishing problems 
 due to numerical effects but it is more expensive computationally. Furthermore, the number 
 of particles in a simulation is a restriction to the maximum value that $N$ can have, 
@@ -395,7 +395,7 @@ transform of the NGP window function.
 %**********************************************************************************************************************
 
 \item \textbf{ Triangular shaped cloud: } This scheme is as the two previously presented but the cloud
-shape function and the window function changes. As it happens with CIC, TSC contributes to diffent
+shape and window function change. As it happens with CIC, TSC contributes to different
 cells, not only the one where it falls in. Both interpretations are shown in the figure \ref{TSC}.
 Next the expression to calculate the charge contribution to a specific cell is given by
 
@@ -452,7 +452,7 @@ the Fourier space let us see the Fourier transform in more detail.
 The fourier transform is defined for this work with the next convention
 
 \begin{equation}
-F(\boldsymbol{\kappa}) = \int_{-\infty}^{\infty} d^3 x f(\textbf{x})e^{-i \boldsymbol{\kappa}\cdot\bf{x}	}
+F(\boldsymbol{\kappa}) = \int_{-\infty}^{\infty} d^3 x f(\textbf{x})e^{-i \boldsymbol{\kappa}\cdot\boldsymbol{x}	}
 \label{FT}
 \end{equation}
 
@@ -512,7 +512,7 @@ frequency
 
 \[\kappa_N = \pi\frac{N}{L} = \frac{\pi}{H} \]
 
-thus, $-\kappa_N < k < \kappa_N $. A phenomenon called aliasing appears when a continuous 
+so $-\kappa_N < k < \kappa_N $. A phenomenon called aliasing appears when a continuous 
 function is sampled and is not bandwidth limited to a frequency smaller than $\kappa_N$. 
 It consists in a folding over or aliasing of the frequencies that fall outside the range
 as shown in figure \ref{alias}. 
@@ -601,8 +601,8 @@ In practice, to calculate in a cosmological simulation the correlation function
 a at distance $r$, it has to be performed an average of the number of neighbours per 
 particle at a given scale or the binned comoving separation. In this direction 
 correlation function estimators can be used, one of the most basic ones is shown below. 
-Two catalogues are considered for this estimator, one is our particles box, 
-data-data catalogue (DD) and the second one is generated 
+Two catalogues are considered for this estimator, one is the properties of the particles 
+of the box, data-data catalogue (DD) and the second one is generated 
 randomly with at least the same number of particles and the same size of the box, 
 random-random catalogue (RR). The DD catalogue should have regions with more or
 less clustering than a homogeneous distribution, this is precisely the RR catalogue role, 
@@ -636,7 +636,9 @@ rough steps are followed to calculate it
 
 \item[1)] A catalogue of $N_R$ particles is generated randomly in a cubic box of size L.
 
-\item[2)] For a bin around $r$ the pair of galaxies in the DD, RR and DR catalogues are found
-and using Landy-Szalay estimator the correlation function is found for that scale. 
+\item[2)] For a bin around $r$ the magnitude of the distances between DD, RR and DR
+particles are found, that way, pairs of galaxies that are at a distance $r$ for every 
+catalogue are obtained. Finally, using Landy-Szalay estimator the correlation function 
+is calculated for each radial bin. 
 
 \end{enumerate}
