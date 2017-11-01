@@ -115,7 +115,7 @@ ds^2= c^2dt^2-a(t)^2\left[\frac{d^2r}{1-Kr^2} +r^2(d^2\theta
 \label{metric}
 \end{equation} 	
 
-The term $a(t)$ is the scale factor, it describes how the relative
+The term $a$ is the scale factor, it describes how the relative
 distance between two fundamental observers changes with time. 
 The term $K$ is the curvature constant for the actual time and defines
 the Universe geometry. When $K=0$ an euclidean metric is recovered 
@@ -151,7 +151,6 @@ the definition of the curvature constant $K = H_o^2(\Omega_o -1)/c^2$.
 At big scales, the most important fundamental interaction of nature is the 
 gravitational one. Hence, the theory of general relativity (TGR) is 
 an essential tool in the study of the cosmos. 
-
 At smaller scales, the Newtonian gravitational theory might be used, where
 the Poisson equation offers a relation between the second derivative of the
 gravitational potential $\Phi$ and the source of the field $\rho$
@@ -192,6 +191,7 @@ shape of the energy-momentum tensor. It can be expressed as
 
 where $\rho$ is the density and $P$ is the fluid pressure. 
 
+\
 
 There are several solutions to the Einstein field equation but not
 many in an analytical form. An analytical solution is Schwarzchild's solution that 
@@ -205,55 +205,59 @@ Walker metric satisfies these equations too.
 %&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 
 
-From HE field equations and the RW metric is posible to propose 
+From HE field equations and the RW metric it is possible to propose 
 cosmological models that give account for the observed dynamics
 in the Universe. In this direction, the components of the 
 field equation can be taken, $\beta=\nu= 0$, time-time component,
-and $ii=1,2,3$ (space-time components), from where
+and $ii=1,2,3$ (space-time components), from where one gets, for the scale
+factor
 
 \begin{equation}
 \frac{\ddot{a}}{a} = -\frac{4\pi G}{3 }\left( \rho + 3 \f{P}{c^2} \right)+\frac{\Lambda c^2}{3} 
 \label{fried1}
 \end{equation}
 
-\[
+\begin{equation}
 \f{\ddot{a}}{a}+2\f{\dot{a}^2}{a^2}+2\f{c^2 K}{a^2} = 4\pi G\left( \rho-\frac{P}{c^2}\right)+\Lambda c^2
-\]
+\label{fried2}
+\end{equation}
 
 \
 
-here, it has been used the energy momentum tensor for an ideal fluid. 
-The former expressions are the Friedmann equations and give account 
-of Universe expansion dynamics. The terms involved are 
-the scale factor $a(t)$ and it is equal to one for the actual epoch,
-$a(t_o)=1$, also $\rho$ is the radiation and matter density, $P$ is
+where, it has been used the energy momentum tensor for an ideal fluid. 
+The former expressions are the Friedmann equations and are written in a form
+that can account for the Universe expansion. In equations \ref{fried1} and \ref{fried2}
+$a(t)$ is the scale factor that is set to one for the actual epoch,
+$a(t_o)=1$, $\rho$ is the total density (radiation plus matter density), $P$ is
 the total pressure.  
 
 The equation \ref{fried1} has the form of force equation and it can
-be parcially deduced from newtonian mechanic (without the presion
+be partially deduced from newtonian mechanics (without the pressure
 and cosmological constant terms). A most convenient and used form
 is obtained after algebraically manipulating them 
 
 
 \begin{equation}
 H(t)=\frac{\dot{a}^2}{a^2}=\frac{8 \pi G}{3}\left(\rho+\frac{\Lambda c^2}{8\pi G}\right) -\frac{Kc^2}{a^2}
-\label{fried1}
+\label{fried3}
 \end{equation}
 
-this one can be interpretated as an energy equation, where the first term in 
+this second form of FE can be interpreted as an energy equation, where the first term in 
 the right hand side is the potential energy. 
-This equation also allows to define the Hubble parameter and for the 
-actual epoch this coincides with the Hubble constant
-$H(t_o)=H_o = 100h$ Km $s^{-1}$ $Mpc^{-1}$.
+This equation also allows to define the Hubble parameter since $H(t)=\dot{a}^2/a^2$ and for the 
+actual epoch its value is equal to $H(t_o)=H_o = 100h$ Km $s^{-1}$ $Mpc^{-1}$ where $h=0.6774$
+according to Planck measures. 
 
-Aditionally \ref{fried2} can be expressed in terms of the critical
-density, i.e.m the matter and energy amount neccesaries for the 
-Universe to be flat. Therefore, if the Universe has a bigger density
-it would collapse about itself.  Conversely, the Universe would
-continue to expanding indefinitly. This quantity is defined as
-$\rho_{crit}(t)= 3H(t)^2/8\pi G$.
+Additionally \ref{fried3} can be expressed in terms of the critical
+density, i.e. the matter-energy density required for a flat Universe.
+%the matter-energy density necessary for the Universe to be flat. 
+Therefore, if the Universe has a bigger density,
+$\rho > \rho_{crit}$, it would collapse about itself. Conversely, the Universe would
+continue to expand indefinitely. The critical density is defined as
 
-Dividing \ref{fried2} by the Hubble constant $H_o$ and defining 
+\[\rho_{crit}(t)= 3H(t)^2/8\pi G\]
+
+Dividing \ref{fried3} by the Hubble constant $H_o$ and defining 
 the density parameter  $\Omega_{i,o} = \rho_{i,o}/\rho_{crit}(t_o)$ 
 with $i=m,r,\Lambda$ is obtained
 
@@ -261,37 +265,38 @@ with $i=m,r,\Lambda$ is obtained
 \frac{H^2(z)}{H_o^{2}}=\Omega_{m,o}\left(1+z\right)^3+
 \Omega_{r,o}\left(1+z\right)^4+ \Omega_{\Lambda,o} + ( 1-\Omega_o)
 \left(1+z\right)
-\label{fried2}
+\label{fried4}
 \end{equation}
 
 
-where $\Omega_o=\Omega_{m,o} +\Omega_{r,o}+\Omega_{\Lambda,o}$. 
-It has been introduced the relation between redshift and scale
+where $\Omega_o=\Omega_{m,o} +\Omega_{r,o}+\Omega_{\Lambda,o}$ and
+it has been introduced the relation between redshift and scale
 factor $1+z=1/a$. The different contributions to the density 
 to the Hubble parameters are observed, i.e., the matter, radiation
-and vacuum density. Every component is a function of the 
-Universe expansion, although the vacuum energy does not depend
+and vacuum density. Every term of matter-energy density is a different 
+function of the Universe expansion, although the vacuum energy does not depend
 on the redshift, this is, is constant through time. 
 
 \
 
 Initially the Universe was dominated by the radiation, during 
 this epoch matter and radiation were coupled, i.e., the De Broglie 
-electrons wavelenght were comparable to the radiation one. Because
-of this, the photons free mean path is negligible causing the Universe
-to be opaque. 
+electrons wavelenght were comparable to the wavelength of photons. Because
+of this, collisions between photons and electrons were very frequent causing
+that the mean free path of the photons be negligible and that the Universe 
+would be opaque. 
 
-During this coupling, the radiation temperature is equal to the 
-matter one and its behaviour is explained as a black body. 
+During this coupling, radiation and matter had the same temperature
+and its behavior is explained as a black body. 
 
-As can be seen in the plot \ref{densidad}, from $z=3230$
+As can be seen in the figure \ref{densidad}, from $z=3230$
 matter becomes the major contribution to the Universe density.
-When $z=1100$ the temperature drop is big enough for the
-recombination rate gets higher than the ionization one. 
-Recombination refers to the formation of neutral atoms,
-that was the ultimate cause to decoupling. 
+When $z=1100$ the temperature drop is big enough and the
+recombination rate turns higher than the ionization one. 
+%Recombination refers to the formation of neutral atoms,
+%that was the ultimate cause to decoupling. 
 
-The last radiation dispertion due to matter still can be
+The last radiation dispersion due to matter still can be
 observed, and it is called cosmic radiation background (CMB).
 Because of the Universe expansion, its temperature
 has been dropping, and it is nowadays around $T$ = $2.7K$. 
@@ -308,14 +313,14 @@ has been dropping, and it is nowadays around $T$ = $2.7K$.
  \end{figure}
 %**********************************************************************************************************************
 
-Nowadays, the dominant density component is vacuum, though it is a constant
+Nowadays, the dominant density component in the Universe is vacuum, though it is a constant
 since it does not depend on the scale factor $\rho_{\Lambda}=-c^4\Lambda/8\pi G$,
 in contrast with matter, which depends on it as $a^{-3}$ and radiation as $a^{-4}$,
 causing both components diminish in time. 
 
 The cosmological constant is associated to vacuum energy that causes an
-opposed behaviour in the Universe dynamics compared to mass density, i.e., 
-it gives account for the accelerated universe expansion. 
+opposed behavior in the Universe dynamics compared to mass density, i.e., 
+it accounts for the accelerated universe expansion. 
 
 There are several solutions to \ref{fried2}, for instance in the Einstein de 
 Sitter Universe, there are no radiation or vacuum contributions to the density
@@ -328,33 +333,33 @@ t = \f{2}{3H_o}(1+z)^{-3/2}
 
 Therefore, depending on the chosen density values, the equation \ref{fried2}
 has different solutions and one can expect several Universe models, i.e.,
-depending on the parameters chosen, the Universe evolution changes.  
-In the case of WMAP9, the parameters used are shown in table\footnote{Table taken from \url{https://lambda.gsfc.nasa.gov/product/map/dr5/params/lcdm_wmap9.cfm}} \ref{WMAPtable}. 
+depending on the parameters chosen, the Universe's evolution changes.  
+In the case of Planck, the parameters used are shown in table \ref{plancktable}. 
 
 \begin{table}
 \begin{center}
   \begin{tabular}{ | c | c | c |}
     \hline \hline
     Parameter & Symbol & Best fit \\ \hline \hline 
-    Hubble constant $(km/Mpc-s)$ & $H_0$ & 68.65$\pm$ 0.93 \\ \hline
-    Baryon density & $\Omega_b h^2$ & 0.02248$\pm$0.00044 \\ \hline
-    Cold dark matter density & $\Omega_c h^2$ & 0.1165$\pm$0.0024 \\  \hline
-    Dark energy density & $\Omega_\Lambda$ & 0.705$\pm$0.0011\\ \hline
-    Scalar spectral index & $n_s$ & 0.967$\pm$ 0.01 \\ \hline
-    Sigma 8 & $\sigma_8$& 0.830 \\ \hline
+    Hubble constant $(km/Mpc-s)$ & $H_0$ & 67.74$\pm$0.46 \\ \hline
+    Baryon density & $\Omega_b h^2$ &  0.02230$\pm$0.00014 \\ \hline
+    Cold dark matter density & $\Omega_c h^2$ & 0.1188$\pm$0.0010 \\  \hline
+    Dark energy density & $\Omega_\Lambda$ & 0.6911$\pm$0.0062 \\ \hline
+    Scalar spectral index & $n_s$ & 0.9667$\pm$0.0040 \\ \hline
+    Sigma 8 & $\sigma_8$& 0.8159$\pm$0.0086 \\ \hline
   \end{tabular}
-    \caption{ Fit cosmological parameters from WMAP+BAO nine-year results.}
-  \label{WMAPtable}
+    \caption{ Fit cosmological parameters from Planck results\cite{planck}.}
+  \label{plancktable}
 \end{center}
 \end{table}
 
 Other possible Universe models are for example, one obtained when matter
 density parameter is the only contribution to total universe density but 
-it is bigger than 1. In such case the Universe obtained is closed. 
+it is bigger than 1. In such a case the Universe obtained is closed. 
 Other one, it is one obtained when the Universe is dominated for the vacuum
 contribution. In this case, the Universe is always open. When all the 
 contributions are present, the Universe can be open or closed depending on the
-total density paremeter. 
+total density parameter. 
 		
 %&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 \section{ Equation of state }
