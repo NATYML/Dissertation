@@ -337,7 +337,7 @@ In the case of Planck, the parameters used are shown in table \ref{plancktable}.
   \begin{tabular}{ | c | c | c |}
     \hline \hline
     Parameter & Symbol & Best fit \\ \hline \hline 
-    Hubble constant $(km/Mpc-s)$ & $H_0$ & 67.74$\pm$0.46 \\ \hline
+    Hubble constant $(km/Mpc$-$s)$ & $H_0$ & 67.74$\pm$0.46 \\ \hline
     Baryon density & $\Omega_b h^2$ &  0.02230$\pm$0.00014 \\ \hline
     Cold dark matter density & $\Omega_c h^2$ & 0.1188$\pm$0.0010 \\  \hline
     Dark energy density & $\Omega_\Lambda$ & 0.6911$\pm$0.0062 \\ \hline
@@ -436,15 +436,15 @@ seeds from where structures observed nowadays formed.
 %At the present time the wavelength associated to this cosmic radiation is in the 
 %microwave range.
 
-In this structure growth, density fluctuations are increasing but it is not
+In this structure growth, density perturbations are increasing but it is not
 until they got a size of $\delta\sim 1$ that this growth is dominated by gravity. 
-The fluctuations have grown enough to start talking 
+The perturbations have grown enough to start talking 
 about galaxy formation when their density gets around $1\times 10^6$ compared to
 the background density, this happens for a epoch around $z\sim 100$ for halos with gas 
 that have cooled enough.
 
-But, it is still important to study the initial stages of the fluctuations.
-Because of this, a linear regime treatment for fluctuations when $\delta\ll 1$
+But, it is still important to study the initial stages of the perturbations.
+Because of this, a linear regime treatment for perturbations when $\delta\ll 1$
 are key in such a study. 
 
 %**********************************************************************************************************************
@@ -462,39 +462,49 @@ are key in such a study.
 %######################################################################################################################
 
 
-Inhomogeneities of density field were formed at initial stages of the Universe, i.e.,
-during the inflationary epoch. These initial density fluctuations 
-have a characteristic length much smaller than the Hubble radius . This implies that the
-size of the fluctuations is very small compared with scales where the Universe curvature 
-is significant, making this Newtonian approximation be valid. Because of this, casualty 
-is taken as granted.
+Inflation is an exponential expansion of the space-time in the initial stages of the 
+Universe. In this stage quantum perturbations were magnified to cosmic size, forming 
+inhomogeneities of the density field, the seeds for the large scale structure of the Universe. 
+Here, the initial density perturbations considered have a characteristic length much smaller 
+such that the relativistic effects can be neglected, i.e., perturbations do not affect the local
+metric. 
+%This implies that the size of the perturbations is very small compared with scales where the Universe curvature  is significant, making this Newtonian approximation be valid. Because of this, causality  is taken as granted.
 
-Basic equations of gas dynamics for a fluid in motion of density $\rho$ 
-subject to a gravitational field that suffers changes in pressure satifies 
+In this Newtonian approximation the equations of gas dynamics for a fluid in a gravitational
+field can be considered. For a fluid in motion with a velocity distribution $\textbf{u}$ and 
+density $\rho$ subject to a gravitational $\phi$ field that suffers changes in its pressure $P$ 
+satisfies 
 
 \begin{eqnarray}
 \der{\rho}{t}&=& -\rho \nabla_r\cdot \textbf{u} \nonumber\\
 \der{\textbf{u}}{t} &=& -\f{\nabla_r P}{\rho}-\nabla_r\phi \nonumber\\
-\nabla^2_r \phi & =& 4\pi G\rho 
+\nabla_r^2 \phi & =& 4\pi G\rho 
 \label{euler}
 \end{eqnarray}
 
-As density fluctuations are more of our interest, since inhomogeneties 
-respect to background are the ones that trigger potential wells, it is
-useful to expresss density as $\rho = \overline{\rho}+\delta\overline{\rho}$, where
-$\overline{\rho}$ is the background density. 
-Here, it is necessary to clear another point. Particle velocities have 
-two different contributions, the first one is caused because of the Universe
-expansion and the other one is the proper velocity of the particle,recessional 
+where an Eulerian description is used, i.e., the partial derivatives in the 
+expressions \ref{euler} describe the variations of the properties at a fixed 
+point in space, $r$ is the proper coordinate. 
+
+Since density perturbations are the ones that trigger potential wells, they are 
+more of our interest than the density field itself.
+Then, it is useful to express the density as $\rho = \overline{\rho}(1 + \delta)$, where
+$\overline{\rho}$ is the background density and $\delta$ is the overdensity of interest. 
+
+
+Additionally, it is necessary to make clear another point. The velocity of the particles have 
+two different contributions, the first one is because of the Universe expansion and 
+the other one is the proper velocity of the particle, recessional 
 and peculiar velocities respectively. 
 From the latter mentioned, the coordinate system can be changed from \ref{euler}
 an Euler description to a Lagrangian one, i.e., moving with the Universe expansion.
-Let's see this in more detail, velocity in an Eulearian description is 
+Let us see this in more detail, velocity in an Eulearian description is 
 $\textbf{u}= a\dot{\textbf{x}}+ \textbf{x}\dot{a} = \textbf{v}+\textbf{x}\dot{a}$, 
 where $\textbf{v}$ is the peculiar velocity and $\textbf{x}\dot{a}$ is the Universe 
 expansion velocity. 
-Then, making a change to comovil coordinates, coordinates that move with the Universe
-expansion and changing density to density contrast, the next equations are found
+Then, transforming in comoving coordinates, coordinates that move with the Universe
+expansion, and changing the density $\rho$ to density perturbations $\delta$, the equations 
+\ref{euler} can be written as 
 
 \begin{eqnarray}
 \pder{\delta}{t} &=& -\f{1}{a}\nabla\cdot[(1+\delta)\textbf{v}]\nonumber\\
@@ -504,15 +514,13 @@ expansion and changing density to density contrast, the next equations are found
 \label{ec.movimiento}
 \end{eqnarray}
 
-the first one corresponds to the continuity equation, the second one is Euler's 
-equation and the last one is poissonian gravitational field equation. Velocity 
-components appear due to gravitational interactions and changes in pressure,
-here $\Phi$ is an effective potential. 
+the first equation corresponds to the continuity equation, the second one is Euler's 
+equation and the last one is Poissonian gravitational field equation with $\Phi = \phi +a\ddot{a}x^2/2$. Velocity components appear due to gravitational interactions and changes in pressure.
 
 \
 
-Aditionally, equation of state relating the thermodynamic quantities P, 
-$\rho$ and s (entropy) for this cosmological fluid is 
+Additionally, equation of state relating the thermodynamic quantities pressure P, 
+density $\rho$ and entropy $s$ for this cosmological fluid is 
 
 \begin{equation}
 P(\rho,s)= \left[\f{h^2}{2\pi(\mu m_p)^{5/3}}e^{-5/3}\right]\rho^{5/3}\exp \left(\frac{2}{3}\f{\mu m_ps}{k_B}\right)
@@ -520,7 +528,7 @@ P(\rho,s)= \left[\f{h^2}{2\pi(\mu m_p)^{5/3}}e^{-5/3}\right]\rho^{5/3}\exp \left
 \end{equation}
 
 Manipulating algebraically the continuity equation, Poisson equation and state equation,
-a wave equation for density fluctuations can be obtained
+a wave equation for density perturbations can be obtained
 
 \begin{equation}
 \f{\partial^2\delta}{\partial t^2}+2\f{\dot{a}}{a}\pder{\delta}{t} =
@@ -529,30 +537,29 @@ a wave equation for density fluctuations can be obtained
 \end{equation}
 
 where $\overline{T}$ is the background temperature and $C_s$ is the speed of sound.
-The Universe expansion is seen in the second term in the left side. Since for an expanding
-Universe the term $\dot{a}{a}$ is positive, Hubble parameter, its effect is opposed to the 
-perturbation growth. This result was expected due to expansion is against collapse leaving to
-a decrease in growth. 	
+The Universe expansion is seen in the second term in the left hand side. Since for an expanding
+Universe the term $\dot{a}/{a}$ is positive, its effect opposes to the 
+perturbation growth. This result was expected since the expansion is against collapse leading to a decrease in growth. 	
 
-In the right side causes for perturbation evolution are shown, these can make them grow 
-or disipate. Entropy can be considered as heat interchange between perturbation and 
-surroundings, causing the expansion or growth of the perturbation. As expected, 
+The right hand side shows the causes for the evolution of the density perturbations. 
+Entropy can be considered as the heat interchange between the perturbation and 
+its surroundings, causing the expansion or growth of the perturbation. As expected, 
 gravitational field is a source for perturbation growth. 
 
-A solution to the perturbation equation in terms of Fourier series is proposed
+A solution to the perturbation equation in terms of Fourier series is proposed as
 
 \begin{eqnarray}
 \delta(x,t) &=& \sum_k \delta_k(t)e^{ik\cdot x} \nonumber\\
 s(x,t) &=& \sum_k s(t)e^{ik\cdot x} \nonumber
 \end{eqnarray}
 
-$\textbf{k}$ is the wave number and $\delta_k$ is 
+where $\textbf{k}$ is the wave number and $\delta_k$ is 
 a density mode that can be calculated using the discrete Fourier transform
 of the density field. Hence, every mode depends on all known values
 of the density perturbations. 
 
-An important aspect in the last expression is the indepencency of the 
-functions $e^{ik\cdot x}$ allowing equation \ref{onda} be expressed as 
+An important aspect in the last expression is the independence of the 
+functions $e^{ik\cdot x}$ allowing equation \ref{onda} to be expressed as 
 
 \begin{equation}
 \f{d^2\delta_k(t)}{dt^2}+2\f{\dot{a}}{a}\der{\delta_k(t)}{t} = 
@@ -561,38 +568,45 @@ functions $e^{ik\cdot x}$ allowing equation \ref{onda} be expressed as
 \label{ec.modos}
 \end{equation}
 
-the solution of the equation provides expansion coefficients for the Fourier series,
-from where, the behaviour of density fluctuations, their growth or 
-disipation, is obtained. 
+the solution of this equation provides expansion coefficients for the Fourier series,
+from where, the behavio	r of density perturbations, their growth or 
+dissipation, is obtained. 
 
 %######################################################################################################################
 \subsection{ Jeans Inestability}
 %######################################################################################################################
 
-Before solving the mode equation \ref{ec.modos}, it is important to develop
+Before solving equation \ref{ec.modos}, it is important to develop
 some intuition about the	 physical phenomena. This can be achived making some 
-simplifications. For example, taking an isentropic static Universe ($\dot{a}=0$)
+simplifications, for example, taking an isentropic static Universe ($\dot{a}=0$)
 the expression becomes
 
 \[
 \f{d^2\delta_k(t)}{dt^2} + \omega^2\delta_k(t) = 0
 \]
 
-with $\omega^2 = C_s^2k^2/a^2-4\pi G\overline{\rho}$. Clearly the solution of modes 
-equation depends on $\omega$'s sign, if $C_s^2k^2/a^2>4\pi G\overline{\rho}$,  
-$\omega$ is positive and the solution obtained is oscillatory. In other words, 
-this solution is a sound wave not gravitationally inestable, therefore, it is
-not of our interest. 
-By the other side, if $4\pi G\overline{\rho}>C_s^2k^2/a^2$ the solution takes
-the form $\delta_k(t)\propto e^{\Gamma_k t}$, with $\Gamma_k=i\omega_k$ named
-growth rate. In this case, the perturbation disipates or collapses depending
-on the square frequency sign chose. 
+with $\omega^2 = C_s^2k^2/a^2-4\pi G\overline{\rho}$. Now, let us analyse
+the different solutions of the previous expression. When the relation 
+$C_s^2k^2/a^2>4\pi G\overline{\rho}$ is satisfied the frequency $\omega$ is
+possitive. The solution represents a sound wave, an oscillatory solution where 
+gravity instabilities are contrarrested by radiation pressure. Thus, this 
+particular solution is not of our interest, matter is not going to agglomerate due 
+to gravity. 
+On the other hand, if $4\pi G\overline{\rho}>C_s^2k^2/a^2$ the solution takes the form 
+$\delta_k(t)\propto e^{\Gamma_k t}$, where $\Gamma_k=i\omega_k$ is the growth rate. 
+Hence, the density mode can grow or dissipate depending on the growth rate, a negative 
+rate causes dissipation but a positive one produces a gravitational collapse.
 
-Physically, it is expected fluctuations tend to collapse 
-because of gravity though preassure gradient caused by atomic
-interactions goes against it. The ones of interest are those
-that collapse. For this, a minimum length that a perturbation
-must have to obtain an inestable fluctuation, i.e., a collapsing
+%Clearly the solution of equation \ref{ec.modos} depends on $\omega$'s sign. If $C_s^2k^2/a^2>4\pi G\overline{\rho}$,  $\omega$ is positive, in this case the solution is oscillatory one. this solution represents a sound wave, then this density mode is not going to agglomerate because of gravitational instabilities, therefore it is not of our interest. 
+%By the other side, if $4\pi G\overline{\rho}>C_s^2k^2/a^2$ the solution takesthe form $\delta_k(t)\propto e^{\Gamma_k t}$, with $\Gamma_k=i\omega_k$ named growth rate. In this case, the perturbation dissipates or collapses dependingon the square frequency sign chose. 
+Concluding, density modes tend to collapse because of gravitational instabilities but 
+pressure gradients appear due to atomic interactions causing dissipation. Then, both 
+components must be considered. 
+But the perturbations that collapse are the subject of our study. 
+
+
+For this, a minimum length that a perturbation must have to obtain an 
+inestable fluctuation, i.e., a collapsing
 perturbation, is defined. Hence, from the frequency Jeans' length
 is obtained $\lambda_J = 2\pi a/k_j$ and satisfies 
 $\lambda_J = 2\pi/k_j = C_s(\pi/G\rho)^{1/2}$.
@@ -725,7 +739,7 @@ dispersion velocity have a bigger viralization time.
 The last model for a non lineal perturbartion treatment 
 has several failures. A next step in this direction is 
 Zeldovich approximation that provides a more realistic description, 
-since it considers that fluctuations' shape is an ellipsoid.
+since it considers that perturbations' shape is an ellipsoid.
 Though pressureless and without viscosity fluid supposition are still taken.
 Coomovil coordinates satisfies 
 
@@ -745,7 +759,7 @@ It can be shown that initial perturbations are given by
 where $\alpha$, $\beta$ and $\gamma$ account for the expansion or contraction 
 along the three main axis of the ellipsoid. 
 When  $\alpha \geq \beta \geq \gamma$ and $b(t)$ are sufficiently big enough a 
-singularity appears. If $\alpha$ also gets its highest value causes that fluctuations
+singularity appears. If $\alpha$ also gets its highest value causes that perturbations
 get a pancake shape due to a faster contraction in x axis. 
 Despite of the simplicity, it is a model accurate with numerical results. Hence,
 it is used in observational cosmology and initial condition generation in N body
@@ -872,7 +886,7 @@ perturbation field is completely described by the two first moments of the distr
 It is usually considered for the initial density field, that density contrasts 
 follow a normal distribution centered in $\langle \delta \rangle = 0$. This idea is supported by
 inflationary scenarios where a random gaussian perturbation field arises naturally from quantum 
-fluctuations during inflation, i.e., statistical behaviour lies on quantum fluctuations. 
+perturbations during inflation, i.e., statistical behaviour lies on quantum perturbations. 
 Since there are a large number of modes, the central limit theory 
 would support this idea if the mode phases are independent. 
 One of the advantages of this model is that the perturbation field remains gaussian during linear evolution. 
