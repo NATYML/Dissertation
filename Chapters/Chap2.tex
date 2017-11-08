@@ -577,21 +577,22 @@ dissipation, is obtained.
 %######################################################################################################################
 
 Before solving equation \ref{ec.modos}, it is important to develop
-some intuition about the	 physical phenomena. This can be achived making some 
+some intuition about the	 physical phenomena. This can be achieved making some 
 simplifications, for example, taking an isentropic static Universe ($\dot{a}=0$)
 the expression becomes
 
-\[
-\f{d^2\delta_k(t)}{dt^2} + \omega^2\delta_k(t) = 0
-\]
+\begin{equation}
+\f{d^2\delta_k(t)}{dt^2} + \omega^2\delta_k(t) = 0 \nonumber
+\label{JI}
+\end{equation} 
 
-with $\omega^2 = C_s^2k^2/a^2-4\pi G\overline{\rho}$. Now, let us analyse
+with $\omega^2 = C_s^2k^2/a^2-4\pi G\overline{\rho}$. Now, let us analyze
 the different solutions of the previous expression. When the relation 
 $C_s^2k^2/a^2>4\pi G\overline{\rho}$ is satisfied the frequency $\omega$ is
-possitive. The solution represents a sound wave, an oscillatory solution where 
-gravity instabilities are contrarrested by radiation pressure. Thus, this 
-particular solution is not of our interest, matter is not going to agglomerate due 
-to gravity. 
+positive. The solution obtained represents a sound wave, an oscillatory solution where 
+gravity instabilities are balanced by radiation pressure. Thus, this 
+particular solution is not of our interest, gravity is not strong enough to
+agglomerate matter.
 On the other hand, if $4\pi G\overline{\rho}>C_s^2k^2/a^2$ the solution takes the form 
 $\delta_k(t)\propto e^{\Gamma_k t}$, where $\Gamma_k=i\omega_k$ is the growth rate. 
 Hence, the density mode can grow or dissipate depending on the growth rate, a negative 
@@ -599,102 +600,92 @@ rate causes dissipation but a positive one produces a gravitational collapse.
 
 %Clearly the solution of equation \ref{ec.modos} depends on $\omega$'s sign. If $C_s^2k^2/a^2>4\pi G\overline{\rho}$,  $\omega$ is positive, in this case the solution is oscillatory one. this solution represents a sound wave, then this density mode is not going to agglomerate because of gravitational instabilities, therefore it is not of our interest. 
 %By the other side, if $4\pi G\overline{\rho}>C_s^2k^2/a^2$ the solution takesthe form $\delta_k(t)\propto e^{\Gamma_k t}$, with $\Gamma_k=i\omega_k$ named growth rate. In this case, the perturbation dissipates or collapses dependingon the square frequency sign chose. 
-Concluding, density modes tend to collapse because of gravitational instabilities but 
-pressure gradients appear due to atomic interactions causing dissipation. Then, both 
-components must be considered. 
-But the perturbations that collapse are the subject of our study. 
+Therefore, density modes tend to collapse because of gravitational instabilities but 
+in this process, pressure gradients appear due to atomic interactions causing dissipation. 
+Nevertheless only the perturbations that collapse are the ones of our interest, they are the 
+seeds of the large scale structure observed nowadays.
 
+Furthermore, one can defined for a perturbation, a minimum length to 
+obtain an unstable evolution, $\lambda_J = 2\pi/k_j = C_s(\pi/G\rho)^{1/2}$, i.e., 
+a collapsing perturbation. This length is called the Jeans' length and 
+it is used to rewrite the growth rate in equation \ref{JI} . 
+Now, with Jeans' length we could know the evolution of a perturbation,
+if $\lambda_{pert}>>\lambda_J$ is satisfied the perturbation collapses, 
+where $\lambda_{pert}$ is the length of the perturbation. A similar analysis
+can be performed with the Jean's mass defined as $M_J =  \pi\overline{\rho}_{m,o}\lambda_J^3 $.
+The latter expressions can be expressed as
 
-For this, a minimum length that a perturbation must have to obtain an 
-inestable fluctuation, i.e., a collapsing
-perturbation, is defined. Hence, from the frequency Jeans' length
-is obtained $\lambda_J = 2\pi a/k_j$ and satisfies 
-$\lambda_J = 2\pi/k_j = C_s(\pi/G\rho)^{1/2}$.
-The growth rate can be rewritten in terms of $\lambda_J$, 
-allowing to make the next comparison, if $\lambda_{pert}>>\lambda_J$
-is satisfied the perturbation collapses, here $\lambda_{pert}$
-is the length of the perturbation.
-
-As was shown previously, Jeans' length depends on the speed of sound
-that is defined as 
-
-\[
-C_s^2 = \left( \pder{P}{\rho} \right)_s
-\]
-
-and using also the equation of state \ref{ec.estado} a relation 
-is found. It was also used the fact that radiation and matter 
-temperature are equal for $z \leq z_{eqv}$ due to coupling. 
-But after decoupling every component evolves independently. 
-Jean's length and mass, the last one defined as $M_J =  \pi\overline{\rho}_{m,o}\lambda_J^3 $,
-are given by
-
-\begin{eqnarray}
+\begin{eqnarray*}
 \lambda_J \approx 0.01(\Omega_{b,o}h^2)^{-1/2}Mpc\\
 M_J \approx 1.5\times 10^5 (\Omega_{b,o}h^2)^{-1/2}M_{\odot}
-\end{eqnarray}
+\end{eqnarray*}
 
-Before decoupling, speed of sound was affected not only 
-by matter but for radiation, even the latter one was more
-important since radiation density dominates in this epoch
-(figure \ref{densidad}). 
-The valid state equation for radiation in this epoch is
-$P = c^2\rho_r/3$ and it can be shown that the change 
-in magnitude order evaluated before and after decoupling
-of Jean's length and mass is $2.6\times 10^{-5}$ and $1.8\times 10^{-14}$
-respectively. From previous asseveration a possible conclusion is
-decoupling increases gravitational collapse since  minimum characteristic length
-required for collapsing becomes smaller. 
+but only for an epoch before decoupling. During this time, 
+speed of sound was affected not only by matter but for radiation, 
+the last one being the most important contribution to density as 
+shown in the figure \ref{densidad}. 
+Since there is a change in the 
+behavior of the density components with decoupling and this way in the
+speed of sound, it appears a change in the Jean's length and Jean's mass.
+It is around $2.6\times 10^{-5}$ for Jean's length  and $1.8\times 10^{-14}$
+for Jean's mass. 
+From the previous asseveration a possible conclusion is that
+decoupling increases the gravitational collapse since the minimum characteristic length
+required for collapsing becomes smaller.
 
-\
+%######################################################################################################################
+\subsection{ Evolution of perturbations }
+%######################################################################################################################
 
 Until now dark matter has not been mentioned, a component that contrary
 to baryonic matter does not interact with radiation. But it is around
-$23\%$ of the overall Universe content, making it responsible for the 
-large scale mass distribution observed. Dark matter particles interact
+$23\%$ of the overall Universe matter-energy density content, making it responsible for the 
+large scale mass distribution. Dark matter particles interact
 among them and with baryonic matter through gravitational interaction.
 This leads to dark matter potential wells where baryonic matter can also fall.  
 It occurs around $z \sim 3500$. But, dark matter initial seeds for potential 
 wells are formed before decoupling, since they do not interact with radiation,
-they can gather forming them. While this happens, baryonic matter and radiation 
-interacts gravitationally with dark matter, leading to no formation of 
-baryonic seeds precisely because of the mentioned coupling. Later a more detailed 
-explanation will be provided. 
+they can gather forming early density perturbations. In this epoch, radiation
+and baryonic matter are modelled as a fluid that interacts gravitationally with 
+dark matter, leading to no formation of baryonic seeds precisely because of the 
+coupling between this two density components, i.e., radiation dissipates the baryonic
+seeds.
+Later a more detailed explanation will be provided. 
 
-The last arguments exposed allow to express perturbations as $\delta = \delta_oD(z)$,
+In the linear regime an ansatz for perturbations is $\delta = \delta_oD(z)$,
 where $\delta_o$ is an initial seed from where a dark matter potential well formed
 and $D(z)$ is a growing function of an initial seed.
-Then, rewritting equation \ref{ec.modos}  
+Then, assuming isotropy and neglecting the velocity term since perturbations of our
+interest satisfy $\lambda_J << \lambda_{pert}$, equation \ref{ec.modos} can be written
+as
 
-\[
+\begin{equation}
 \f{d^2D(z)}{dz^2}+\left[ \f{H'(z)}{H(z)} -\f{1}{1+z}\right]\der{D}{z}
-= \f{1}{H^2(z)}\left[ \f{4\pi G\overline{\rho}(z)}{(1+z)^2} \right]D(z)
-\]
+= \f{1}{H^2(z)}\left[ \f{4\pi G\overline{\rho}(z)}{(1+z)^2} \right]D(z) 
+\nonumber
+\end{equation}
 
 %**********************************************************************************************************************
 \begin{figure}[htbp]
        \centering
                \includegraphics[width=0.8\textwidth]{Images/chapter2/masavacio.pdf}
-       \caption{\small Perturbation evolution for a model Mass-vacuum, the behaviour
-       for different contributions of each component. }
+       \caption{\small Perturbation evolution for a model mass-vacuum, the behavior
+       for different contributions of each component. The largest redshift is $z=0$. }
        \label{masavacio}
  \end{figure}
 %**********************************************************************************************************************
 
-in the expresion isotropy was assumed and the velocity term was neglected
-since the perturbations of our interest satify $\lambda_J \ll \lambda$.
-Using the last equation, different solutions changing density parameters
-are obtained. For example, an Einstein de Sitter Universe  $\delta_k(z)=\delta_o(1+z)^{-1}$,  
+In the last equation, different solutions are obtained by changing the density parameters. 
+For example, an Einstein de Sitter Universe $\delta_k(z)=\delta_o(1+z)^{-1}$,  
 an Universe dominated by radiation $\delta_k(z)=\delta_o(1+z)^{-1.22}$ and
 an Universe dominated by vacuum $\delta_k(z)=\delta_o(1+z)^{-0.58}$. 
-Obviously, for different contributions to every component of density can be found,
-in figure \ref{masavacio} is shown perturbations evolution for a model with
-matter and vacuum contributions. As expected, for bigger matter density
-perturbations grow faster while for universes with bigger vacuum contribution, 
-perturbations grow slower cause accelerated expansion. In the latter, a bigger
-initial mass is required to start collapsing. In the figure, largest redshift
-is $z=0$ but solution is only valid while $\delta\ll 1$. 
+In figure \ref{masavacio} we show the evolution of perturbations for models with
+different matter and vacuum contributions. As expected, for bigger matter density
+perturbations, the growth is faster while for universes with bigger vacuum contribution, 
+perturbations grow slower because of the accelerated expansion induced by $\Lambda$. 
+In the latter, a bigger initial mass is required to start the gravitational collapse.
 
+\begin{comment}
 %&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 \section{ Higher order perturbation theory }
 %&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
@@ -764,18 +755,19 @@ get a pancake shape due to a faster contraction in x axis.
 Despite of the simplicity, it is a model accurate with numerical results. Hence,
 it is used in observational cosmology and initial condition generation in N body
 simulations. 
+\end{comment}
 
 %&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 \section{ Statistical properties of cosmological perturbations }
 %&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 
-Nevertheless, to study the evolution of the Universe since decoupling requiere to know 
-or assume a density field, to know density in every point and its evolution with time. 
+To study the evolution of the Universe since decoupling requiere to know 
+or assume a density field, a sampling of the density in some points and their temporal evolution. 
 But using the concept of density contrast $\delta = (\rho - \overline{\rho})/\overline{\rho}$, 
 leads to a density perturbation field, which is a clearer way to analyse the evolution
 of the density field.
 
-In linear regime, there are a huge amount of perturbations described by different 
+In linear regime, there are a infinite amount of perturbations described by different 
 fourier modes. Since they evolve independently their amplitudes change with time and 
 can be modelled using a transfer function $T(k)$ and a linear growth rate $D(t)$. 
 To characterize such amount of density field values, statistical 
@@ -786,9 +778,10 @@ to the primordial perturbations that originated the large scale structure observ
 nowadays. Hence, our Universe could be considered as a realization of a random process 
 where a statistical treatment results as a natural way to study it. 
 
-Consider that the Universe can be divided into small cells, each of them with position 
-$x_i$. These can be statistically characterized with a joint probability 
-distribution and its moments that, in principle infinite, would describe the 
+Consider that the Universe or certain region of this with volume $V_u$, 
+can be divided into small cells, each of them with position 
+$x_i$. These can be characterized statistically with a joint probability 
+distribution and its moments that would describe the 
 cosmic density perturbation field. 
 Following this approach, the probability of having a mode between $\delta_k$ and 
 $\delta_{k}+d\delta_k$ is, 
@@ -803,9 +796,8 @@ $\delta_{k}+d\delta_k$ is,
 
 
 where $r_{\mbox{\boldmath$\kappa$}}$ corresponds to perturbations amplitude,  $\phi_{\mbox{\boldmath$\kappa$}}$ 
-is the phase and varies between $[0,2\pi)$. The joint probability distribution function 
-is useful because it allows the independence of the terms $\delta_{\mbox{\boldmath$\kappa$}}$, 
-or in other words it is the product of every mode
+is the phase and varies between $[0,2\pi)$, i.e., $\delta_{\bm{\kappa}}=|\delta_{\bm{\kappa}}|\exp^{-i\phi_{\bm{\kappa}}} = r_{\bm{\kappa}} \exp^{-i\phi_{\bm\kappa}}$. The joint probability distribution function is useful because it allows the independence of the terms $\delta_{\mbox{\boldmath$\kappa$}}$, 
+or in other words it is the product of every mode's probability
 
 \[
 \mathcal{P}_{\mbox{\boldmath$\kappa$}}(\delta_{\mbox{\boldmath$\kappa$}1},...,\delta_{\mbox{\boldmath$\kappa$}N})=
@@ -814,28 +806,31 @@ or in other words it is the product of every mode
 
 
 This expression is not satisfied when the inverse fourier transform is done, since the 
-probability density is not separable in the initial coordinate space. The term $P(\kappa)$ 
-(assuming isotropy in \mbox{\boldmath$\kappa$}) is the power spectrum defined in the 
-fourier space and it is related to the 2 point correlation function in the real space
+probability density is not separable in the initial coordinate space. In the Fourier space,
+the term $P(\kappa)$ can be defined as the power spectrum and is related to the 2 point correlation function as
 
 \begin{equation}
 P(k) = \f{4\pi}{V_u}\int_0^\infty \xi (r)\f{sin(kr)}{kr}r^2dr =  \langle|\delta(\mbox{\boldmath$\kappa$})|^2\rangle
 \label{pk}
 \end{equation}
 
-as it can be seen in the expression, the isotropy of the universe is taken into account since during the power spectrum calculation, an average is done over all  possible orientations of the vector ${\mbox{\boldmath$\kappa$}}$
+from the latter expression can be seen that the isotropy of the Universe is taken into account since during the power spectrum calculation, an average is done over all  possible orientations of the vector ${\mbox{\boldmath$\kappa$}}$.
 
-Here, $\xi (r)$  describes the distribution of points, telling for example, how clumpy certain region is or in general the clustering properties of the system. Being more specific, this function describes the excess probability of finding a particle at a distance $r$ from a particle selected at random over the expected in an uniform, random distribution. 
-The two point correlation is defined as 
+The correlation function, $\xi(r)$, describes the distribution of points, the excess probability of finding a particle at a distance $r$ from another particle selected at random compared against a random distribution. The two point correlation is defined as 
 
-\[\xi (r) =  \langle  \delta(\textbf{x})\delta(\textbf{x}+\textbf{r}) \rangle\]
+\begin{equation}
+\xi (r) =  \langle  \delta(\textbf{x})\delta(\textbf{x}+\textbf{r}) \rangle
+\label{xi}
+\end{equation}
 
-therefore, the density field leads to a direct way to find the power spectrum through a fourier 
-transform. $\xi$ only depends on the amplitude of r because of the assumption of homogeneity
+hence $\xi$ only depends on the amplitude of r, it is due to the assumption of homogeneity
 and isotropy, i.e., depends on relative distances. 
+Furthermore, from equations \ref{xi} and \ref{pk} it can be seen that the density field 
+leads to a direct way to find the power spectrum using the Fourier transform.
 
-No clustering would imply that $\xi(r)$ is zero. A natural way to see this is through
-a conditional probability, given that there is a particle in a volume element $dV_1$
+In the correlation function, no clustering would imply that $\xi(r)$ is zero. 
+A natural way to see this is through a conditional probability, given that there 
+is a particle in a volume element $dV_1$
 the probability there is other one in a volume element $dV_2$ at a distance $r$
 
 \[dP(2|1) = n[1+\xi(x_{12})]dV_2\]
@@ -895,7 +890,7 @@ Additionally it has been found that the initial power spectrum expected from inf
 has the form $P(\kappa)= k^n$. If $n=1$ the power spectrum is called Harrison-Zeldovich which is 
 commonly used. 
 
-With the initial power spectrum it can be done an inverse fourier transform and this way creating the initial density field. 
+With the initial power spectrum it can be done an inverse fourier transform and this way recreating the initial density field. 
 
 \
 
@@ -903,7 +898,7 @@ Furthermore, using inflationary models the shape of the linear power spectrum is
 determined but there are not amplitude predictions, i.e., there is not a defined 
 normalization of the power spectrum. 
 One commonly way to do such thing is through the variance of the galaxy distribution when
-sampled with randomly placed spheres at radius R. The relation between the variance of the 
+sampled with randomly placed spheres at radius $R$. The relation between the variance of the 
 density field and the power spectrum is
 
 \[
