@@ -308,7 +308,7 @@ are selected.
 
 \item[4)] A gaussian fit of the first bump is performed. Only the more central points
 of the signal are considered since the outer ones are the noiser parts of the signal. This noise 
-could be diminished using more realizations per population. \textbf{no se muy bien como explicar esto}. 
+could be diminished using more realizations per population. 
 
 \item[5)] The fit is also performed for all the realizations, the same points
 considered for the BAO signal fit of the mean CF are taken for the remaining realizations. 
@@ -320,36 +320,45 @@ obtained for every population and the realizations.
 
 The parameters that characterizes the BAO bump are the amplitude $A$, the position
 $\mu$ and the width $2\sigma$. In the figure \ref{BAO_fit} some fits of the BAO
-signal are shown. 
+signal are shown. It can be noticed that the points that correspond to the BAO
+bump have a gaussian like distribution. The Gaussian fits performed are also shown
+with the parameters found showing. It can be noticed a good accordance between 
+the data and the fit obtained. 
+The error bars displayed were obtained through the BAO fits performed for the
+different realizations, with them the standard deviation per population was found.  
+
 
 \begin{figure}[htbp]
    %\begin{center}
    $
     \begin{array}{ll}
     \includegraphics[width=85mm]{Images/chapter4/BAO_1e14.pdf}&
-    \includegraphics[width=85mm]{Images/chapter4/BAO_1e14.pdf}\\
-    \includegraphics[width=85mm]{Images/chapter4/BAO_1e14.pdf}&
-    \includegraphics[width=85mm]{Images/chapter4/BAO_1e14.pdf}
+    \includegraphics[width=85mm]{Images/chapter4/BAO_1e13.pdf}\\
+    \includegraphics[width=85mm]{Images/chapter4/BAO_1e12_q4.pdf}&
+    \includegraphics[width=85mm]{Images/chapter4/BAO_1e11_q1.pdf}
     \end{array}$
   %\end{center}
-   \caption{The }
+   \caption{ BAO signal for population 4, 3, $q_4$ of $1e12$ and $q_1$ of $1e11$ from
+   upper left to lower right. }
    \label{BAO_fit}
 \end{figure}
 
 
-\section{Baryonic acoustic oscillations in the populations of MDPL }
+
+
+\section{ BAO properties in the populations of MDPL }
 
 As mentioned previously, the BAO peak is clearly detected for every population 
 and the fit to the BAO signal was properly calculated using a Gaussian function. 
 Let us see the situation in more detail. There are different populations, each of 
-them have the following ranges in mass, the population $1$: $M \leq 1e11 M_{\odot}$, 
-the population $2$: $ 1e11 M_{\odot} <M \leq 1e12 M_{\odot}$, the population $3$: $ 1e12 M_{\odot} <M \leq 1e13 M_{\odot}$ 
-and finally the population $4$: $ 1e13 M_{\odot} <M \leq 1e14 M_{\odot}$. 
-Thus, we are considering per population, more massive halos each time and that
-way be able to analyze if there is an effect on the properties of BAO obtained
-for each population. It is important to take into account that more massive halos 
-trace higher density peaks in the matter density field which should lead, in principle, 
-to a stronger correlation than the less massive ones, thus a better detection of 
+them have the ranges in mass shown in the beginning of this chapter.
+  
+For the thick bins, we are considering per population, more massive halos each 
+time and that way be able to analyze if there is an effect on the properties of 
+BAO obtained for each population. It is important to take into account that 
+more massive halos trace higher density peaks in the matter density field which 
+should lead, in principle, to a stronger correlation than the less massive ones, 
+thus a better detection of 
 the BAO signal. For example, in figure \ref{ampl} an increase of the amplitude 
 of the BAO for more massive halos is obtained as precisely expected for a stronger
 correlation. If the amplitude of the BAO for the population 1 is taken as reference
@@ -357,60 +366,68 @@ and using the percent error formula, the difference with the third and fourth
 population are $\approx 66.47\%$ and $\approx 90.82\%$, supporting the idea of the
 increment in amplitude. 
 
-Another important factor is the gravitational interaction among more massive halos.
-Since larger masses exert greater gravitational attraction than smaller masses, 
-the more massive halos should be closer among them, causing a smaller broadening
-in the BAO peak compared with the less massive ones. This can be seen in the
-figure \ref{width} where the width of the BAO decreases with more massive halos.
-Again, taking the population 1 as reference it is obtained $\approx 18.54\%$ and
-$\approx 65.38\%$ for the third and forth population respectively.
-
 The position of the BAO depends on the sound horizon scale as shown in \ref{SH},
 gravitational interactions causes a change in the BAO width \cite{Pilar} not in 
 its position. But in the figure \ref{mean} a decrease in the BAO position with 
 more massive halo population appears. But using the population $1$ as reference
 the difference with the third and fourth population are $\approx 2.07\%$ and $\approx 3.9\%$,
 is very small. Hence, it would not be a very reliable result. 
+
+\begin{figure}[h]
+   %\begin{center}
+   $
+    \begin{array}{cc}
+    \includegraphics[width=78mm]{Images/chapter4/Amp_vs_Mh.pdf}&
+    \includegraphics[width=78mm]{Images/chapter4/Pos_vs_Mh.pdf}
+    \end{array}$
+  %\end{center}
+   \caption{Figure caption}
+   \label{ampl}
+\end{figure}
+
+%**********************************************************************************************************************
+\begin{figure}[htbp]
+       \centering
+
+    \includegraphics[width=90mm]{Images/chapter4/Width_vs_Mh.pdf}
+\caption{\small Amplitude of BAO for the populations obtained from MDPL simulation.}
+       \label{ampl}
+ \end{figure}
+%**********************************************************************************************************************
+
+Another important factor is the gravitational interaction among more massive halos.
+Since larger masses exert greater gravitational attraction than smaller masses, 
+the more massive halos should be closer among them, causing a smaller broadening
+in the BAO peak compared with the less massive ones. This can be seen in the
+figure \ref{width} where the width of the BAO decreases with more massive halos.
+Again, taking the population 1 as reference it is obtained $\approx 18.54\%$ and
+$\approx 65.38\%$ for the third and forth population respectively. The behavior of
+the population $2$ does not follow what was initially expected. Because of this,
+the quarter and thin populations were created to study in more detail the effect of
+the mass bins in the properties measure of BAO. 
+
+
+
 	
 
 \begin{figure}[h]
    %\begin{center}
    $
-    \begin{array}{lll}
-    \includegraphics[width=55mm]{Images/chapter4/Amp_vs_Mh.pdf}&
-    \includegraphics[width=55mm]{Images/chapter4/Width_vs_Mh.pdf}&
-    \includegraphics[width=55mm]{Images/chapter4/Pos_vs_Mh.pdf}
+    \begin{array}{cc}
+    \includegraphics[width=85mm]{Images/chapter4/AmplitudevsMh2.pdf}&
+    \includegraphics[width=85mm]{Images/chapter4/PosvsMh2.pdf}
     \end{array}$
   %\end{center}
    \caption{Figure caption}
    \label{CFall}
 \end{figure}
-	
 
-
-\begin{comment}
 %**********************************************************************************************************************
 \begin{figure}[htbp]
        \centering
-               \includegraphics[width=0.8\textwidth]{Images/chapter4/Amp_vs_Mh.pdf}
-       \caption{\small Amplitude of BAO for the populations obtained from MDPL simulation.}
+
+    \includegraphics[width=100mm]{Images/chapter4/WidthvsMh2.pdf}
+\caption{\small Amplitude of BAO for the populations obtained from MDPL simulation.}
        \label{ampl}
  \end{figure}
 %**********************************************************************************************************************
-%**********************************************************************************************************************
-\begin{figure}[htbp]
-       \centering
-               \includegraphics[width=0.8\textwidth]{Images/chapter4/Width_vs_Mh.pdf}
-       \caption{\small Width of BAO for the populations obtained from MDPL simulation.}
-       \label{width}
- \end{figure}
-%**********************************************************************************************************************
-%**********************************************************************************************************************
-\begin{figure}[htbp]
-       \centering
-               \includegraphics[width=0.8\textwidth]{Images/chapter4/Pos_vs_Mh.pdf}
-       \caption{\small Position of BAO for the populations obtained from MDPL simulation.}
-       \label{mean}
- \end{figure}
-%**********************************************************************************************************************
-\end{comment}
