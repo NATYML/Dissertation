@@ -344,7 +344,7 @@ In the case of Planck, the parameters used are shown in table \ref{plancktable}.
     Scalar spectral index & $n_s$ & 0.9667$\pm$0.0040 \\ \hline
     Sigma 8 & $\sigma_8$& 0.8159$\pm$0.0086 \\ \hline
   \end{tabular}
-    \caption{ Fit cosmological parameters from Planck results\cite{planck}.}
+    \caption{ Cosmological parameters from Planck results\cite{planck}.}
   \label{plancktable}
 \end{center}
 \end{table}
@@ -843,7 +843,11 @@ a random catalogue.
 
 Also, the function $\xi(r)$ can be expressed as a power law of the form
 
-\[ \xi(r) = \left( \frac{r}{r_0} \right)^{-\Gamma} \]
+\begin{equation}
+\xi(r) = \left( \frac{r}{r_0} \right)^{-\Gamma}
+\label{powlaw}
+\end{equation}
+
 
 being valid in the range $100 h^{-1}$ kpc to $10h^{-1}$ Mpc. The preferred
 scale $r_0=5h^{-1}$ Mpc is the one where the galaxy density is greater than twice 
@@ -957,9 +961,10 @@ the pressure caused by the coupling between baryons and radiation, leading baryo
 The scale of the baryonic acoustic oscillation is 
 usually called the sound horizon and it can be computed as
 
-\[  
+\begin{equation} 
 s = \int_{z_{rec}}^{\infty} \f{c_s dz}{H(z)}
-\]
+\label{SH}
+\end{equation}
 
 
 where $c_s$ is the velocity of the propagation and $H(z)$ is the Hubble param, (\cite{Pilar}). 
