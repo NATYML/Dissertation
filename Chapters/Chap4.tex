@@ -1,29 +1,41 @@
 \chapter{ Results }
 
-
-During this chapter we are going to show several results in order to answer the 
-initial questions we had formulated initially such as, are BAO properties changing with the 
-scale of the tracer halo population? 
-
-The simulation Multidark Planck (MDPL) is going to be used throughout this chapter. It
-belongs to the MultiDark database, uses a Planck cosmology (table \ref{plancktable}), has 
-a box length of $L=1$Gpc/h and a number of particles equal to $3840^3$.
-Specifically for this work, it was used a MDPL halo catalogue constructed with Friend of 
-Friends algorithm and a linking length of 0.2 \footnote{ Data taken from \url{https://www.cosmosim.org/cms/simulations/MDPL/}}. From the complete halo catalog are selected different halo populations
-depending on a halo mass range, five different halo populations are constructed as shown in table \ref{pophalos}.
+During this chapter the questions initially stated are going to be study in detail, 
+looking forward to answer them. Though there are several questions, the central one
+consists in finding if there is any difference in BAO properties when the scale of the tracer
+halo population is changed. A possible way to account for this, it is to study the 
+clustering at BAO scales for such halo populations. That is precisely what is proposed
+in this work. 
+One statistical tool that will be used to study clustering were already explained in chapter \ref{chap3},
+the correlation function will provide our main results. 
 
 \
 
-The main objective for the construction of these populations is to find if there is 
-a difference in the behavior of the correlation function of every population, 
-and likewise the BAO that is recovered from the correlation function. 
-In the figures \ref{pophalos}, the correlation function calculated for every population 
-is shown. There are some differences, a first one is that the correlation function amplitude 
-changes with the population, the more massive halo populations have a larger amplitude
-compared with the lower ones, at least this is clear from the maximum value obtained in
-each case. Other notorious difference is the decrease in the error bars shown for each
-population as they become more massive. This effect appears due to the way the error is
-calculated. 
+Now, using this tool, the simulation Multidark Planck (MDPL) will be studied. 
+It belongs to the MultiDark database in which Planck parameters were used
+(table \ref{plancktable}). The characteristics of MDPL
+simulation are a box length of $L=1$Gpc/h, a number of particles equal to 
+$3840^3$ and a mass resolution of $1.51e9 M_{\odot}/h$.
+Furthermore, the MDPL simulation has available a halo catalogue constructed with Friend of 
+Friends algorithm and a linking length of 0.2 \footnote{ Data taken from \url{https://www.cosmosim.org/cms/simulations/MDPL/}}. 
+From this halo catalog are constructed several populations using the mass of the halos to
+classify them. This is more clear from the table \ref{pophalos} where each mass range for 
+the 4 different populations constructed are shown. They are going to be called the 
+thick bins. 
+
+There are other subsamples created from every thick bin.
+Four populations are constructed for the population $1$, each of them has the same
+number of halos as shown in figure \textit{pendiente}. 
+They are labelled as $q_i$ with $i=1,\dots,4$, $q_1$ is the extreme 
+nearer to population 3 and $q_4$ is the extreme nearer to population 1. 
+Likewise, for the population $2$ other four populations are constructed where
+the same labelling is used. They will be called quarter populations. 
+
+Aditionally, other bins called the thin bins are created. The mean mass for each 
+bin are $10^{12.5}, 10^{12.9}, 10^{13.3}, 10^{13.7}, 10^{14.1}, 10^{14.5}$ and $10^{15}$. 
+
+All of these subdivisions are created to study the effect of the scale of the populations 
+on the BAO signal. 
 
 
 \begin{table}
@@ -35,12 +47,15 @@ calculated.
     3 & $ 1e13 \leq M < 1e14 $ & 443356\\ \hline
     2 & $ 1e12 \leq M < 1e13$ & 3687677\\ \hline
     1 & $ 1e11 \leq M < 1e12$ & 32868688 \\ \hline
-    0 & $ 1e10 \leq M < 1e11$ &  69822513 \\ \hline
   \end{tabular}  
    \caption{ Populations constructed from the mass range that appears in column two. }
 \label{pophalos}
 \end{center}
 \end{table}
+
+
+\section{ Correlation functions for MDPL populations}
+
 
 \begin{figure}[htbp]
    %\begin{center}
@@ -52,17 +67,275 @@ calculated.
     \includegraphics[width=85mm]{Images/chapter4/CF_all_1e14.pdf}
     \end{array}$
   %\end{center}
-   \caption{The correlation functions for populations $1$, $2$, $3$ and $4$ are displayed from the upper left to the lower right. }
+   \caption{The correlation functions for populations $1$ with $N_{random} =10$, $2$ with $N_{random} =10$, $3$ with with $N_{random} =10$ and $4$ with with $N_{random} =40$ are displayed from the upper left to the lower right. For each population 3 runs with 12 bins were performed. }
    \label{CFall}
 \end{figure}
 
-\section{ Correlation functions for MDPL populations}
+
+To calculate the correlation function was implemented a parallel C code 
+that uses mpi.
+There are several important quantities in order to run the code
+and obtain the correlation function for a specific population, 
+the random sample factor $N_r$, the minimum radial value $R_{min}$, 
+the maximum radial value $R_{max}$, the radial number of bins $N_{bins}$,
+and the number of particles of the population $N_{part}$.
+The random sample factor accounts for the size of the random-random 
+catalogue, the total population for the RR catalogue is 
+$N_r N_{part}$.
+The quanties $R_{min}$ and $R_{max}$ define a range where correlation
+function is found. With this range and the radial number of bins 
+a distance is estimated, points where the correlation function is
+computed.
+
+Next, in the figures \ref{pophalos}, the correlation function for every population 
+is shown. The random factor used is not the same for each case, 
+it diminish with the bigger populations since it would be too expensive
+computationally to use a big enough value for all of them. For each population 
+3 different runs were performed with the same $N_r$ and $N_b = 12$. The first one used 
+$R_{min}=20$ and $R_{max}=200$, the second one $R_{min}=25$ and $R_{max}=205$
+and the last one $R_{min}=30$ and $R_{max}=210$. In this way the noise 
+in the final correlation function plotted per population is reduced. 
+This is, if only one run from $R_{min}=20$ to $R_{max}=210$ with bins width of $5$
+Mpc would have been performed, less data would have been used to calculate the correlation function 
+per bin compared with the 3 runs performed, making more robust the results in the last scenario. 
+
+In the different figures the correlation function obtained has a similar 
+shape and there is a bump around $\sim 105$ Mpc that corresponds
+to the BAO peak. 
+But there is a difference in the amplitude and the particular population. 
+The more massive halo populations have a larger amplitude
+compared with the lower ones. This is more clear from the maximum value obtained in
+each case. 
+
+Further, an error bar was found for each point where the correlation function 
+was found. For this, 10 realizations with the same characteristics for each
+population were calculated. The standard deviation found using the realizations
+are the values used for the error bars. 
+In the figures there are a decrease in the error bars for each population as they 
+become more massive. Hence, the correlation function for the realizations are more alike 
+for the smaller populations. 
+
 
 \subsection{ Random Sampling and Number of particles}
 
-\section{ Correlation function fit}
 
-\subsection{ Correlation function of subsamples }
+Since the random sampling factor is intended to reduce the shot 
+noise, it is important to study its impact on the calculation
+of the correlation function (CF). A first exercise in this direction
+is displayed in the figure \ref{nrandom} for the population 4, 
+the correlation function was calculated for 3 different random sampling factors. 
+There is something important to highlight, there were performed
+ten realizations per $N_{r}$ and the CFs shown are the mean of these
+realizations. From the figure what can be seen is that there is no 
+significant change in the CF obtanied due to the random sampling number, 
+not at least for radial values smaller than $150$ Mpc. 
+For bigger values, the CF with a smaller random sampling factor 
+behavior becomes a little bit noisier but this scales are not of our interest.
+
+If the same exercise is repeated with specific realizations instead of the
+mean CFs, more fluctuatios are introduced producing a more notorious difference
+for scales smaller than $150$ Mpc. 
+
+%**********************************************************************************************************************
+\begin{figure}[htbp]
+       \centering
+               \includegraphics[width=0.7\textwidth]{Images/chapter4/CF_1e14_Nrandom.pdf}
+       \caption{\small Correlation function for population 4 with different random factor
+       numbers.}
+       \label{nrandom}
+ \end{figure}
+%**********************************************************************************************************************
+
+
+Other exercise performed to find the effect of the $N_r$ on the CF is shown
+in the figure \ref{CFscat}. In this case, for a thick population, $10^{14.5}$
+several realizations with the same characteristics were performed except
+by the $N_r$ used. The two values for $N_r$ are 50 and 100 with equal number
+of realizations per calculation. The plotted line in each CF corresponds to the 
+mean of the realizations. The x range was reduced to see in more detail the
+bump of the BAO. The dispertion of the CFs values for the two $N_r$ values
+is very similar. Hence, there is no change in the CF estimation because of 
+$N_r$ value.
+Though the left figure appears with more points per bin, this is caused
+because of the difference in the number of realizations done. 
+
+\begin{figure}[htbp]
+   %\begin{center}
+   $
+    \begin{array}{ll}
+    \includegraphics[width=80mm]{Images/chapter4/scatter_mean_1e145_50.pdf}&
+    \includegraphics[width=80mm]{Images/chapter4/scatter_mean_1e145_100.pdf}
+    \end{array}$
+  %\end{center}
+   \caption{Correlation function for population $14.5$ with two $N_r$ values.
+   The left panel displays 50 different CFs and the right one 100 different CFs.}
+   \label{CFscat}
+\end{figure}
+
+
+There was another factor that has to be considered, the number of particles taken for the 
+correlation function calculation. Since there is a large number of particles for the 
+population 1 and 2, there is not enough computational resources to run the program, hence
+it is necessary to use a subsample representative of all of population. Now, the idea
+is to study the effect it has on the estimation of the correlation function. 
+In the figure \ref{NofP} is shown for the population 1 the correlation function obtained
+for two different subsamples, one is around $7.6\%$ of the total population
+and the other one is around $15.2\%$ percentage of the total population. Both
+correlation functions coincide for ranges lower to $80$ Mpc, in the region where BAO.
+
+
+
+
+%**********************************************************************************************************************
+\begin{figure}[htbp]
+       \centering
+               \includegraphics[width=0.7\textwidth]{Images/chapter4/CF_1e11_NofP.pdf}
+       \caption{\small Correlation function for two different subsamples of population 
+       population 1 .}
+       \label{NofP}
+ \end{figure}
+%**********************************************************************************************************************
+
+
+
+\section{ Correlation function fit }
+
+A first step torward obtaining the BAO signal and its properties from the CF,
+it is to make a fit precisely of the CF. In the figure \ref{CFall} the CF 
+for different populations are shown, the label used for them is \textit{data}. 
+As it can be seen the $y$ axis corresponds to $r^2\xi(r)$ since it allows to visualize better the BAO bump.
+
+The CF function fits that we are finding do not try to reproduce 
+the bumps observed in the correlation function. Because of this, not all 
+the points obtained for a CF estimation were used to make the fit, only
+those ones that do not fall in the bumps. 
+
+The fit of the points were adjusted to the function 
+
+\begin{equation}
+f(r) = r^2\xi(r) = \frac{r^\lambda}{a_0}
+\label{CF_r2}
+\end{equation}
+
+\begin{figure}[htbp]
+   %\begin{center}
+   $
+    \begin{array}{ll}
+    \includegraphics[width=85mm]{Images/chapter4/CF_fit_1e12-q3.pdf}&
+    \includegraphics[width=85mm]{Images/chapter4/CF_fit_1e12-q2.pdf}\\
+    \includegraphics[width=85mm]{Images/chapter4/CF_fit_all_1e13.pdf}&
+    \includegraphics[width=85mm]{Images/chapter4/CF_fit_all_1e14.pdf}
+    \end{array}$
+  %\end{center}
+   \caption{The correlation functions for populations $q_3$ of $1e12$ , $q_2$ of $1e12$, $3$ and 
+   $4$ are displayed from the upper left to the lower right. For each population 3 runs with 12 bins
+   were carried out. }
+   \label{CFall}
+\end{figure}
+
+
+where $\lambda$ and $a_0$ are the parameters found with the fit. 
+The theoretical function used to adjust $\xi(r)$ was already shown in \ref{powlaw}. 
+Since it is is a power law function, an easier way to carry out the fit is on 
+logarithmic scale. In this way, it is performed a linear fit: $a r +b$. 
+But, the values of the CF can be negative. Then, to avoid any trouble a $\Delta$ value 
+is summed to the CF to get only positive values before perfoming the fit. 
+
+When the coefficients $a$ and $b$ are obtained, we can recover the initial parameters
+$\lambda$ and $a_0$  by considering the fact that $\gamma = a$ and $a_0=\exp(-b)$. 
+Now, replacing the parameters in the expression \ref{CF_r2} and subtracting the amount $\Delta$, 
+the CF can be plotted. 
+
+This procedure is repeated to obtain the fit for every population and 
+all of its realizations. In the figure
+\ref{CFall} some of the fits obtained for the samples are displayed. Here, 
+one important thing is to get a measure of the robustness of the fit. Hence, 
+error bars are calculated using the different realizations of the CF, i.e.,
+the standard deviation is obtained. 
+The error bars are shown for every figure of \ref{CFall} but 
+because of the similarities of the fits they are almost no visible. 
+So the CF fits are considered robust enough.  
+
+In all of the CFs in \ref{CFall} there are visible two bumps, the first one
+corresponds to the BAO since it agress with the value observed of BAO
+peak as it was shown in figure \ref{ps_cf}.
+Also the position coincides with the BAO position measured for galaxy clusters, 
+a mass range we are considering in our populations. 
+
+Something to highlight is that in the population $q_2$ de $1e12$ 
+there is no separation of this two bumps, making more difficult to recognize the BAO signal. 
+It also happens with the population $2$ not shown in this figure. This 
+was precisely the reason to study in more detail the effect of the mass bins in the CF estimation 
+and thus the BAO bump. 
+
+
+\subsection{BAO fit}
+
+Since the measure of our interest is the BAO bump, it becomes necessary
+to extract it from the CF and thus to be able to obtain the properties of 
+BAO we are looking for to analyse. In this direction, a correlation function 
+model can be useful  
+
+\begin{equation}
+CF(r) = \xi(r) - \Delta + GF(r,A,\mu,\sigma)
+\end{equation}
+
+the term $\xi(r)$ corresponds to the theoretical form shown in \ref{powlaw},
+for us it is recovered from the CF fit divided by $r^2$. 
+The second term is the one that it is summed to the CF as was explained
+in the previous section, so it must be subtracted here. 
+The function $GF$ is a gaussian fit that reproduces the BAO shape recovered 
+from the correlation function. 
+
+\[GF(r,A,\mu,\sigma) = Ae^{-(r-\mu)^2/(2\sigma^2)}\]
+
+This model where BAO is fitted with a gaussian function is proposed in \cite{BAO_model}. 
+
+Then, the next steps are followed to recover the BAO bump for every population. 
+The median of the realizations is taken as the principal CF and the standard
+deviation is obtained through the realizations.
+
+\begin{itemize}
+
+\item[1)] The term $\Delta$ is substracted from the CF fit. After the function
+is divided by $r^2$ obtaining $\xi(r)$. 
+
+\item[2)] The function $\xi(r)$ is substracted from the estimated CF leaving
+the signal of the two bumps. 
+
+\item[3)] Only the points corresponding to the first bump located around $105$ Mpc 
+are selected. 
+
+\item[4)] A gaussian fit of the first bump is performed. Only the more central points
+of the signal are considered since the outer ones are the noiser parts of the signal. This noise 
+could be diminished using more realizations per population. \textbf{no se muy bien como explicar esto}. 
+
+\item[5)] The fit is also performed for all the realizations, the same points
+considered for the BAO signal fit of the mean CF are taken for the remaining realizations. 
+
+\item[6)] The parameters amplitude $A$, mean $\mu$ and standard deviation $\sigma$ are
+obtained for every population and the realizations. 
+
+\end{itemize}
+
+The parameters that characterizes the BAO bump are the amplitude $A$, the position
+$\mu$ and the width $2\sigma$. In the figure \ref{BAO_fit} some fits of the BAO
+signal are shown. 
+
+\begin{figure}[htbp]
+   %\begin{center}
+   $
+    \begin{array}{ll}
+    \includegraphics[width=85mm]{Images/chapter4/BAO_1e14.pdf}&
+    \includegraphics[width=85mm]{Images/chapter4/BAO_1e14.pdf}\\
+    \includegraphics[width=85mm]{Images/chapter4/BAO_1e14.pdf}&
+    \includegraphics[width=85mm]{Images/chapter4/BAO_1e14.pdf}
+    \end{array}$
+  %\end{center}
+   \caption{The }
+   \label{BAO_fit}
+\end{figure}
+
 
 \section{Baryonic acoustic oscillations in the populations of MDPL }
 
