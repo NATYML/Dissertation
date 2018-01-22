@@ -640,8 +640,39 @@ required for collapsing becomes smaller.
 Until now dark matter has not been mentioned, a component that contrary
 to baryonic matter does not interact with radiation. But it is around
 $23\%$ of the overall Universe matter-energy density content, making it responsible for the 
-large scale mass distribution. Dark matter particles interact
-among them and with baryonic matter through gravitational interaction.
+large scale mass distribution. First, let us see some observational evidence of dark matter. 
+
+One of the first observational evidence was found in the Coma cluster due to
+a mass estimation from the virial theorem, let us see this in more detail: 
+the specific kinetic energy of the system is $T = v^2/2 \sim 3\sigma^2/2 $ 
+where $\sigma$ is the galaxy velocity dispertion and the potential energy
+is $U = 3GM_{vir}/(5R_{vir})$. From the mass-luminosity ratio and the 
+mean luminosity of the cluster, a second estimative of the mass is found. There is
+such a big discrepancy between the two values that is reasonable to affirm that $\sim 90\%$ of the 
+cluster's mass is not visible. 
+
+The rotation curve of the galaxies can be other prove for dark matter existence,
+for example, the velocity measures performed with respect to the radious of Andromeda 
+galaxy (or another spiral galaxies) is approximately the same independent of the radial
+distance of the stars to the center of the galaxy. From this, it could be affirmed that
+density is uniform along the galaxy contrary to expected for the observed 
+number of star in function of the radius. 
+
+
+Another example is the Bullet cluster, composed by two two clusters that are colliding, 
+an event not commonly observed. The gas of them reaches velocities around $\sim 10$ $millions$ $of$ $miles/h$ during the violent collision while they interact among them because of their charge. 
+This interaction disminishes the gas velocity but this does not happen with dark
+matter cause it does not interact electrically. 
+Using gravitational lensing a distortion map is obtained. Using the X rays detected
+and the distortion map, four different groups of matter are found, 2 bigger ones
+that correspond to the dark matter component and two smaller ones that correspond
+to luminous matter formed from the intercluster gas. These presents a strong
+evidence of dark matter existence. 
+
+\
+
+Dark matter particles interact among them and with baryonic matter through 
+gravitational interaction.
 This leads to dark matter potential wells where baryonic matter can also fall.  
 It occurs around $z \sim 3500$. But, dark matter initial seeds for potential 
 wells are formed before decoupling, since they do not interact with radiation,
@@ -650,7 +681,8 @@ and baryonic matter are modelled as a fluid that interacts gravitationally with
 dark matter, leading to no formation of baryonic seeds precisely because of the 
 coupling between this two density components, i.e., radiation dissipates the baryonic
 seeds.
-Later a more detailed explanation will be provided. 
+Later a more detailed explanation will be provided.
+
 
 In the linear regime an ansatz for perturbations is $\delta = \delta_oD(z)$,
 where $\delta_o$ is an initial seed from where a dark matter potential well formed
@@ -1017,3 +1049,175 @@ hot regions to colder ones during the epoch of recombination.
        \label{peak}
  \end{figure}
 %**********************************************************************************************************************
+
+\subsection{ Shift for BAO }
+
+\begin{comment}
+During the linear regime the BAO properties are not affected, i.e., the BAO shape does not 
+change during this regime. But, once the non linear regime starts, it causes deviations in
+the BAO properties. But, let us see in more detail how it can be measured this deviation.
+In order to do so, it can be studied the velocity field. This gives account for the changes
+in the mass distribution. Hence, we are going to focuse in one model proposed by \cite{motion}
+that models the shift suffered for the BAO signal during the non linear regime. 
+
+As mentioned, the correlation function allows to study the mass distribution. But a
+specific mass distribution is affected by the existing velocity field at the same time.  
+Hence, it is necessary to find a way to relate the correlation function with the velocity 
+field. In this scenario, two particles are separated by
+a distance $\vec{r} = \vec{r_2} - \vec{r_1}$ and thus the pairwise infall velocity, 
+$u_{12}(\vec{r},\eta)$, is directed along the separation unit vector $\hat{r}$, where
+$\tau$ is the conformal time.
+However, this distance diminishes with time due to clustering. In this direction, 
+an important equation is the pair conservation equation
+
+\begin{equation}
+\frac{\partial \ln[1+\xi(r,\eta)]}{\partial \eta} - u_{12}(r,\eta)\frac{\partial \ln[1+\xi(r,\eta)]}{\partial r} = \Theta(r,\eta)
+\label{pair_eq}
+\end{equation}
+
+where $\Theta(r,\eta) = \nabla \cdot [u_{12}(r,\eta)\hat{r}]$, is the divergence 
+the pairwise infall velocity. 
+it allows to study the evolution of any feature, its movement, in the correlation function.
+Hence, the relation between the correlation function and the pairwise infall velocity allows
+to study the shift that BAO would suffer due to gravitational clustering. 
+To solve the equation \ref{pair_eq} is used the method of characteristics, the characteristics 
+are the equations of motion  of the pairs 
+
+\begin{equation}
+\frac{dr}{d\eta}=-u_{12}(r,\eta)
+\label{charact}
+\end{equation}
+
+whose solutions allow to obtain an ordinary equation from \ref{pair_eq}. It can be shown
+that for linear theory the solution of \ref{charact} is given by 
+
+\[\exp^{2\eta}-1 = \int^{r_0}_r\frac{3}{\eta_0(r)}\frac{dr}{r}\]
+
+where $\eta_0$ is the linear correlation function at $\eta_0=0$. It provides the 
+evolution of the distance vector, $r$, that must diminish from an initial value $r_0$
+due to gravitational collapse. 
+\end{comment}
+
+%**********************************************************************************************************************
+
+During the linear regime the BAO properties are not affected, i.e., the BAO shape does not 
+change during this regime. But, once the non linear regime starts, it causes deviations in
+the BAO properties. But, let us see in more detail how it can be measured this deviation.
+In order to do so, it can be studied the velocity field. This gives account for the changes
+in the mass distribution. Hence, we are going to focuse in one model proposed by \cite{motion}
+that models the shift suffered for the BAO signal during the non linear regime. 
+
+\
+
+As mentioned, the correlation function allows to study the mass distribution. But a
+specific mass distribution is affected by the existing velocity field at the same time.  
+Hence, it is necessary to find a way to relate the correlation function with the velocity 
+field. In this scenario, two particles are separated by
+a distance $\vec{r} = \vec{r_2} - \vec{r_1}$ and thus the pairwise infall velocity, 
+$u_{12}(\vec{r},\eta)$, is directed along the separation unit vector $\hat{r}$, where
+$\eta$ is proportional to the conformal time.
+However, this distance diminishes with time due to clustering. In this direction, 
+an important equation is the pair conservation equation
+
+\begin{equation}
+\frac{\partial \ln[1+\xi(r,\eta)]}{\partial \eta} - u_{12}(r,\eta)\frac{\partial \ln[1+\xi(r,\eta)]}{\partial r} = \Theta(r,\eta)
+\label{pair_eq}
+\end{equation}
+
+where $\Theta(r,\eta) = \nabla \cdot [u_{12}(r,\eta)\hat{r}]$, is the divergence 
+the pairwise infall velocity. 
+It allows to study the evolution of any feature, its movement, in the correlation function.
+Hence, the relation between the correlation function and the pairwise infall velocity allows
+to study the shift that BAO would suffer due to gravitational clustering. 
+To solve the equation \ref{pair_eq} is used the method of characteristics, the characteristics 
+are the equations of motion  of the pairs 
+
+\begin{equation}
+\frac{dr}{d\eta}=-u_{12}(r,\eta)
+\label{charact}
+\end{equation}
+
+whose solutions allow to obtain an ordinary equation from \ref{pair_eq} 
+
+\begin{equation}
+\frac{d \ln [1+\xi(r,\eta)]}{d\eta} = \Theta(r,\eta)
+\label{ppe}
+\end{equation}
+
+Besides, the solution of the last equation \ref{ppe} solution is given by 
+
+\begin{equation}
+1 + \xi(r,\eta) = (1+\xi_0[r_0(r,\eta)])\times \exp\left[\int_0^\eta \Theta[r_{\eta'}(r,\eta),\eta']d\eta'\right]
+\label{sol}
+\end{equation}
+
+where $r_0(r,\eta)$ is the initial separation that corresponds to $r$ at time $\eta$ and likewise
+for $r_{\eta'}$. To find this general solution, the shift in the correlation function due to 
+gravitational clustering, it is necessary to know the divergence of the velocity field. 
+A first approach that can tell us how the BAO peak evolves is through  linear theory of 
+velocities for $\Theta(r,\eta)$. This is shown in the expression below. 
+
+\begin{equation}
+\Theta(r,\eta) = 2e^{2\eta}\xi_0(r)
+\label{linb}
+\end{equation}
+
+where $\xi_0$ is the linear correlation function at $\eta_0=0$. In such case, the correlation
+function grows due to the infall velocities. It becomes the biggest contribution when $\eta$ is
+large. 
+
+Now, using this expression and clearing the initial correlation function is obtained the 
+plot \ref{sbao}, the two curves for $z=0$ and $z=1$ are represented with solid lines. 
+Also, two curves, solid squares and solid triangles, for $z=0$ and $z=1$ respectively, show the 
+behavior of the correlation function in cosmological simulations. From this, it
+can be said that in non linear regime the BAO has been wash out and it does not 
+suffice the linear theory to produce such effect. This is in accordance with several 
+studies that show a significant differenc between numerical simulations and the predictions
+of the linear theory. 
+Hence, a next step is to include in \ref{sol} a divergence of the velocity that
+includes the nonlinear effects. 
+
+
+%**********************************************************************************************************************
+\begin{figure}[htbp]
+       \centering
+               \includegraphics[width=0.5\textwidth]{Images/chapter2/shift.png}
+       \caption{ \small Using expression \ref{linb} for $z=0$ and $z=1$ is obtained
+       the solid lines. From cosmological simulations the correlation function for $z=0$ 
+       and $z=1$ is shown, solid squares and solid triangles. Image taken from \cite{motion}.}
+       \label{sbao}
+ \end{figure}
+%**********************************************************************************************************************
+
+For nonlinear regime, the perturbation theory (PT) can be used to find the pairwise infall 
+velocity. This one has two nonlinear contributions and its divergence can be expressed as 
+
+\begin{equation}
+\Theta(r,\eta) = \Theta_2(r,\eta)+ \Theta_3(r,\eta)\nonumber
+\end{equation}
+
+where $\Theta_2(r,\eta)=2\nabla \cdot \langle \delta_1 \vec{u}_2 \rangle$ and 
+$\Theta_3(r,\eta)=2\nabla \cdot \langle \delta_1\delta_2 \vec{u}_1 \rangle$. It
+can be shown that PT is used to find the last two terms as shown in \cite{motion}. 
+Finally, the correlation function is expressed as 
+
+\begin{eqnarray}
+1 + \xi(r,\eta) &=& (1+b_i^2\xi_0[r_0(r,\eta)])\times \nonumber \\   & &\exp\left[\int_0^\eta d\eta'( b(\eta') \Theta_2[r_{\eta'}(r,\eta),\eta'] 
++ b(\eta')^2\Theta_3[r_{\eta'}(r,\eta), \eta'] )\right]
+\end{eqnarray}
+
+
+where $b_i$ is the initial bias. This expression predicts the damping of the BAO 
+that causes an apparent shifting to smaller scales. 
+Hence, it can be concluded that indeed nonlinear regime induce changes on BAO properties.
+This idea is supported by \cite{motion}, \cite{uno}, \cite{dos}, \cite{tres}, \cite{cuatro},
+\cite{crocce}, where it is shown that the position of the BAO peak is changed 
+around $1\%$ to $3\%$. Despite of the fact it is not a big difference, it induce a significant
+bias in the parameter of the dark energy equation. Then, a model for BAO must include
+the nonlinear contributions. 
+
+Although this model gives account for the shift due to the transport of matter by the velocity
+field, there is other term that can contribute to the shifting, the impact of tidal gravitational 
+fields in the growth of structure as explained in \cite{crocce}.
+ 
+ 
