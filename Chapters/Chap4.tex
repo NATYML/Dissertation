@@ -23,20 +23,36 @@ classify them. This is more clear from the table \ref{pophalos} where each mass 
 the 4 different populations constructed are shown. They are going to be called the 
 thick bins. 
 
-There are other subsamples created from every thick bin.
-Four populations are constructed for the population $1$, each of them has the same
-number of halos. %as shown in figure \textit{pendiente}. 
+But, the populations have a range mass that is arbitrary, so
+the results obtained can have some sort of bias. To avoid this, 
+it will be study in further detail the effect that 
+the size of the mass bins have in the results, i.e., the mass
+range considered. The bins size could be ``masking'' information
+contained for smaller mass ranges. 	
+
+Hence, there are other subsamples created from every thick bin.
+Four populations are constructed for the population $1$,  
+each of them has the same number of halos. %as shown in figure \textit{pendiente}. 
 They are labelled as $q_i$ with $i=1,\dots,4$, $q_1$ is the extreme 
 nearer to population 3 and $q_4$ is the extreme nearer to population 1. 
 Likewise, for the population $2$ other four populations are constructed where
 the same labelling is used. They will be called quarter populations. 
-
+There was another reason to construct such populations, the correlation function
+found for the population 2 has an irregular shape around values of BAO peak. This
+will later discussed in a next section. 
 Aditionally, other bins called the thin bins are created. The mean mass for each 
 bin are $10^{12.5}, 10^{12.9}, 10^{13.3}, 10^{13.7}, 10^{14.1}, 10^{14.5}$ and $10^{15}$. 
 
-All of these subdivisions are created to study the effect of the scale of the populations 
-on the BAO signal. 
+Concluding, all of these subdivisions are created to study the effect of the scale of the populations 
+on the BAO signal. This is found to be related with the nonlinear gravitational effects, i.e.
+for smaller mass halos there is a coupling among different density modes. 
 
+This lead us to other experiment, to revise if there is a difference in the BAO properties
+found for the same cosmological box but for $z=1$, where nonlinear gravitational effects
+should be less prominent. In the table \ref{z1}, it is going to be shown populations used 
+for $z=1$. The same procedure that will be exposed for the populations with $z=0$ is followed
+for $z=1$, but we are going to concentrate in the first redshift where a deeper study 
+was performed. 
 
 \begin{table}
 \begin{center}
@@ -48,10 +64,28 @@ on the BAO signal.
     2 & $ 1e12 \leq M < 1e13$ & 3687677\\ \hline
     1 & $ 1e11 \leq M < 1e12$ & 32868688 \\ \hline
   \end{tabular}  
-   \caption{ Populations constructed from the mass range that appears in column two. }
+   \caption{ Populations constructed from the mass range that appears in column two (z=0). }
 \label{pophalos}
 \end{center}
 \end{table}
+
+
+\begin{table}
+\begin{center}
+  \begin{tabular}{ | c | c | c | }
+    \hline \hline
+    MDPL population & Mean Mass $M_{\odot}$& Number of halos \\ \hline \hline    
+    9 & $ 1e13.5$ & 8462\\ \hline
+    8 & $ 1e13$ & 66473 \\ \hline
+    7 & $ 1e12.5$ & 326163 \\ \hline
+    6 & $ 1e12$ & 1258759 \\ \hline
+    5 & $ 1e11.5$ & 4333890 \\ \hline
+  \end{tabular}  
+   \caption{ Populations constructed for $z=1$. }
+\label{z1}
+\end{center}
+\end{table}
+
 
 
 \section{ Correlation functions for MDPL populations}
@@ -184,8 +218,6 @@ and the other one is around $15.2\%$ percentage of the total population. Both
 correlation functions coincide for ranges lower to $80$ Mpc, in the region where BAO.
 
 
-
-
 %**********************************************************************************************************************
 \begin{figure}[htbp]
        \centering
@@ -221,14 +253,14 @@ f(r) = r^2\xi(r) = \frac{r^\lambda}{a_0}
    %\begin{center}
    $
     \begin{array}{ll}
-    \includegraphics[width=85mm]{Images/chapter4/CF_fit_1e12-q3.pdf}&
-    \includegraphics[width=85mm]{Images/chapter4/CF_fit_1e12-q2.pdf}\\
+    \includegraphics[width=85mm]{Images/chapter4/CF_all_1e11.pdf}&
+    \includegraphics[width=85mm]{Images/chapter4/CF_all_1e12.pdf}\\
     \includegraphics[width=85mm]{Images/chapter4/CF_fit_all_1e13.pdf}&
     \includegraphics[width=85mm]{Images/chapter4/CF_fit_all_1e14.pdf}
     \end{array}$
   %\end{center}
-   \caption{The correlation functions for populations $q_3$ of $1e12$ , $q_2$ of $1e12$, $3$ and 
-   $4$ are displayed from the upper left to the lower right. For each population 3 runs with 12 bins
+   \caption{The correlation functions for populations thick $1$, $2$, $3$ and $4$ 
+   are displayed from the upper left to the lower right. For each population 3 runs with 12 bins
    were carried out. }
    \label{CFall}
 \end{figure}
@@ -247,8 +279,8 @@ Now, replacing the parameters in the expression \ref{CF_r2} and subtracting the 
 the CF can be plotted. 
 
 This procedure is repeated to obtain the fit for every population and 
-all of its realizations. In the figure
-\ref{CFall} some of the fits obtained for the samples are displayed. Here, 
+all of its realizations. In the figure \ref{CFall} some of the fits 
+obtained for the samples are displayed. Here, 
 one important thing is to get a measure of the robustness of the fit. Hence, 
 error bars are calculated using the different realizations of the CF, i.e.,
 the standard deviation is obtained. 
@@ -257,7 +289,7 @@ because of the similarities of the fits they are almost no visible.
 So the CF fits are considered robust enough.  
 
 In all of the CFs in \ref{CFall} there are visible two bumps, the first one
-corresponds to the BAO since it agress with the value observed of BAO
+corresponds to the BAO since it agrees with the value observed of BAO
 peak as it was shown in figure \ref{ps_cf}.
 Also the position coincides with the BAO position measured for galaxy clusters, 
 a mass range we are considering in our populations. 
@@ -343,8 +375,12 @@ different realizations, with them the standard deviation per population was foun
    \label{BAO_fit}
 \end{figure}
 
-
-
+For every figures displayed in plot \ref{BAO_fit}, there is a curve labeled as B spline.
+This fit was obtained using basis splines. It has a different behavior than the one observed 
+for the Gaussian fit. At least in general terms, it fits better the BAO signal recovered.
+Furthermore, there is a difference in the main peaks of the two fits 
+performed, Gaussian and basis spline fit. Despite the difference between the peaks, the
+functional form obtained for the properties is similar. This will be shown in the next section. 
 
 \section{ BAO properties in the populations of MDPL }
 
@@ -359,10 +395,8 @@ BAO obtained for each population.
 It is important to take into account that more massive halos trace higher density 
 peaks in the matter density field. This should lead, in principle, to a stronger 
 correlation in the most massive populations compared with the less massive ones. 
-Thus, a better detection of the BAO signal. 
-
-In the left figure \ref{prop1} an increase of the amplitude of the BAO for more massive 
-halos is obtained as precisely expected for a stronger correlation.  
+Thus, a better detection of the BAO signal. In the left figure \ref{prop1} an increase of the amplitude of the BAO for more massive halos is obtained as precisely expected for a stronger 
+correlation. 
 
 \begin{figure}[h]
    %\begin{center}
@@ -377,11 +411,20 @@ halos is obtained as precisely expected for a stronger correlation.
    \label{prop1}
 \end{figure}
 
-The position of the BAO depends on the sound horizon scale as shown in \ref{SH},
-gravitational interactions causes a change in the BAO width \cite{Pilar} not in 
-its position. But in the right figure \ref{prop1} a decrease in the BAO position with 
-more massive halo population appears. 
-
+The initial position of the BAO depends on the sound horizon scale as shown in \ref{SH},
+but as explained in the model exposed in \ref{shiftBAO}, this position changes due to
+nonlinear effects. Now, the plot in the left of \ref{prop1} shows the position of the 
+BAO in function of the halo mass. It can be noticed a decrease in the value of the position
+as the halo mass increase. This behavior could be expected due to nonlinear gravitational 
+collapse. The velocity field causes a movement of the BAO peak to smaller scales, 
+for the nonlinear regime. In this case, this corresponds to the 
+smaller halo masses for which the density modes are coupled among them. 
+The porcentual difference is around $3.8\%$. This is
+precisely of the same order of magnitude found in \cite{motion}. This result contributes 
+in a different way as \cite{motion} since they consider cosmological boxes with a very
+small resolution $640^3$ in contrast with the populations used in this study. Furthermore,
+we study the BAO behavior for a more extended mass range and this could let us see 
+the effect of BAO properties in the nonlinear range. 
 
 %**********************************************************************************************************************
 \begin{figure}[htbp]
@@ -430,9 +473,70 @@ the mass bins in the properties measure of BAO.
 The BAO properties obtained for all the populations, except $1e11$ and $1e12$,
 are plotted in the figures \ref{prop2} and \ref{sigm2}. It is noticed that when it is used
 thiner masses bins, we do not recover the same tendency observed in the previous
-figures. A possible reason for these results is that the correlation function for
-thicker bins is "masking" information of smaller mass scales. A non linear behavior
-is dominating the BAO properties.
+figures. Let us start with the left figure of \ref{prop2}. In this case, there is
+still a tendency of the amplitude to increase with an increase of the halo mass.
+Though, for masses smaller than $\sim 10^{12.4}$, there is a more irregular behavior
+compared with the one obtained for the thicker bins. 
+
+Now, the right figure of \ref{prop2} shows the position of the BAO vs the halo mass.
+In the case of the solid blue line, the populations considered are those ones that
+belong to $z=0$, with the properties recovered using the Gaussian fit. To analyse it, 
+let us again divide the figure in two regions. For halo masses bigger than $\sim 10^{12.4}$,
+a similar behavior compared with \ref{prop1}, i.e., a decrease in the BAO position with
+the increase of the halo mass. As was previously mentioned, this behavior is expected 
+as explained in \ref{shiftBAO}. But, for masses smaller than $\sim 10^{12.4}$, it is not 
+observed any specific tendency. It is in this region where the coupling among density
+modes makes the nonlinear effects too big to extract any possible tendency. Hence, it 
+is out of the purpose of this work to go deeper into the subject. 
+A second curve is the discontinues blue line, it corresponds the same populations 
+as the solid blue line. But, in this case, the position of the BAO was recovered
+using a basis spline fit. This was perfomed to make the results obtanied
+with the Gaussian BAO fit more robust. Although, there is a difference in the properties
+recovered, this values are similar and also they behave in a similar manner. Thus,
+the region for masses bigger than $\sim 10^{12.4}$ shows a decreases of the BAO position.
+Hence, this supports the result obtained with the Gaussian fit. 
+The red solid curve shows the BAO properties recovered for the populations with $z=1$.
+It can be seen that BAO position does not change significantly due to the nonlinear 
+effects are less prominent in this epoch. Similarly, the discontinues red line displays
+the properties found for the same populations as the solid red line, but it recovers
+the position using a basis spline fit. For both curves, there is not a notorious change 
+in the position of the BAO. Hence, these two curves support the idea that nonlinear 
+effects are causing a shift in the BAO position, not observed for $z=1$. 
+
+
+In the figure \ref{sigm2}, it is not recovered the same behavior as \ref{sigm1}.
+But, for halo masses bigger than $\sim 10^{12.4}$, the width of the BAO decreases
+with mass. This was expected as explained for \ref{sigm1}. For masses smaller than
+$\sim 10^{12.4}$, the nonlinear effects causes that there is no tendency of the 
+data. 
+
+Concluding, the properties recovered for the BAO using the thicker bins are behaving
+as expected but they are possibly "masking" information of smaller mass scales. For this, 
+the thiner bins provided us with a more accurate properties. This lead us to see that
+for masses bigger than $\sim 10^{12.4}$, we recovered the expected tendency. But for
+the smaller masses, the nonlinear effects do not let us extract any specific behavior
+of the properties. A nonlinear behavior is dominating the BAO properties at these mass
+scales. 
+
+\section{Summary and conclusions}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
