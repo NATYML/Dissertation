@@ -411,12 +411,12 @@ correlation.
    \label{prop1}
 \end{figure}
 
-The initial position of the BAO depends on the sound horizon scale as shown in \ref{SH},
+The initial position of the BAO depends on the sound horizon scale as mentioned in \ref{SH},
 but as explained in the model exposed in \ref{shiftBAO}, this position changes due to
 nonlinear effects. Now, the plot in the left of \ref{prop1} shows the position of the 
 BAO in function of the halo mass. It can be noticed a decrease in the value of the position
 as the halo mass increase. This behavior could be expected due to nonlinear gravitational 
-collapse. The velocity field causes a movement of the BAO peak to smaller scales, 
+collapse. The velocity field causes a movement of the BAO peak to smaller scales 
 for the nonlinear regime. In this case, this corresponds to the 
 smaller halo masses for which the density modes are coupled among them. 
 The porcentual difference is around $3.8\%$. This is
@@ -436,6 +436,32 @@ the effect of BAO properties in the nonlinear range.
  \end{figure}
 %**********************************************************************************************************************
 
+But not only the velocity field causes a shift of the BAO peak due to nonlinear evolution, 
+there is a change of the width of the BAO peak. In order to understand this, let us consider
+that the density field is affected by the dispersion of velocities and thus the correlation 
+function obtanied. In this scenario, when we are considering halo populations with smaller 
+masses, it is expected a bigger dispersion of the velocities compared with the populations 
+with bigger masses. 	This occurs due to more massive halos are harder to move, thus the 
+deviation from the mean velocity is not so big. At least,  compared  with the smaller halos 
+that can have a wider range of velocities. 
+To support this idea, let us consider the figure \ref{toy_pro} where a toy density profile 
+is shown and separated in two parts, the one halo term  and the BAO signal. The one halo
+term is affected by the dispersion of the velocities causing a broadening of this. Hence, 
+a similar behavior is expected for the BAO signal. Thus, the BAO signal suffers a 
+broadening but it depends on the halo mass considered. 
+
+
+%**********************************************************************************************************************
+\begin{figure}[htbp]
+       \centering
+    \includegraphics[width=70mm]{Images/chapter4/toy_pro.png}
+\caption{\small Profile that includes one halo term and the BAO signal.}
+       \label{toy_pro}
+ \end{figure}
+%**********************************************************************************************************************
+
+
+\begin{comment}
 Another important factor is the gravitational interaction among more massive halos.
 Since larger masses exert greater gravitational attraction than smaller masses, 
 the more massive halos should be closer among them, causing a smaller broadening
@@ -444,18 +470,19 @@ figure \ref{sigm1} where the width of the BAO decreases with more massive halos.
 But, the behavior of the population $2$ does not follow this tendency. Because of this,
 the quarter and thin populations were created to study in more detail the effect of
 the mass bins in the properties measure of BAO. 
+\end{comment}
 
 
 \begin{figure}[h]
    %\begin{center}
    $
     \begin{array}{cc}
-    \includegraphics[width=85mm]{Images/chapter4/AmplitudevsMh2.pdf}&
-    \includegraphics[width=85mm]{Images/chapter4/PosvsMh2.pdf}
+    \includegraphics[width=78mm]{Images/chapter4/AmplitudevsMh2.pdf}&
+    \includegraphics[width=78mm]{Images/chapter4/WidthvsMh2.pdf}
     \end{array}$
   %\end{center}
    \caption{\small In the left panel the amplitude of BAO in function of the mass of all populations 
-   is shown. In the right one the position of BAO in function of the mass of the thick population is displayed.}
+   is shown. In the right one width of BAO versus the masss of the thick populations. }
    \label{prop2}
 \end{figure}
 
@@ -463,8 +490,8 @@ the mass bins in the properties measure of BAO.
 \begin{figure}[htbp]
        \centering
 
-    \includegraphics[width=100mm]{Images/chapter4/WidthvsMh2.pdf}
-\caption{\small Width of BAO versus the masss of the thick populations.}
+    \includegraphics[width=100mm]{Images/chapter4/PosvsMh2.pdf}
+\caption{\small The position of BAO in function of the mass of the thick population is displayed.}
        \label{sigm2}
  \end{figure}
 %**********************************************************************************************************************
@@ -478,7 +505,13 @@ still a tendency of the amplitude to increase with an increase of the halo mass.
 Though, for masses smaller than $\sim 10^{12.4}$, there is a more irregular behavior
 compared with the one obtained for the thicker bins. 
 
-Now, the right figure of \ref{prop2} shows the position of the BAO vs the halo mass.
+Now, in the right figure of \ref{prop2}, it is not recovered the same behavior as \ref{sigm1}.
+But, for halo masses bigger than $\sim 10^{12.4}$, the width of the BAO decreases
+with mass. This was expected as explained for \ref{sigm1}. For masses smaller than
+$\sim 10^{12.4}$, the nonlinear effects causes that there is no tendency of the 
+data. 
+
+In the figure \ref{sigm2}, shows the position of the BAO vs the halo mass.
 In the case of the solid blue line, the populations considered are those ones that
 belong to $z=0$, with the properties recovered using the Gaussian fit. To analyse it, 
 let us again divide the figure in two regions. For halo masses bigger than $\sim 10^{12.4}$,
@@ -503,12 +536,6 @@ the position using a basis spline fit. For both curves, there is not a notorious
 in the position of the BAO. Hence, these two curves support the idea that nonlinear 
 effects are causing a shift in the BAO position, not observed for $z=1$. 
 
-
-In the figure \ref{sigm2}, it is not recovered the same behavior as \ref{sigm1}.
-But, for halo masses bigger than $\sim 10^{12.4}$, the width of the BAO decreases
-with mass. This was expected as explained for \ref{sigm1}. For masses smaller than
-$\sim 10^{12.4}$, the nonlinear effects causes that there is no tendency of the 
-data. 
 
 Concluding, the properties recovered for the BAO using the thicker bins are behaving
 as expected but they are possibly "masking" information of smaller mass scales. For this, 
