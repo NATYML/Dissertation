@@ -1,0 +1,35 @@
+# Grafica de la funcion de Luminosidad Schetcher
+#Se usan 3 diferentes pendientes para los parametros 
+
+import numpy as np 
+import math as mt 
+import pylab as plt 
+plt.close("all")
+
+#Luminosidad Schetcher en funcion de la magnitud
+def SLF( M,alpha ):     
+    result = np.log(10)*phia*(10**(0.4*(Ma-M)))**(alpha+1)*np.exp(-10**(0.4*(Ma-M)))
+    return result/2.5
+
+#Parametros
+M = np.linspace(-23,-15,1000)
+phia = 3.56
+Ma = -20.1
+#Pendiente 1
+alpha1 = -1.3
+slf1 = SLF(M,alpha1)
+# Pendiente 2
+alpha2 = -1.5
+slf2 = SLF(M,alpha2)
+# Pendiente 3
+alpha3 = -1.7
+slf3 = SLF(M,alpha3)
+
+plt.semilogy(M,slf1,label='$LF$ $with$ $\\alpha$=$%1.1f$'%(alpha1))
+plt.semilogy(M,slf2,label='$LF$ $with$ $\\alpha$=$%1.1f$'%(alpha2))
+plt.semilogy(M,slf3,label='$LF$ $with$ $\\alpha$=$%1.1f$'%(alpha3))
+plt.ylabel("$Log_{10}(N/mag/Mpc^3)$")
+plt.xlabel("$M $")
+plt.grid()
+plt.legend(loc='lower right')
+plt.show()
