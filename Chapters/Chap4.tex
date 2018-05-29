@@ -192,12 +192,13 @@ for scales larger than $150$ $Mpc/h$.
 
 
 Other exercise performed to find the effect of the $N_r$ on the CF is shown
-in the figure \ref{CFscat}. In this case, for a thick population, $10^{14.5}$ $M_{\odot}/h$
+in figure \ref{CFscat}. In this case, for a thick population, $10^{14.5}$ $M_{\odot}/h$
 several realizations with the same characteristics were performed except
 by the $N_r$ used. The two values for $N_r$ are 50 and 100 with equal number
 of realizations per calculation. The plotted line in each CF corresponds to the 
-mean of the realizations. The xrange was reduced to see in more detail the
-bump of the BAO. The dispersion of the CFs values for the two $N_r$ values
+mean of the realizations. It was taken a smaller x-range for plots in figure \ref{CFscat},
+to see in more detail the bump of the BAO. 
+The dispersion of the CFs values for the two $N_r$ values
 is very similar. Hence, there is no change in the CF estimation because of 
 $N_r$ value.
 Though the left figure appears with more points per bin, this is caused
@@ -212,8 +213,8 @@ because of the difference in the number of realizations done.
     \includegraphics[width=80mm]{Images/chapter4/scatter_mean_1e145_100.pdf}
     \end{array}$
   %\end{center}
-   \caption{Correlation function for population $14.5$ with two $N_r$ values.
-   The left panel displays 50 different CFs and the right one 100 different CFs.}
+   \caption{Correlation function for population $4$ with two $N_r$ values.
+   Left: it displays the mean of fifty different CFs. Right: it shows the mean of a one hundred CFs.}
    \label{CFscat}
 \end{figure}
 
@@ -223,10 +224,10 @@ correlation function calculation. Since there is a large number of particles for
 population 1 and 2, there is not enough computational resources to run the program, hence
 it is necessary to use a subsample representative of all of population. Now, the idea
 is to study the effect it has on the estimation of the correlation function. 
-In the figure \ref{NofP} is shown for the population 1 the correlation function obtained
-for two different subsamples, one is around $7.6\%$ of the total population
-and the other one is around $15.2\%$ percentage of the total population. Both
-correlation functions coincide for ranges lower to $80$ $Mpc/h$, in the region where BAO.
+In the figure \ref{NofP}, it is shown the correlation function for the population 1 obtained
+for two different subsamples. One is around $7.6\%$ of the total population. The other one is around $15.2\%$ percentage of the total population. Both
+correlation functions coincide for ranges lower to $80$ $Mpc/h$. In the region where BAO
+appears, there is a bigger discrepancy between the two curves. 
 
 
 %**********************************************************************************************************************
@@ -244,19 +245,19 @@ correlation functions coincide for ranges lower to $80$ $Mpc/h$, in the region w
 \section{ Correlation function fit }
 
 A first step torward obtaining the BAO signal and its properties from the CF,
-it is to make a fit precisely of the CF. In the figure \ref{CFall} the CF 
+it is to make a fit precisely of the CF. In figure \ref{CFall}, the CF 
 for different populations are shown, the label used for them is \textit{data}. 
-As it can be seen the $y$ axis corresponds to $r^2\xi(r)$ since it allows to visualize better the BAO bump.
+As it can be seen the $y$ axis corresponds to $r^2\xi(r)$, since it allows to visualize better the BAO bump.
 
-The CF function fits that we are finding do not try to reproduce 
-the bumps observed in the correlation function. Because of this, not all 
-the points obtained for a CF estimation were used to make the fit, only
-those ones that do not fall in the bumps. 
+The CF function fits, shown in figure \ref{CFall}, were not performed using
+all the dots where the CF is known. It was not included the dots that
+correspond to the BAO bump. Since the fits try to reproduce the CFs
+without including the BAO signal. 
 
-The fit of the points were adjusted to the function 
+The fit of the points were adjusted to the function, 
 
 \begin{equation}
-f(r) = r^2\xi(r) = \frac{r^\lambda}{a_0}
+f(r) = r^2\xi(r) = \frac{r^\lambda}{a_0},
 \label{CF_r2}
 \end{equation}
 
@@ -272,8 +273,8 @@ f(r) = r^2\xi(r) = \frac{r^\lambda}{a_0}
     (c) &  (d)
     \end{array}$
   %\end{center}
-   \caption{The correlation functions for populations thick $1$, $2$, $3$ and $4$ 
-   are displayed from the upper left to the lower right. For each population 3 runs with 12 bins
+   \caption{The correlation functions and fits for the populations (a): $1$, (b): $2$, (c): $3$ and (d): $4$ 
+   are displayed from the upper left to the lower right. For each population three runs with 12 bins
    were carried out. }
    \label{CFall}
 \end{figure}
@@ -282,8 +283,8 @@ f(r) = r^2\xi(r) = \frac{r^\lambda}{a_0}
 where $\lambda$ and $a_0$ are the parameters found with the fit. 
 The theoretical function used to adjust $\xi(r)$ was already shown in \ref{powlaw}. 
 Since it is is a power law function, an easier way to carry out the fit is in 
-logarithmic scale. In this way, it is performed a linear fit: $a r +b$. 
-But, the values of the CF can be negative. Then, to avoid any trouble a $\Delta$ value 
+logarithmic scale. In this way, it is performed a linear fit: $a r +b$, 
+but, the values of the CF can be negative. Then, to avoid any trouble a $\Delta$ value 
 is summed to the CF to get only positive values before perfoming the fit. 
 
 When the coefficients $a$ and $b$ are obtained, we can recover the initial parameters
@@ -307,10 +308,9 @@ peak as it was shown in figure \ref{ps_cf}.
 Also the position coincides with the BAO position measured for galaxy clusters, 
 a mass range we are considering in our populations. 
 
-Something to highlight is that in the population $q_2$ de $1\times 10^{12}$ $M_{\odot}/h$ 
-there is no separation of this two bumps, making more difficult to recognize the BAO signal. 
-It also happens with the population $2$ not shown in this figure. This 
-was precisely the reason to study in more detail the effect of the mass bins in the CF estimation 
+Something to highlight is that in the population $2$, 
+there is no separation of these two bumps, making more difficult to recognize the BAO signal. 
+This was precisely the reason to study in more detail the effect of the mass bins in the CF estimation 
 and thus the BAO bump. 
 
 
@@ -319,25 +319,26 @@ and thus the BAO bump.
 Since the measure of our interest is the BAO bump, it becomes necessary
 to extract it from the CF and thus to be able to obtain the properties of 
 BAO we are looking for to analyse. In this direction, a correlation function 
-model can be useful  
+model can be useful,  
 
 \begin{equation}
-CF(r) = \xi(r) - \Delta + GF(r,A,\mu,\sigma)
+CF(r) = \xi(r) - \Delta + GF(r,A,\mu,\sigma),
 \end{equation}
 
-the term $\xi(r)$ corresponds to the theoretical form shown in \ref{powlaw},
-for us it is recovered from the CF fit divided by $r^2$. 
+the term $\xi(r)$ corresponds to the theoretical form shown in equation \ref{powlaw}.
+Numerically, we could calculate the correlation function from the CF fit divided by $r^2$. 
+Since the CF fit was $r^2\xi(r)$. 
 The second term is the one that it is summed to the CF as was explained
 in the previous section, so it must be subtracted here. 
 The function $GF$ is a gaussian fit that reproduces the BAO shape recovered 
 from the correlation function. 
 
-\[GF(r,A,\mu,\sigma) = Ae^{-(r-\mu)^2/(2\sigma^2)}\]
+\[GF(r,A,\mu,\sigma) = Ae^{-(r-\mu)^2/(2\sigma^2)}.\]
 
-This model where BAO is fitted with a gaussian function is proposed in \cite{motion}. 
+This model, where BAO is fitted with a gaussian function is proposed in \cite{motion}. 
 
 Then, the next steps are followed to recover the BAO bump for every population. 
-The median of the realizations is taken as the principal CF and the standard
+The median of the realizations is taken as the main CF and the standard
 deviation is obtained through the realizations.
 
 \begin{itemize}
@@ -366,9 +367,9 @@ obtained for every population and the realizations.
 The parameters that characterizes the BAO bump are the amplitude $A$, the position
 $\mu$ and the width $2\sigma$. In the figure \ref{BAO_fit} some fits of the BAO
 signal are shown. It can be noticed that the points that correspond to the BAO
-bump have a gaussian like distribution. The Gaussian fits performed are also shown
-with the parameters found. It can be noticed a good coincidence between 
-the data and the fit obtained. 
+bump have a gaussian-like distribution. The Gaussian fits performed are also shown
+with the parameters found, blue curve. It can be noticed a good coincidence between 
+the data (green curve) and the fit obtained. 
 The error bars displayed were obtained through the BAO fits performed for the
 different realizations, with them the standard deviation per population was found.  
 
@@ -385,12 +386,13 @@ different realizations, with them the standard deviation per population was foun
     (c) &  (d)
     \end{array}$
   %\end{center}
-   \caption{ BAO signal for population 4, 3, $q_4$ of $1e12$ and $q_1$ of $1e11$ from
-   upper left to lower right. }
+   \caption{ BAO signal for population (green curve) (a): 4, (b): 3, (c): $q_4$ of $1e12$ and (d): $q_1$ of $1e11$. Two fits are shown, magenta curve: Basis spline fit and blue curve: Gaussian fit. 
+}
    \label{BAO_fit}
 \end{figure}
 
-For every plot displayed in the figure \ref{BAO_fit}, there is a curve labeled as B spline.
+For every plot displayed in the figure \ref{BAO_fit}, there is a curve labeled as B spline,
+magenta curve.
 This fit was obtained using basis splines. It has a different behavior than the one observed 
 for the Gaussian fit. At least in general terms, it fits better the BAO signal recovered.
 Furthermore, there is a difference in the main peaks of the two fits 
@@ -402,15 +404,18 @@ functional form obtained for the properties is similar. This will be shown in th
 As mentioned previously, the BAO peak is clearly detected for every population 
 and the fit to the BAO signal was properly calculated using a Gaussian function. 
 Let us see the situation in more detail. There are different populations, each of 
-them have the ranges in mass shown in the beginning of this chapter.
+them have the ranges in mass shown in the beginning of this chapter (see table \ref{pophalos} and table 
+\ref{z1} and the quartil populations).
   
-For the thick bins, we are considering per population, more massive halos each 
-time. That way, we are be able to analyze if there is an effect on the properties of 
-BAO obtained for each population. 
+In the case of thin populations, $q_1$, $q_2$, $q_3$ and $q_4$ of the populations $1$ and 
+$2$, their mean mass increases from $q_4$ to $q_1$. 
+This means that the halo masses considered
+in population $q_4$ are smaller than the halo masses considered in $q_1$. 
+That way, we are be able to analyze if there is an effect on the BAO properties obtained for each population. 
 It is important to take into account that more massive halos trace higher density 
 peaks in the matter density field. This should lead, in principle, to a stronger 
 correlation in the most massive populations compared with the less massive ones. 
-Thus, a better detection of the BAO signal. In the left figure \ref{prop1} an increase of the amplitude of the BAO for more massive halos is obtained as precisely expected for a stronger 
+Thus, a better detection of the BAO signal. In the left figure \ref{prop1}, an increase of the amplitude of the BAO for more massive halos is obtained as precisely expected for a stronger 
 correlation. 
 
 %\huge BAO amplitude $Mpc$ $h^{-1}$
@@ -430,7 +435,7 @@ correlation.
 
 The initial position of the BAO depends on the sound horizon scale as mentioned in \ref{SH},
 but as explained in the model exposed in \ref{shiftBAO}, this position changes due to
-nonlinear effects. Now, the plot in the left of \ref{prop1} shows the position of the 
+nonlinear effects. Now, left figure of \ref{prop1} shows the position of the 
 BAO in function of the halo mass. It can be noticed a decrease in the value of the position
 as the halo mass increase. This behavior could be expected due to nonlinear gravitational 
 collapse. The velocity field causes a movement of the BAO peak to bigger scales 
@@ -438,7 +443,7 @@ for the nonlinear regime. In this case, this corresponds to the
 smaller halo masses for which the density modes are coupled among them. 
 The porcentual difference is around $3.8\%$. This is
 precisely of the same order of magnitude found in \cite{motion}. This result contributes 
-in a different way as \cite{motion} since they consider cosmological boxes with a very
+in a different way as \cite{motion}, since they consider cosmological boxes with a very
 small resolution $640^3$ in contrast to the populations used in this study. Furthermore,
 we study the BAO behavior for a more extended mass range and this could let us see 
 the effect of BAO properties in the nonlinear range. 
@@ -474,7 +479,7 @@ in the velocity field in each case.
 Now, consider the right figure of \ref{toy_pro} where a toy density profile is shown 
 and separated in two parts. The left curve is 
 the one halo term  and the right curve is the BAO signal. 
-The one halo term is esentially the density profile of a halo 
+The one halo term is, esentially, the density profile of a halo 
 and it is affected by the dispersion of velocities. 
 This dispersion causes a broadening of the profile. Hence, a similar behavior 
 is expected for the BAO signal. This is, the halos 
@@ -488,17 +493,19 @@ deviation from the mean velocity is not so big. At least,  compared  with the sm
 that can have a wider range of velocities. This idea is supported by the distribution
 of velocities observed in different populations as shown in the figure \ref{hist}, where
 we see that for larger halo masses populations the velocity dispersion is smaller. This is
-in accordance with the toy model proposed. In the figure \ref{hist} is also seen a bigger
-mean velocity for larger masses populations. 
+in accordance with the toy model proposed. 
+In the figure \ref{hist} is also seen a bigger mean velocity for larger masses populations. 
+%\huge BAO amplitude $[Mpc$ $h^{-1}]$ 
+These velocity distributions were plotted using the halo velocities, taken from the MDPL halo catalog. Thus, a histogram allows to obtain an estimative of the mean velocity per population. 
 
-
-%\huge BAO amplitude $[Mpc$ $h^{-1}]$
 
 The previous discussion is a possible explanation of what it is seen in the
 figure \ref{sigm1} where the width of the BAO decreases with more massive halos.
 But, the behavior of the population $2$ does not follow this tendency. Because of this,
 the quarter and thin populations were created to study in more detail the effect of
 the mass bins in the properties measure of BAO. 
+
+
 
 %\huge v[$Kms^{-1}/h$]
 
@@ -510,6 +517,30 @@ the mass bins in the properties measure of BAO.
        \label{toy_pro}
  \end{figure}
 %**********************************************************************************************************************
+
+\begin{figure}[h]
+   %\begin{center}
+   $
+    \begin{array}{cc}
+    \includegraphics[width=80mm]{Images/chapter4/AmplitudevsMh2.pdf}&
+    \includegraphics[width=78mm]{Images/chapter4/WidthvsMh2.pdf}
+    \end{array}$
+  %\end{center}
+   \caption{\small In the left panel the amplitude of BAO in function of the mass of all populations 
+   is shown. In the right one width of BAO versus the masss of the thick populations. }
+   \label{prop2}
+\end{figure}
+
+%**********************************************************************************************************************
+\begin{figure}[htbp]
+       \centering
+
+    \includegraphics[width=100mm]{Images/chapter4/PosvsMh2.pdf}
+\caption{\small The position of BAO in function of the mass of the thick population is displayed.}
+       \label{sigm2}
+ \end{figure}
+%**********************************************************************************************************************
+
 
 \begin{figure}[h]
    %\begin{center}
@@ -545,31 +576,6 @@ But, the behavior of the population $2$ does not follow this tendency. Because o
 the quarter and thin populations were created to study in more detail the effect of
 the mass bins in the properties measure of BAO. 
 \end{comment}
-
-
-\begin{figure}[h]
-   %\begin{center}
-   $
-    \begin{array}{cc}
-    \includegraphics[width=80mm]{Images/chapter4/AmplitudevsMh2.pdf}&
-    \includegraphics[width=78mm]{Images/chapter4/WidthvsMh2.pdf}
-    \end{array}$
-  %\end{center}
-   \caption{\small In the left panel the amplitude of BAO in function of the mass of all populations 
-   is shown. In the right one width of BAO versus the masss of the thick populations. }
-   \label{prop2}
-\end{figure}
-
-%**********************************************************************************************************************
-\begin{figure}[htbp]
-       \centering
-
-    \includegraphics[width=100mm]{Images/chapter4/PosvsMh2.pdf}
-\caption{\small The position of BAO in function of the mass of the thick population is displayed.}
-       \label{sigm2}
- \end{figure}
-%**********************************************************************************************************************
-
 
 The BAO properties obtained for all the populations, except $1\times 10^{11}$ and $1\times 10^{12}$,
 are plotted in the figures \ref{prop2} and \ref{sigm2}. It is noticed that when it is used
@@ -616,6 +622,12 @@ the position using a basis spline fit. For both curves, there is not a notorious
 in the position of the BAO. Hence, these two curves support the idea that nonlinear 
 effects are causing a shift in the BAO position, not so evident for $z=1$. 
 
+The curves obtained for $z=1$, in figures \ref{sigm2} and right plot of \ref{prop2},
+were constructed in the same way, as curves for $z=0$ were calculated. Thus, the CF
+for different populations (see table \ref{z1}) was calculated and its variance. After
+recovering the BAO signal from the CF, the fit using a Gaussian function allowed to
+calculate the BAO properties at this redshift. 
+
 
 Concluding, the properties recovered for the BAO using the thicker bins are behaving
 as expected but they are possibly "masking" information of smaller mass scales. For this, 
@@ -626,6 +638,8 @@ of the properties. A nonlinear behavior is dominating the BAO properties at thes
 scales. 
 
 \
+
+
 
 During this chapter the results for two different numerical experiments were performed
 using a halo catologue from MDPL simulation. The first case used thick bins for the populations
