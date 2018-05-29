@@ -1,10 +1,19 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% HEADER
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \documentclass[english,a4paper,11pt,twoside]{book}
 \usepackage{verbatim}
 \usepackage{amsmath}
 %\documentclass[spanish,a4paper,11pt,twoside]{book}
+
+%in the preamble
+%--------------------------------
+
+\usepackage{apacite}
+\bibliographystyle{apacite}
+
+\usepackage{natbib}
+
 
 \include{Macros/Macro}
 
@@ -43,7 +52,7 @@
 \input{Chapters/Chap2}
 \input{Chapters/Chap3}
 \input{Chapters/Chap4}
-\input{Chapters/Chap5}
+%\input{Chapters/Chap5}
 
 \newpage
 \cleardoublepage
@@ -55,10 +64,10 @@
 
 \addcontentsline{toc}{chapter}{References} %'Bibliography' into toc
 %\nocite{*} %Even non-cited BibTeX-Entries will be shown.
-\bibliographystyle{ieeetr} %Style of Bibliography: plain / apalike / amsalpha / ...
-\renewcommand{\bibname}{References}
+%\bibliographystyle{alphabetic} %Style of Bibliography: plain / apalike / amsalpha / ...
+%\renewcommand{\bibname}{References}
+%\bibliography{References}
 \bibliography{References}
-
 
 %% The List of Figures
 %\clearpage
@@ -74,7 +83,7 @@
 %\clearpage
 %\addcontentsline{toc}{chapter}{List of Tables}
 %\listoftables
-
+  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% APPENDICES
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
