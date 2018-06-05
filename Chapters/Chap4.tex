@@ -12,8 +12,9 @@ the correlation function will provide our main results.
 
 Now, using this tool, it will be studied the simulation Multidark Planck (MDPL). 
 It belongs to the MultiDark database in which Planck parameters were used
-(see table \ref{plancktable}). The characteristics of MDPL
-simulation are a box length of $L=1$Gpc/h, a number of particles equal to 
+(see table \ref{plancktable}). 
+The MDPL simulation was performed using the L-Gadget2 code, and it was used the $\Lambda$CDM cosmology. The initial conditions of this dark matter simulation contains the BAO signal, i.e., this prefered scale at around $110$ Mpc/h is contained in the initial density distribution of it. 
+The characteristics of MDPL simulation are a box length of $L=1$Gpc/h, a number of particles equal to 
 $3840^3$ and a mass resolution of $1.51\times 10^9 M_{\odot}/h$.
 Furthermore, the MDPL simulation has available a halo catalogue constructed with Friend of 
 Friends algorithm and a linking length of 0.2 \footnote{ Data taken from \url{https://www.cosmosim.org/cms/simulations/MDPL/}}. 
@@ -75,6 +76,26 @@ was performed.
 \label{pophalos}
 \end{center}
 \end{table}
+
+\begin{comment}
+\begin{table}
+\begin{center}
+  \begin{tabular}{ | c | c | c | c | c |  }
+    \hline \hline
+Mean mass [$M_{\odot}/h$] & $q_1$  & $q_2$  & $q_3$  & $q_4$  \\ \hline
+    Pop 1 & $10^{11.77}$ & $10^{11.39}$ & $10^{11.19}$ & $10^{11.06}$ \\ \hline
+    Pop 2 & $10^{12.75}$ & $10^{12.39}$ & $10^{12.19}$ & $10^{12.06}$\\ \hline
+  \end{tabular}  
+   \caption{ Populations constructed from MDPL halo catalogue for z=0. }
+\label{pophalos}
+\end{center}
+\end{table}
+\end{comment}
+
+Their mean masses in logarithmic scale are: quartiles for population 1: 
+$10^{11.77}$, $10^{11.39}$, $10^{11.19}$ and $10^{11.06}$ $M_{\odot}/h$, 
+quartiles for population 2:
+$10^{12.75}$, $10^{12.39}$, $10^{12.19}$ and $10^{12.06}$ $M_{\odot}/h$.
 
 
 \begin{table}
@@ -239,7 +260,6 @@ appears, there is a bigger discrepancy between the two curves.
        \label{NofP}
  \end{figure}
 %**********************************************************************************************************************
-
 
 
 \section{ Correlation function fit }
@@ -496,7 +516,7 @@ we see that for larger halo masses populations the velocity dispersion is smalle
 in accordance with the toy model proposed. 
 In the figure \ref{hist} is also seen a bigger mean velocity for larger masses populations. 
 %\huge BAO amplitude $[Mpc$ $h^{-1}]$ 
-These velocity distributions were plotted using the halo velocities, taken from the MDPL halo catalog. Thus, a histogram allows to obtain an estimative of the mean velocity per population. 
+These velocity distributions were plotted using the halo velocities, taken from the MDPL halo catalog. Thus, a histogram allows to obtain an estimate of the mean velocity per population. 
 
 
 The previous discussion is a possible explanation of what it is seen in the
@@ -529,7 +549,7 @@ the mass bins in the properties measure of BAO.
    \caption{\small In the left panel the amplitude of BAO in function of the mass of all populations 
    is shown. In the right one width of BAO versus the masss of the thick populations.
    The vertical line in each plot indicates two regions, the left one, the nonlinear region
-   and the right ond, the linear region.   }
+   and the right one, the linear region.   }
    \label{prop2}
 \end{figure}
 
@@ -596,7 +616,7 @@ $\sim 10^{12.4}$ $M_{\odot}/h$, the nonlinear effects causes that there is no te
 data. The red curve shown in the same figure corresponds to the width in function of the 
 halo mass for $z=1$. It has a better behavior since nonlinear effects are not so strong.
 Hence, it can be noticed that because of the structure evolution between $z=1$ and $z=0$, 
-the coupling among different density modes becomes more notorius. 
+the coupling among different density modes becomes more notorious.
 
 Figure \ref{sigm2}, shows the position of the BAO vs the halo mass.
 In the case of the solid blue line, the populations considered are those ones that
